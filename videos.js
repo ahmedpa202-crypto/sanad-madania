@@ -1,0 +1,57 @@
+// روابط مقاطع الدروس — من قائمة «قراءة القاعدة المدنية» (46 مقطعًا)، مطابقة لعناوين الدروس.
+// لكل درس: v = معرّف مقطع يوتيوب، s/e = بداية ونهاية بالثواني (اختياري).
+// الباب الثاني عشر لا مقاطع له في القائمة. الدرسان «قطع أم وصل» و«قمرية أم شمسية» مراجعة بلا مقطع.
+window.VIDEOS = {
+  playlist: "PLGeu80ApFDrlZh18gHDZJ50KtFCjS6lLX",
+  app: "https://onelink.to/h7hb77",
+  intro: "po-LNy25ZKY",   // المقدمة
+  promo: "JVuMgU-DL0c",   // برومو
+  main: "",
+  lessons: {
+    "1-1": { v: "36CUWn-5Gkc" },
+    "1-2": { v: "99of6AfffbI" },
+    "1-3": { v: "YCUp26k9N50" },
+    "1-4": { v: "Iur3V8TAA6k" },
+    "1-5": { v: "WG6YBAnRUuU" },
+    "2-1": { v: "LG0Cju7-EV4" },
+    "2-1x": { v: "Zcwl_kAdwzs" },
+    "2-2": { v: "Ixeb8FqDZCw" },
+    "2-2x": { v: "QKBSlZSsyDs" },
+    "2-3": { v: "lREGgfcE3fU" },
+    "2-3x": { v: "pbRF56RZato" },
+    "2-4": { v: "4PRtpZt4_Sc" },
+    "2-4x": { v: "Ge_27ERz2nQ" },
+    "3-1": { v: "3vusD8IfnFk" },
+    "3-1x": { v: "Jsy2u0mW9Cw" },
+    "3-2": { v: "fGdqrTTHEBY" },
+    "3-2x": { v: "I3arxfPD_i4" },
+    "3-3": { v: "Rv8jzM8jKro" },
+    "3-3x": { v: "gaVDAM-R3_c" },
+    "4-1": { v: "YM_nuEITJ1k" },
+    "4-1x": { v: "jMqtrRru15c" },
+    "4-2": { v: "HStz_rSHBvE" },
+    "4-2x": { v: "lkSqzeH-zXo" },
+    "4-3": { v: "LGy8J3QcxbI" },
+    "4-3x": { v: "RwGbIQ4c6rg" },
+    "5-1": { v: "H4jyOjHyNzc" },
+    "5-1x": { v: "QXyuFKhcrxw" },
+    "5-2": { v: "R6LnM9hArTA" },
+    "5-2x": { v: "HzK5wknft3g" },
+    "5-3": { v: "wYfbfitYCf8" },
+    "5-3x": { v: "MbxHNOjlyfU" },
+    "5-4": { v: "6d-BVvd5_Ks" },
+    "6-1": { v: "KrL5hpczXSg" },
+    "6-2": { v: "WBQvxjnfevU" },
+    "7-1": { v: "soTudo_vMDA" },
+    "8-1": { v: "EbuGnmyZqjQ" },
+    "9-1": { v: "Rnb4ED24yf8" },
+    "9-2": { v: "Rnb4ED24yf8" },
+    "10-1": { v: "c6HOx2BNqsc" },
+    "10-2": { v: "TzWtZJTFcDI" },
+    "11-1": { v: "xgylEhDPACw" },
+    "11-2": { v: "gGxoIsci4p0" },
+    "11-3": { v: "BEylFk7fWm0" },
+    "11-4": { v: "qEuS4KFdlm0" },
+    "11-5": { v: "wo2Hhkc5AnU" }
+  }
+};

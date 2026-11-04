@@ -1,0 +1,1114 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>سَنَد – القاعدة المدنية</title>
+<meta name="description" content="منصة سَنَد التعليمية: برنامج القاعدة المدنية لتعليم القراءة للبنين من ٦ إلى ٩ سنوات — كتاب تفاعلي، وكتاب الطالب، ودليل المعلم.">
+<meta name="theme-color" content="#173A5E">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="img/icon-192.png">
+<link rel="apple-touch-icon" href="img/icon-192.png">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ar_SA">
+<meta property="og:title" content="سَنَد – نُتقن الحرف… ونزرع القيم">
+<meta property="og:description" content="برنامج القاعدة المدنية لتعليم القراءة: كتاب تفاعلي، وكتاب الطالب، ودليل المعلم. نسخة تجريبية.">
+<meta property="og:image" content="img/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+@font-face{font-family:TS;src:url(fonts/thmanyahsans-Medium.woff2) format("woff2");font-weight:400 500;font-display:swap}
+@font-face{font-family:TS;src:url(fonts/thmanyahsans-Bold.woff2) format("woff2");font-weight:600 900;font-display:swap}
+@font-face{font-family:TT;src:url(fonts/thmanyahseriftext-Bold.woff2) format("woff2");font-display:block}
+@font-face{font-family:TD;src:url(fonts/thmanyahserifdisplay-Black.woff2) format("woff2");font-display:swap}
+/* هوية سند: كحلي أساس، وسماوي ونعناعي وذهبي للمحطات والبيوت؛ ورقي للصفحات */
+:root{--navy:#173A5E;--deep:#0D2945;--sky:#69B7E8;--mint:#79CDB5;--gold:#F2B84B;--cream:#FFF9EF;--paper:#FFFDF9;
+ --skyS:#E6F3FC;--mintS:#E3F6F0;--goldS:#FEF2D9;--soft:#5E7389;
+ --bg:#FFF9EF;--card:#FFFDF9;--ink:#173A5E;--ink2:#5E7389;--tile:#FFFFFF;--line:#E4E9EF;--hi:#1C78B5;--ok:#2E9C7E;--okS:#E3F6F0;--bad:#B9472C;--badS:#FBE3DB;--shade:#0D294526;color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0D2945;--card:#132F4C;--ink:#FFF9EF;--ink2:#A9BCD0;--line:#24476B;--hi:#8CCBF2;--shade:#00000066;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0D2945;--card:#132F4C;--ink:#FFF9EF;--ink2:#A9BCD0;--line:#24476B;--hi:#8CCBF2;--shade:#00000066;color-scheme:dark}
+*{box-sizing:border-box}
+html,body{margin:0;direction:rtl;unicode-bidi:isolate}
+body{text-align:right}
+body{font-family:TS,system-ui,sans-serif;background:var(--bg);color:var(--ink);min-height:100vh;-webkit-tap-highlight-color:transparent;padding-bottom:env(safe-area-inset-bottom,0px)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--bg)}
+button{font:inherit;color:inherit;cursor:pointer;border:0;background:none}
+button:focus-visible,a:focus-visible,summary:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid var(--sky);outline-offset:3px}
+img{max-width:100%}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+.ar{font-family:TT;font-weight:700;color:var(--navy);line-height:1.9;letter-spacing:0;word-spacing:.12em}
+/* ===== شريط علوي ===== */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:25;background:var(--bg);border-bottom:1px solid var(--line)}
+.bar .in{max-width:1180px;margin:0 auto;display:flex;align-items:center;gap:12px;padding-block:8px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.brand{display:flex;align-items:center;gap:10px;min-width:0;text-decoration:none;color:var(--ink)}
+.brand img{height:40px}
+.brand b{font-weight:800;font-size:16px;white-space:nowrap}
+.nav{display:flex;gap:4px;flex:1;justify-content:center;overflow-x:auto;scrollbar-width:none}
+.nav a{flex:none;display:flex;align-items:center;gap:6px;min-height:44px;padding:0 14px;border-radius:12px;font-weight:800;font-size:15px;color:var(--ink2);text-decoration:none;white-space:nowrap}
+.nav a.on{background:var(--navy);color:#fff}
+.nav a .soon{font-size:11px;background:var(--gold);color:var(--deep);border-radius:99px;padding:1px 7px}
+.ib{min-width:44px;height:44px;border-radius:12px;display:inline-flex;align-items:center;justify-content:center;gap:6px;background:var(--card);border:1px solid var(--line);font-size:15px;padding:0 12px;font-weight:800;color:var(--ink)}
+.ib.on{background:var(--navy);color:#fff;border-color:var(--navy)}
+main{max-width:1180px;margin:0 auto;padding-block:18px 96px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.crumb{display:flex;gap:8px;align-items:center;color:var(--ink2);font-size:14px;margin-bottom:10px;flex-wrap:wrap}
+.crumb button{color:var(--hi);font-weight:700;padding:6px 2px;min-height:44px}
+h2.sec{font-family:TD;font-weight:900;font-size:clamp(24px,3.4vw,30px);margin:34px 0 12px;text-wrap:balance}
+.lead{color:var(--ink2);margin:-4px 0 14px;line-height:1.8}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 18px;border-radius:14px;font-weight:800;background:var(--navy);color:#fff;text-decoration:none;font-size:16px}
+.btn.s{background:var(--card);color:var(--ink);border:1px solid var(--line)}
+.btn.g{background:var(--gold);color:var(--deep)}
+.btn.m{background:var(--mint);color:var(--deep)}
+.btn[disabled]{opacity:.55;cursor:default}
+.chip{display:inline-block;background:var(--navy);color:#fff;font-weight:700;font-size:13px;padding:4px 12px;border-radius:99px}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:12px 0}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:18px}
+.note{background:var(--goldS);color:var(--deep);border-radius:14px;padding:12px 16px;line-height:1.8;margin:0 0 14px}
+.note b{color:var(--navy)}
+/* ===== الغلاف ===== */
+.cover{display:grid;grid-template-columns:1.25fr .75fr;gap:24px;align-items:center;background:var(--navy);color:#fff;border-radius:28px;padding:30px;position:relative;overflow:hidden}
+.cover::after{content:"";position:absolute;left:28px;right:28px;bottom:12px;height:5px;border-radius:5px;background:linear-gradient(90deg,var(--sky) 0 33%,var(--mint) 33% 66%,var(--gold) 66%)}
+.cover .kick{color:#BFD3E6;font-weight:700}
+.cover h1{font-family:TD;font-weight:900;font-size:clamp(36px,6vw,64px);line-height:1.25;margin:4px 0 2px}
+.cover .sub{font-size:clamp(17px,2.2vw,22px);color:#DCE8F3;margin:0}
+.cover .slogan{color:var(--gold);font-weight:800;font-size:20px;margin:14px 0 4px}
+.cover .credit{color:#BFD3E6;font-size:14px;line-height:1.8;margin:10px 0 18px;max-width:52ch}
+.cover img.bk{width:100%;max-width:250px;justify-self:center;border-radius:14px;box-shadow:0 22px 44px #00000066}
+.cover .acts{display:flex;gap:10px;flex-wrap:wrap}
+.cover .btn.s{background:#ffffff14;color:#fff;border-color:#ffffff33}
+/* ===== الترحيب ===== */
+.welcome{display:grid;grid-template-columns:auto 1fr;gap:22px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:26px;padding:22px;margin-top:18px}
+.welcome img{width:170px}
+.welcome h2{font-family:TD;font-weight:900;font-size:clamp(28px,4vw,40px);margin:0}
+.welcome p{line-height:1.9;margin:6px 0}
+.stations{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:12px}
+.st{border-radius:18px;padding:14px;background:var(--tile);color:var(--navy);border:2px solid var(--c);display:flex;gap:10px;align-items:flex-start}
+.st .n{flex:none;width:36px;height:36px;border-radius:50%;background:var(--c);color:var(--deep);display:grid;place-items:center;font-weight:900}
+.st b{display:block;font-size:18px}.st span{font-size:14px;color:var(--soft);line-height:1.6}
+.wgrid{display:grid;grid-template-columns:1.2fr 1fr;gap:12px;margin-top:12px}
+.box{background:var(--tile);color:var(--navy);border-radius:18px;padding:14px 16px;border:1px solid var(--line)}
+.box b{font-size:17px}.box p{margin:6px 0;line-height:1.8;color:var(--soft)}
+.houses{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px}
+.houses span{font-family:TT;font-weight:700;font-size:24px;padding:0 12px;border-radius:10px;line-height:1.8;color:var(--navy)}
+.tS{background:var(--skyS)}.tM{background:var(--mintS)}.tG{background:var(--goldS)}
+.stars3{display:flex;gap:12px;margin-top:6px}.stars3 span{display:flex;flex-direction:column;align-items:center;font-size:13px;font-weight:700;color:var(--soft)}
+.stars3 svg{width:34px;height:34px;fill:var(--gold)}
+/* ===== الأبواب ===== */
+.units{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px}
+.uc{display:flex;flex-direction:column;gap:6px;text-align:right;background:var(--card);border:1px solid var(--line);border-radius:20px;padding:16px;min-height:150px}
+.uc:hover{border-color:var(--sky)}
+.uc .n{display:inline-grid;place-items:center;width:42px;height:42px;border-radius:12px;background:var(--skyS);color:var(--navy);font-weight:900;font-size:19px}
+.uc:nth-child(3n+2) .n{background:var(--mintS)}.uc:nth-child(3n) .n{background:var(--goldS)}
+.uc h3{margin:0;font-family:TD;font-weight:900;font-size:21px;line-height:1.4;text-wrap:balance}
+.uc small{color:var(--ink2)}
+.prog{height:8px;border-radius:8px;background:var(--line);overflow:hidden;margin-top:auto}
+.prog i{display:block;height:100%;background:var(--mint);border-radius:8px}
+/* ===== التطبيق (إعلان) ===== */
+.appcard{display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center;border-radius:28px;padding:30px;position:relative;background:linear-gradient(135deg,var(--deep),var(--navy));color:#fff;margin-top:34px;overflow:hidden}
+.appcard h3{font-family:TD;font-weight:900;font-size:clamp(26px,3.6vw,36px);margin:6px 0}
+.appcard p{color:#DCE8F3;line-height:1.8;margin:4px 0 14px;max-width:56ch}
+.badge{display:inline-flex;gap:6px;align-items:center;background:var(--gold);color:var(--deep);font-weight:900;font-size:13px;border-radius:99px;padding:4px 12px}
+.badge i{width:8px;height:8px;border-radius:50%;background:var(--deep);animation:pulse 1.6s infinite}
+@keyframes pulse{50%{opacity:.25}}
+.feat{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px}
+.fe{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:16px}
+.fe b{display:block;font-size:18px;margin:6px 0 4px}.fe p{margin:0;color:var(--ink2);line-height:1.7}
+.fe .ic{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;background:var(--skyS);color:var(--navy);font-weight:900}
+/* ===== صفحة الباب ===== */
+.uhead{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:20px;display:grid;grid-template-columns:1fr auto;gap:16px}
+.uhead h1{font-family:TD;font-weight:900;font-size:clamp(28px,4vw,42px);margin:4px 0;line-height:1.35;text-wrap:balance}
+.goals{margin:10px 0 0;padding:0;list-style:none;display:grid;gap:6px}
+.goals li{padding-right:22px;position:relative;line-height:1.7}
+.goals li::before{content:"";position:absolute;right:2px;top:.6em;width:10px;height:10px;border-radius:50%;background:var(--mint)}
+.uact{display:flex;flex-direction:column;gap:8px;min-width:200px}
+.lessons{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px;margin-top:16px}
+.lc{text-align:right;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:14px 16px;display:flex;flex-direction:column;gap:6px;min-height:112px}
+.lc:hover{border-color:var(--sky)}
+.lc b{font-size:18px;line-height:1.5}
+.lc .sm{font-size:13px;color:var(--ink2)}
+.stars{display:flex;gap:4px;margin-top:auto}
+.stars svg{width:22px;height:22px;fill:var(--line)}.stars svg.on{fill:var(--gold)}
+.qrs{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
+.qc{background:var(--tile);border:1px solid var(--line);border-radius:18px;padding:12px;text-align:center;color:var(--navy);display:flex;flex-direction:column;gap:6px;align-items:center}
+.qc svg{width:110px;height:110px}
+.qc b{font-size:14px;line-height:1.5}
+/* ===== الدرس ===== */
+.lhead{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.lhead h1{font-family:TD;font-weight:900;margin:0;font-size:clamp(26px,4vw,38px);flex:1;text-wrap:balance}
+.tabs{display:flex;gap:8px;overflow-x:auto;padding:10px 0;scrollbar-width:none}
+.tab{flex:none;min-height:52px;padding:0 20px;border-radius:14px;background:var(--card);border:1px solid var(--line);font-weight:800;font-size:17px;display:flex;align-items:center;gap:8px}
+.tab i{width:10px;height:10px;border-radius:50%;background:var(--c)}
+.tab.on{background:var(--navy);color:#fff;border-color:var(--navy)}
+.script{display:flex;gap:12px;align-items:flex-start;background:var(--goldS);color:var(--deep);border-radius:14px;padding:10px 14px;margin:0 0 14px;line-height:1.8}
+.script b{flex:none;background:var(--gold);color:var(--deep);border-radius:99px;padding:0 12px;font-size:14px;margin-top:4px}
+.board{display:grid;gap:10px;grid-template-columns:repeat(auto-fill,minmax(var(--w,108px),1fr))}
+.board.fit{grid-template-columns:repeat(var(--cd),minmax(0,1fr))}
+.tile{background:var(--tile);border:2px solid var(--line);border-radius:18px;min-height:96px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:6px 8px 4px;gap:2px;position:relative;color:var(--navy)}
+.tile .ar{font-size:var(--fs,46px);line-height:1.75;white-space:nowrap}
+.tile .tg{font-family:TT;font-weight:700;font-size:20px;color:#1C78B5;background:var(--skyS);border-radius:9px;padding:0 10px;line-height:1.8}
+.tile .nm{font-size:15px;color:var(--soft);font-family:TT;font-weight:700}
+.tile.tS{background:var(--skyS);border-color:#CFE6F7}.tile.tM{background:var(--mintS);border-color:#C6EADF}.tile.tG{background:var(--goldS);border-color:#F7DFA9}
+.tile.cur{border-color:var(--navy);box-shadow:0 0 0 3px var(--sky)}
+.tile.done::after{content:"";position:absolute;left:8px;right:8px;bottom:5px;height:5px;border-radius:4px;background:var(--gold)}
+.tile .rd{position:absolute;top:6px;left:8px;width:8px;height:8px;border-radius:50%;background:var(--mint)}
+.buildrow{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:8px}
+.buildrow.c2{grid-template-columns:repeat(2,1fr)}
+.buildrow .tile{min-height:86px}
+.buildrow .tile:last-child{background:var(--mintS)}
+.line{display:flex;align-items:center;justify-content:center;text-align:center;background:var(--tile);border:2px solid var(--line);border-radius:18px;padding:10px 16px;margin-bottom:10px;min-height:84px;width:100%;color:var(--navy);position:relative}
+.line .ar{font-size:clamp(26px,4vw,40px);white-space:normal;line-height:2.1}
+.formrow{display:grid;grid-template-columns:1.2fr repeat(3,1fr) 1.4fr;gap:8px;margin-bottom:8px;align-items:stretch}
+.formrow .tile{min-height:84px}
+.pages{display:flex;gap:10px;flex-wrap:wrap}
+.pages button{width:120px;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#fff;padding:0}
+.pages img{width:100%;display:block}
+.vq{display:grid;grid-template-columns:auto 1fr;gap:20px;align-items:center;background:var(--tile);color:var(--navy);border:2px solid var(--line);border-radius:22px;padding:18px}
+.vq .qbig{width:190px;height:190px;padding:10px;background:#fff;border-radius:18px;border:2px solid var(--line)}
+.vq .qbig svg{width:100%;height:100%}
+.vq h3{font-family:TD;font-weight:900;font-size:24px;margin:0 0 6px}
+.vq p{margin:4px 0 12px;color:var(--soft);line-height:1.8}
+.vbox{aspect-ratio:16/9;width:100%;max-width:100%;border-radius:18px;overflow:hidden;background:#000;margin-top:14px}
+.vbox iframe{width:100%;height:100%;border:0}
+.mstars{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px}
+.mst{display:flex;flex-direction:column;align-items:center;gap:6px;background:var(--tile);border:2px solid var(--line);border-radius:18px;padding:16px;font-weight:800;color:var(--navy);min-height:120px}
+.mst svg{width:56px;height:56px;fill:var(--line)}
+.mst.on svg{fill:var(--gold)}.mst.on{border-color:var(--gold)}
+/* ===== الألعاب ===== */
+.games{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:12px}
+.gc{background:var(--tile);border:2px solid var(--line);border-radius:18px;padding:16px;text-align:right;display:flex;flex-direction:column;gap:6px;min-height:128px;color:var(--navy)}
+.gc:hover{border-color:var(--sky)}
+.gc .gi{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;font-family:TT;font-weight:700;font-size:24px;background:var(--skyS)}
+.gc:nth-child(3n+2) .gi{background:var(--mintS)}.gc:nth-child(3n) .gi{background:var(--goldS)}
+.gc b{font-size:18px}.gc small{color:var(--soft);line-height:1.6}
+.gwrap{max-width:880px;margin:0 auto}
+.ghead{display:flex;align-items:center;gap:10px;margin-bottom:12px;flex-wrap:wrap}
+.ghead h3{flex:1;margin:0;font-size:21px}
+.dots{display:flex;gap:5px;flex-wrap:wrap}.dots i{width:12px;height:12px;border-radius:50%;background:var(--line)}.dots i.ok{background:var(--mint)}.dots i.no{background:#F3B8A6}.dots i.cur{background:var(--sky)}
+.prompt{background:var(--tile);border:2px solid var(--line);border-radius:22px;min-height:180px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:14px;margin-bottom:14px;text-align:center;color:var(--navy)}
+.prompt .ar{font-size:clamp(48px,9vw,96px);line-height:1.8}
+.prompt .q{color:var(--soft);font-weight:700;font-size:16px}
+.prompt .say{font-family:TT;font-weight:700;color:var(--navy);font-size:clamp(34px,6vw,54px);line-height:1.8}
+.opts{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.opt{background:var(--tile);border:2px solid var(--line);border-radius:18px;min-height:96px;display:grid;place-items:center;padding:6px;color:var(--navy)}
+.opt .ar{font-size:clamp(30px,5vw,48px)}
+.opt.lbl{font-weight:800;font-size:21px;line-height:1.6;padding:8px 12px}
+.opt.ok{background:var(--okS);border-color:var(--ok)}
+.opt.no{background:var(--badS);border-color:var(--bad)}
+.opt.sel{border-color:var(--hi);box-shadow:0 0 0 3px var(--sky)}
+.opt.gone{visibility:hidden}
+.mem{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.card{min-height:110px;border-radius:16px;border:2px solid var(--line);background:var(--navy);display:grid;place-items:center;padding:4px;color:var(--navy)}
+.card.up{background:var(--tile)}
+.card.match{background:var(--okS);border-color:var(--ok)}
+.card .ar{font-size:clamp(22px,4vw,38px)}
+.card .back{width:34px;height:34px;border-radius:50%;background:radial-gradient(circle at 35% 35%,var(--sky),var(--deep))}
+.huntg{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.order{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;min-height:90px;align-items:center;background:var(--tile);border:2px dashed var(--line);border-radius:18px;padding:10px;margin-bottom:12px}
+.order .opt{min-height:70px;padding:4px 16px}
+.res{text-align:center;padding:20px}
+.res img{width:120px}
+.res h3{font-family:TD;font-weight:900;font-size:32px;margin:6px 0}
+.big3{display:flex;justify-content:center;gap:8px;margin:8px 0}.big3 svg{width:54px;height:54px;fill:var(--line)}.big3 svg.on{fill:var(--gold)}
+.fb{min-height:30px;text-align:center;font-weight:800;margin:10px 0;font-size:18px}
+.fb.ok{color:var(--ok)}.fb.no{color:var(--bad)}
+.award{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:10px}
+.award button{min-height:48px;padding:0 16px;border-radius:14px;font-weight:800;color:var(--deep);background:var(--tc)}
+/* ===== الفرق ===== */
+.teams{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
+.team{border-radius:20px;padding:14px;background:var(--tile);color:var(--navy);border:3px solid var(--tc);display:flex;flex-direction:column;gap:8px}
+.team .th{display:flex;gap:8px;align-items:center}
+.team .th i{width:16px;height:16px;border-radius:50%;background:var(--tc);flex:none}
+.team input.tn{flex:1;min-width:0;font:inherit;font-weight:900;font-size:19px;border:0;border-bottom:2px dashed var(--line);background:transparent;color:var(--navy);padding:6px 2px}
+.team textarea{width:100%;min-height:120px;font:inherit;border-radius:12px;border:1px solid var(--line);padding:8px 10px;background:#fff;color:var(--navy);line-height:1.7;resize:vertical}
+.team small{color:var(--soft)}
+.score{display:flex;align-items:center;gap:10px;justify-content:center}
+.score b{font-size:48px;line-height:1;min-width:80px;text-align:center;font-variant-numeric:tabular-nums}
+.score button{width:56px;height:56px;border-radius:16px;background:var(--tc);color:var(--deep);font-size:28px;font-weight:900}
+.score button.m{background:var(--line);color:var(--navy)}
+.tools{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px;margin-top:12px}
+.tool{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:16px;display:flex;flex-direction:column;gap:10px}
+.tool h3{margin:0;font-size:18px}
+.clock{font-size:54px;font-weight:900;text-align:center;font-variant-numeric:tabular-nums}
+.chipb{min-height:44px;padding:0 14px;border-radius:12px;background:var(--tile);border:1px solid var(--line);font-weight:800;color:var(--navy)}
+.picked{font-size:32px;font-weight:900;text-align:center;min-height:56px;line-height:1.7}
+.picked small{display:block;font-size:14px;color:var(--ink2)}
+textarea.roster{width:100%;min-height:120px;font:inherit;border-radius:12px;border:1px solid var(--line);padding:8px 10px;background:var(--tile);color:var(--navy);line-height:1.7}
+select{font:inherit;min-height:44px;border-radius:12px;border:1px solid var(--line);background:var(--tile);color:var(--navy);padding:0 10px;font-weight:800}
+.fab{position:fixed;left:max(14px,env(safe-area-inset-left,0px));bottom:calc(14px + env(safe-area-inset-bottom,0px));z-index:35;display:flex;gap:6px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:6px;box-shadow:0 14px 34px -14px var(--shade)}
+.fab .ft{display:flex;align-items:center;gap:6px;border-radius:12px;padding:4px 8px;background:var(--tc);color:var(--deep);font-weight:900;min-height:44px}
+.fab .ft span{max-width:90px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:13px}
+.fab .ft b{font-size:20px;font-variant-numeric:tabular-nums}
+.fab .ft button{width:44px;height:44px;border-radius:10px;background:#ffffff99;font-weight:900;font-size:20px;color:var(--deep)}
+/* احتفال الفائز */
+.win{position:fixed;inset:0;z-index:60;background:#0D2945F2;display:flex;align-items:center;justify-content:center;padding:16px;color:#fff;text-align:center;overflow:auto}
+.win .wb{max-width:760px;width:100%}
+.win h2{font-family:TD;font-weight:900;font-size:clamp(34px,6vw,60px);margin:8px 0;color:var(--wc)}
+.win .crown{font-family:TD;font-size:22px;color:var(--gold);font-weight:900}
+.win .names{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:18px 0}
+.win .names span{background:#ffffff14;border:2px solid var(--wc);border-radius:99px;padding:8px 18px;font-weight:800;font-size:clamp(18px,2.6vw,26px);animation:pop .5s both}
+@keyframes pop{from{opacity:.2;translate:0 12px}to{opacity:1;translate:0 0}}
+.win .big3 svg{fill:var(--gold);width:64px;height:64px}
+.conf{position:fixed;inset:0;pointer-events:none;z-index:61}
+/* ===== الدليل ===== */
+.gsec{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:18px;margin-top:14px}
+.gsec h2{font-family:TD;font-weight:900;font-size:26px;margin:0 0 8px}
+.gsec h3{font-size:18px;margin:16px 0 6px;color:var(--hi)}
+.gsec p,.gsec li{line-height:1.9}
+.gsec ol{list-style:arabic-indic}
+.plan{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.plan div{border-radius:16px;padding:12px;background:var(--tile);border:2px solid var(--line);color:var(--navy)}
+.plan div:nth-child(1){border-color:var(--sky)}.plan div:nth-child(2){border-color:var(--mint)}.plan div:nth-child(3){border-color:var(--gold)}.plan div:nth-child(4){border-color:var(--navy)}
+.plan b{display:block;font-size:20px}.plan small{color:var(--soft);font-weight:700}.plan p{margin:6px 0 0;font-size:15px;line-height:1.7}
+.defs{display:grid;gap:8px}
+.def{display:grid;grid-template-columns:minmax(120px,230px) 1fr;gap:12px;background:var(--tile);color:var(--navy);border-radius:12px;padding:10px 14px}
+.def b{color:#1C78B5}
+.mis{background:var(--badS);color:#7A2E1B;border-radius:12px;padding:10px 14px;margin:6px 0;line-height:1.8}
+.home{background:var(--mintS);color:var(--deep);border-radius:12px;padding:10px 14px;line-height:1.8;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.home span{flex:1;min-width:200px}
+.src{font-size:12px;color:var(--ink2);font-weight:700;background:var(--line);border-radius:99px;padding:2px 10px;margin-right:6px;vertical-align:middle}
+details.gu{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:12px 16px;margin-top:10px}
+details.gu summary{cursor:pointer;font-weight:800;font-size:19px;list-style:none;display:flex;gap:10px;align-items:center;min-height:44px}
+details.gu summary::-webkit-details-marker{display:none}
+details.gu summary .n{display:inline-grid;place-items:center;width:36px;height:36px;border-radius:10px;background:var(--skyS);color:var(--navy)}
+
+/* القائمة الجانبية */
+.menu{gap:8px}.hb{display:grid;gap:4px}.hb i{display:block;width:18px;height:2px;border-radius:2px;background:currentColor}
+.beta{font-size:11px;font-weight:900;background:var(--goldS);color:#8A5A00;border:1px solid #F7DFA9;border-radius:99px;padding:2px 8px;white-space:nowrap}
+.betanote{display:inline-block;background:var(--goldS);color:#6B4700;border-radius:99px;padding:2px 14px;margin:4px 0;font-weight:700}
+#scrim{position:fixed;inset:0;background:#0D294599;z-index:44}
+#drawer{position:fixed;top:0;bottom:0;right:0;z-index:45;width:min(340px,88vw);background:var(--card);color:var(--ink);border-left:1px solid var(--line);box-shadow:-20px 0 50px -20px var(--shade);transform:translateX(105%);transition:transform .25s ease;overflow-y:auto;padding:calc(14px + env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) calc(20px + env(safe-area-inset-bottom,0px)) 16px;display:flex;flex-direction:column;gap:14px}
+#drawer.open{transform:none}
+.dh{display:flex;align-items:center;gap:10px}.dh img{height:36px}.dh b{flex:1}
+.dg{display:grid;gap:4px}
+.dg h4{margin:4px 0 2px;font-size:13px;color:var(--ink2);letter-spacing:.02em}
+.dl{display:flex;align-items:center;gap:10px;min-height:46px;padding:0 12px;border-radius:12px;color:var(--ink);text-decoration:none;font-weight:700;text-align:right;width:100%}
+.dl:hover,.dl.on{background:var(--skyS);color:var(--navy)}
+.dl .n{display:inline-grid;place-items:center;min-width:28px;height:28px;border-radius:8px;background:var(--line);font-size:13px;font-weight:900}
+.dl .pc{margin-right:auto;font-size:12px;color:var(--ink2)}
+.mini{display:block;width:44px;height:6px;border-radius:6px;background:var(--line);overflow:hidden}.mini i{display:block;height:100%;background:var(--mint)}
+details.du summary{list-style:none;cursor:pointer}details.du summary::-webkit-details-marker{display:none}
+.tg2{display:flex;align-items:center;justify-content:space-between;gap:10px;min-height:52px;padding:6px 12px;border-radius:12px;background:var(--tile);color:var(--navy);border:1px solid var(--line);font-weight:700}
+.tg2 small{display:block;color:var(--soft);font-weight:500;font-size:12px}
+.tg2 input{width:22px;height:22px;accent-color:var(--navy);flex:none}
+/* عرض كبير */
+.spot{background:var(--tile);color:var(--navy);border:2px solid var(--line);border-radius:26px;min-height:min(62vh,520px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;padding:14px;text-align:center}
+.spot .ar{font-size:clamp(90px,20vw,230px);line-height:1.5}
+.spot .ar.sm{font-size:clamp(40px,7vw,80px);line-height:2;white-space:normal}
+.spot .nm{font-family:TT;font-weight:700;font-size:clamp(26px,4vw,44px);color:var(--ok)}
+.spot .ix{color:var(--soft);font-weight:800}
+.spot.bump .ar{animation:bump .35s}
+@keyframes bump{40%{scale:1.08}}
+.sbar{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:12px}
+.sbar .btn{min-width:110px}
+.tile.rnd{border-color:var(--gold);box-shadow:0 0 0 4px var(--gold)}
+
+/* كتاب الطالب */
+.sbunits{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
+.sbt{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:8px;text-align:center;display:flex;flex-direction:column;gap:6px;color:var(--ink)}
+.sbt:hover{border-color:var(--sky)}
+.sbt img{width:100%;aspect-ratio:170/240;object-fit:cover;border-radius:8px;background:#fff;box-shadow:0 4px 14px -8px var(--shade)}
+.sbt b{font-size:14px;line-height:1.5}.sbt small{color:var(--ink2);font-size:12px}
+.viewer{display:flex;flex-direction:column;gap:10px}
+.vbar{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.vbar .pgn{font-weight:800;min-width:110px;text-align:center}
+.spread{display:flex;justify-content:center;gap:0;direction:rtl;touch-action:pan-y;user-select:none}
+.spread img{display:block;background:#fff;box-shadow:0 10px 30px -14px var(--shade);height:auto;max-width:100%}
+.spread.one img{width:min(100%,calc((100vh - 230px) * 170 / 240));border-radius:10px}
+.spread.two img{width:min(50%,calc((100vh - 210px) * 170 / 240))}
+.spread.two img:first-child{border-radius:0 10px 10px 0}.spread.two img:last-child{border-radius:10px 0 0 10px}
+.strip{display:flex;gap:6px;overflow-x:auto;padding:4px 2px 8px;scrollbar-width:thin}
+.strip button{flex:none;width:52px;border-radius:6px;overflow:hidden;border:2px solid transparent;background:#fff;padding:0}
+.strip button.on{border-color:var(--navy)}
+.strip img{width:100%;display:block;aspect-ratio:170/240;object-fit:cover}
+@media (max-width:720px){.spread.one img{width:100%}}
+
+/* ===== الواجهة التعريفية ===== */
+.lh{position:relative;overflow:hidden;border-radius:30px;background:linear-gradient(160deg,var(--card),var(--skyS) 140%);border:1px solid var(--line);padding:34px 28px;display:grid;grid-template-columns:1.15fr .85fr;gap:20px;align-items:center}
+.lh .deco{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.lh .deco span{position:absolute;font-family:TT;font-weight:700;color:var(--navy);opacity:.05;line-height:1}
+.lh img.logo{height:64px;width:auto}
+.lh h1{font-family:TD;font-weight:900;font-size:clamp(34px,5.6vw,60px);line-height:1.3;margin:12px 0 6px;color:var(--ink);text-wrap:balance}
+.lh p{font-size:clamp(16px,1.9vw,19px);line-height:1.9;color:var(--ink2);margin:0 0 18px;max-width:52ch}
+.lh .child{height:min(380px,60vw);width:auto;justify-self:center;filter:drop-shadow(0 24px 30px #0D294533)}
+@media (prefers-reduced-motion:no-preference){.lh .child{animation:float 6s ease-in-out infinite}@keyframes float{50%{translate:0 -8px}}}
+.lsec{margin-top:46px}
+.lsec>h2{font-family:TD;font-weight:900;font-size:clamp(26px,3.6vw,36px);margin:0 0 8px;text-wrap:balance}
+.lsec>.lead{max-width:62ch}
+.feat4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.f4{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:20px;box-shadow:0 10px 30px -24px var(--shade)}
+.f4 .ic{width:48px;height:48px;border-radius:14px;display:grid;place-items:center;font-family:TT;font-weight:700;font-size:26px;color:var(--navy);background:var(--c)}
+.f4 b{display:block;font-size:19px;margin:12px 0 6px}.f4 p{margin:0;color:var(--ink2);line-height:1.8}
+.jrn{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;counter-reset:j}
+.jst{position:relative;background:var(--card);border:1px solid var(--line);border-radius:22px;padding:18px;border-top:6px solid var(--c)}
+.jst b{font-size:22px;font-family:TD;font-weight:900}.jst small{display:block;color:var(--hi);font-weight:800;margin:2px 0 8px}.jst p{margin:0;color:var(--ink2);line-height:1.8}
+.why{margin-top:12px;background:var(--goldS);color:var(--deep);border-radius:18px;padding:14px 18px;line-height:1.9}
+.prog1{display:grid;grid-template-columns:auto 1fr auto;gap:18px;align-items:center;background:var(--navy);color:#fff;border-radius:26px;padding:22px}
+.prog1 img{height:150px;width:auto;border-radius:10px;box-shadow:0 14px 30px #0006}
+.prog1 h3{font-family:TD;font-weight:900;font-size:clamp(22px,3vw,30px);margin:4px 0}.prog1 p{color:#DCE8F3;line-height:1.8;margin:0}
+.inside{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.ins{background:var(--card);border:1px solid var(--line);border-radius:20px;overflow:hidden;display:flex;flex-direction:column;text-align:right;color:var(--ink)}
+.ins:hover{border-color:var(--sky)}
+.ins .shot{aspect-ratio:4/3;background:var(--skyS);display:grid;place-items:center;overflow:hidden}
+.ins .shot img{height:100%;width:auto;object-fit:contain}
+.ins div.t{padding:12px 14px}.ins b{font-size:17px}.ins p{margin:4px 0 0;color:var(--ink2);font-size:14px;line-height:1.7}
+.mini3{display:flex;gap:12px;justify-content:center;align-items:center;height:100%;color:var(--navy);font-weight:800;font-size:13px}
+.mini3 span{display:flex;flex-direction:column;align-items:center;gap:4px}.mini3 svg{width:46px;height:46px;fill:var(--gold)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.card2{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:22px}
+.card2 h3{font-family:TD;font-weight:900;font-size:24px;margin:0 0 8px}.card2 p,.card2 li{line-height:1.9;color:var(--ink2)}
+.card2 ul{padding-right:20px;margin:6px 0 14px}
+.age{display:inline-flex;align-items:center;gap:8px;background:var(--mintS);color:var(--deep);font-weight:900;border-radius:99px;padding:8px 18px;font-size:17px}
+.final-cta{margin-top:46px;display:grid;grid-template-columns:auto 1fr;gap:22px;align-items:center;background:linear-gradient(135deg,var(--deep),var(--navy));color:#fff;border-radius:28px;padding:26px}
+.final-cta img{height:200px;width:auto}
+.final-cta h2{font-family:TD;font-weight:900;font-size:clamp(28px,4vw,42px);margin:0 0 8px}
+.final-cta p{color:#DCE8F3;margin:0 0 16px;line-height:1.8}
+.btn.wa2{background:#1FA855;color:#fff}
+.wa{position:fixed;right:max(14px,env(safe-area-inset-right,0px));bottom:calc(14px + env(safe-area-inset-bottom,0px));z-index:34;display:inline-flex;align-items:center;gap:8px;min-height:52px;padding:0 16px;border-radius:99px;background:#1FA855;color:#fff;text-decoration:none;font-weight:800;box-shadow:0 12px 26px -10px #0D294588}
+.wa svg{width:24px;height:24px}
+.priv{max-width:760px}.priv h2{font-family:TD;font-weight:900}.priv p,.priv li{line-height:1.9}
+@media (max-width:900px){.feat4,.jrn,.inside{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:720px){.lh{grid-template-columns:1fr;text-align:center;padding:24px 18px}.lh p{margin-inline:auto}.lh .acts{justify-content:center}.lh .child{height:240px}
+ .two,.prog1{grid-template-columns:1fr}.prog1{text-align:center}.prog1 img{margin:auto}.final-cta{grid-template-columns:1fr;text-align:center}.final-cta img{height:150px;margin:auto}.wa span{display:none}.wa{padding:0 14px}}
+@media (max-width:460px){.feat4,.jrn,.inside{grid-template-columns:1fr}}
+
+/* ===== التذييل ===== */
+footer.site{margin-top:40px;background:var(--deep);color:#DCE8F3;padding-block:36px 96px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.fwrap{max-width:1180px;margin:0 auto}
+.fcols{display:grid;grid-template-columns:1.5fr 1fr 1.1fr 1fr;gap:28px}
+.fcol h4{color:#fff;font-size:16px;margin:4px 0 12px;font-weight:900;position:relative;padding-bottom:8px}
+.fcol h4::after{content:"";position:absolute;right:0;bottom:0;width:28px;height:3px;border-radius:3px;background:var(--gold)}
+.fcol a{display:flex;align-items:center;gap:10px;min-height:44px;color:#DCE8F3;text-decoration:none;font-weight:700}
+.fcol a:hover{color:#fff}
+.fcol a i{font-style:normal;width:26px;height:26px;border-radius:8px;background:#ffffff14;display:grid;place-items:center;font-size:12px;color:var(--gold);flex:none}
+.flogo{height:52px;width:auto;background:#FFF9EF;border-radius:14px;padding:6px 12px}
+.fsl{color:var(--gold);font-weight:800;font-size:17px;margin:12px 0 6px}
+.fabout p{line-height:1.8;margin:0 0 10px;font-size:14px}
+.fwa{background:#ffffff0f;border:1px solid #ffffff22;border-radius:16px;padding:8px 12px;margin-bottom:6px}
+.fwa .wic{width:40px;height:40px;border-radius:50%;background:#1FA855;color:#fff;display:grid;place-items:center;flex:none}.fwa .wic svg{width:22px;height:22px}
+.fwa small{display:block;font-size:12px;color:#A9BCD0;font-weight:700}.fwa bdi{font-size:19px;color:#fff;font-weight:900;letter-spacing:.04em;font-variant-numeric:tabular-nums}
+.fpart{display:flex;align-items:center;gap:14px;background:#FFFDF9;border-radius:16px;padding:10px 14px;width:max-content;max-width:100%}
+.fpart img{height:44px;width:auto;object-fit:contain}.fpart .nwb{font-size:18px}
+.fcred{margin-top:26px;padding-top:18px;border-top:1px solid #ffffff1f;text-align:center;font-size:14px;line-height:1.9}.fcred p{margin:0}.fcred b{color:#fff}
+.fbar{margin-top:14px;padding-top:14px;border-top:1px solid #ffffff14;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font-size:13px;color:#A9BCD0}
+.fbar span:first-child{color:#fff;font-weight:700}
+@media (max-width:900px){.fcols{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.fcols{grid-template-columns:1fr}.fbar{justify-content:center;text-align:center}}
+/* ===== جوال التطبيق ===== */
+.dev{position:relative;justify-self:center;padding:20px 26px}
+.phone{width:210px;height:420px;border-radius:38px;background:linear-gradient(160deg,#21476F,#0A1F35);padding:10px;box-shadow:0 30px 60px -20px #000a,inset 0 0 0 2px #3C6A98;position:relative;display:block;border:0}
+.phone .scr{height:100%;border-radius:30px;background:var(--paper);overflow:hidden;display:flex;flex-direction:column;position:relative}
+.phone .notch{position:absolute;top:8px;left:50%;translate:-50% 0;width:70px;height:18px;border-radius:12px;background:#0A1F35;z-index:2}
+.phone .ph{background:var(--navy);color:#fff;padding:32px 12px 12px;display:flex;justify-content:space-between;align-items:center}
+.phone .ph b{font-size:15px}.phone .ph small{font-size:10px;background:var(--gold);color:var(--deep);border-radius:99px;padding:1px 8px;font-weight:900}
+.phone .pbody{padding:10px;display:flex;flex-direction:column;gap:8px;flex:1}
+.phone .lt{font-size:11px;font-weight:800;color:var(--navy);display:flex;justify-content:space-between}
+.phone .pg{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.phone .pg span{border-radius:10px;font-family:TT;font-weight:700;color:var(--navy);font-size:24px;text-align:center;line-height:1.75;background:var(--skyS)}
+.phone .pg span:nth-child(3n+2){background:var(--mintS)}.phone .pg span:nth-child(3n){background:var(--goldS)}
+.phone .pg span.on{background:var(--navy);color:#fff}
+.phone .ps{display:flex;gap:6px;justify-content:center}.phone .ps svg{width:22px;fill:var(--gold)}
+.phone .pb{height:8px;border-radius:8px;background:var(--line);overflow:hidden}.phone .pb i{display:block;width:64%;height:100%;background:var(--mint)}
+.phone .tabs4{margin-top:auto;display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);padding:6px 4px 10px;text-align:center;font-size:9px;font-weight:800;color:var(--soft)}
+.phone .tabs4 i{display:block;width:8px;height:8px;border-radius:50%;margin:0 auto 3px;background:var(--c)}
+.phone .tabs4 span:first-child{color:var(--navy)}
+.chipf{position:absolute;background:#FFFDF9;color:var(--navy);border-radius:14px;padding:8px 12px;font-weight:800;font-size:13px;box-shadow:0 14px 30px -12px #0008;display:flex;align-items:center;gap:6px;white-space:nowrap}
+.chipf svg{width:18px;fill:var(--gold)}
+.chipf.c1{top:150px;right:-8px}.chipf.c2{top:250px;left:-18px}.chipf.c3{bottom:-4px;left:10px}
+@media (prefers-reduced-motion:no-preference){.chipf{animation:float 5s ease-in-out infinite}.chipf.c2{animation-delay:-1.6s}.chipf.c3{animation-delay:-3s}}
+.soonrow{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px}
+.soonb{display:inline-flex;align-items:center;gap:10px;background:#ffffff14;border:1px solid #ffffff2e;color:#fff;border-radius:14px;padding:8px 14px;min-height:48px}
+.soonb small{display:block;font-size:11px;color:#BFD3E6}.soonb b{font-size:15px}
+.soonb svg{width:24px;height:24px;fill:#fff}
+@media (max-width:720px){.chipf.c2{left:0}.dev{padding:16px 10px}}
+
+/* ===== وضعا الموقع: الواجهة / البرنامج (شكل تطبيق) ===== */
+body.modeL .navP,body.modeP .navL{display:none}
+.pfv{max-width:860px;margin:0 auto;padding:16px}.pfh{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-bottom:14px}.pfh h1{flex:1;font-family:TD;font-weight:900;font-size:clamp(22px,4vw,32px);margin:0}.pfv img{display:block;width:100%;height:auto;border-radius:14px;margin:0 0 16px;box-shadow:0 6px 24px rgba(0,0,0,.12);background:#fff}
+.ib.login{background:var(--navy);color:#fff;border-color:var(--navy)}
+.rolechip{font-size:11px;font-weight:900;border-radius:99px;padding:2px 8px;background:var(--mintS);color:var(--deep);margin-right:6px}
+.apptabs{display:none}
+body.modeP .wa{display:none}
+@media (max-width:720px){
+ body.modeP .navP{display:none}
+ body.modeP .apptabs{display:grid;grid-template-columns:repeat(5,1fr);position:fixed;left:0;right:0;bottom:0;z-index:36;background:var(--card);border-top:1px solid var(--line);padding:6px max(8px,env(safe-area-inset-right,0px)) calc(6px + env(safe-area-inset-bottom,0px)) max(8px,env(safe-area-inset-left,0px));box-shadow:0 -10px 30px -18px var(--shade)}
+ .apptabs a,.apptabs button{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;min-height:52px;border-radius:14px;font-size:12px;font-weight:800;color:var(--ink2);text-decoration:none}
+ .apptabs span{font-size:20px;line-height:1}
+ .apptabs .on{background:var(--skyS);color:var(--navy)}
+ body.modeP .fab{bottom:calc(78px + env(safe-area-inset-bottom,0px))}
+ body.modeP main{padding-bottom:110px}
+ body.modeL .navL{grid-template-columns:repeat(3,minmax(0,1fr))!important}
+ .ib.login{padding:0 10px;font-size:13px}
+}
+/* الدخول */
+.login-card{max-width:460px;margin:20px auto;background:var(--card);border:1px solid var(--line);border-radius:26px;padding:26px;text-align:center;box-shadow:0 20px 50px -30px var(--shade)}
+.login-card img{height:60px;width:auto}
+.login-card h1{font-family:TD;font-weight:900;font-size:30px;margin:10px 0 4px}
+.login-card input{width:100%;min-height:56px;border-radius:16px;border:2px solid var(--line);background:var(--tile);color:var(--navy);font:inherit;font-size:24px;text-align:center;letter-spacing:.3em;margin:14px 0 10px}
+.login-card .two2{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px;text-align:right}
+.login-card .two2 div{background:var(--tile);border:1px solid var(--line);border-radius:16px;padding:12px;color:var(--navy)}
+.login-card .two2 b{display:block}.login-card .two2 small{color:var(--soft);line-height:1.6}
+.lockbox{max-width:560px;margin:24px auto;text-align:center;background:var(--card);border:1px solid var(--line);border-radius:26px;padding:26px}
+.lockbox .ic{font-size:44px}.lockbox h2{font-family:TD;font-weight:900;margin:8px 0}
+.locked{position:relative;opacity:.55}.locked::after{content:"🔒";position:absolute;top:10px;left:12px;font-size:18px}
+/* مكتبة الألعاب */
+.ghub{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:18px;margin-bottom:18px}
+.ghub h2{font-family:TD;font-weight:900;margin:0 0 6px;font-size:clamp(24px,3.4vw,32px)}
+.ghub .row select{min-width:220px}
+.gcount{display:inline-flex;align-items:center;gap:6px;background:var(--goldS);color:var(--deep);border-radius:99px;padding:4px 14px;font-weight:900}
+
+/* ===== دليل المعلم الحديث ===== */
+.ghero{border-radius:26px;padding:24px;background:linear-gradient(135deg,var(--navy),var(--deep));color:#fff;margin-bottom:14px}
+.ghero h1{font-family:TD;font-weight:900;font-size:clamp(26px,4vw,40px);margin:8px 0 6px}.ghero p{color:#DCE8F3;margin:0;line-height:1.9;max-width:60ch}.ghero .chip{background:var(--gold);color:var(--deep)}
+.gcards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:14px}
+.gcard{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:16px}.gcard span{font-size:26px}.gcard b{display:block;font-size:17px;margin:6px 0}.gcard p{margin:0;color:var(--ink2);line-height:1.8;font-size:14px}
+.upills{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+.upills button{width:52px;height:52px;border-radius:16px;background:var(--card);border:1px solid var(--line);font-weight:900;font-size:19px}
+.upills button.on{background:var(--navy);color:#fff;border-color:var(--navy)}
+.gpanel{background:var(--card);border:1px solid var(--line);border-radius:26px;padding:22px}
+.gu-head{display:flex;align-items:center;gap:14px}.gu-n{width:60px;height:60px;border-radius:18px;background:var(--gold);color:var(--deep);display:grid;place-items:center;font-weight:900;font-size:26px;flex:none}
+.gu-head small{color:var(--ink2);font-weight:800}.gu-head h2{font-family:TD;font-weight:900;margin:0;font-size:clamp(24px,3.4vw,34px)}
+.gu-goals{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 4px}.gu-goals span{background:var(--mintS);color:var(--deep);border-radius:99px;padding:6px 14px;font-weight:700;font-size:14px}
+.gh{font-size:19px;margin:22px 0 10px;color:var(--ink)}
+.gdefs{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:10px}
+.gdef{background:var(--tile);color:var(--navy);border-radius:16px;padding:14px;border-top:5px solid var(--sky)}.gdef:nth-child(3n+2){border-top-color:var(--mint)}.gdef:nth-child(3n){border-top-color:var(--gold)}
+.gdef b{font-size:16px}.gdef p{margin:6px 0 0;color:var(--soft);line-height:1.8;font-size:14px}
+.steps{list-style:none;margin:0;padding:0;counter-reset:st;display:grid;gap:10px}
+.steps li{display:flex;gap:12px;align-items:flex-start;background:var(--tile);color:var(--navy);border-radius:16px;padding:12px 14px}
+.steps li span{counter-increment:st;flex:none;width:32px;height:32px;border-radius:50%;background:var(--navy);color:#fff;display:grid;place-items:center;font-weight:900}
+.steps li span::before{content:counter(st,arabic-indic)}.steps li p{margin:3px 0 0;line-height:1.9}
+.gex{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px}
+.gexc{background:var(--skyS);color:var(--navy);border-radius:16px;padding:10px 14px;text-align:right}.gexc small{font-weight:800;color:var(--soft)}
+.gexc div{display:flex;gap:10px;flex-wrap:wrap}.gexc .ar{font-size:30px}
+.gtwo{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.glessons{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:10px}
+.glessons button{background:var(--tile);color:var(--navy);border:1px solid var(--line);border-radius:16px;padding:12px 14px;text-align:right;display:flex;flex-direction:column;gap:4px;min-height:72px}
+.glessons small{color:var(--soft);line-height:1.6}.glessons button:hover{border-color:var(--sky)}
+.gsrc{margin:18px 0 0;font-size:13px;color:var(--ink2)}
+@media (max-width:900px){.gcards{grid-template-columns:1fr 1fr}.gtwo{grid-template-columns:1fr}}
+@media (max-width:460px){.gcards{grid-template-columns:1fr}.upills button{width:46px;height:46px}}
+
+/* ===== الثيمات ===== */
+:root[data-theme="warm"]{--bg:#F5EDDB;--card:#FFF8EC;--tile:#FFFCF5;--line:#E7D9BD;--ink:#173A5E;--ink2:#6A5D48;--hi:#1C78B5;--skyS:#E9F1F3;--mintS:#E6F1EA;--goldS:#FBEBCB;--shade:#5E4A2A33;color-scheme:light}
+body.big{font-size:17px}body.big .lead,body.big p{font-size:1.06em}body.big .tile .ar{--fs:54px}body.big .btn{font-size:17px}
+/* ===== القائمة الجانبية ===== */
+#drawer{width:min(380px,92vw);gap:16px}
+.dhead{display:flex;align-items:center;gap:12px}.dhead img{height:40px;width:auto}.dhead div{flex:1;display:flex;flex-direction:column;align-items:flex-start;gap:2px}.dhead b{font-size:16px}
+.dacc{display:flex;align-items:center;gap:12px;background:linear-gradient(135deg,var(--navy),var(--deep));color:#fff;border-radius:18px;padding:12px 14px}
+.dacc .av{width:42px;height:42px;border-radius:50%;background:#ffffff1f;display:grid;place-items:center;font-size:20px;flex:none}
+.dacc div{flex:1}.dacc b{display:block}.dacc small{color:#BFD3E6}.dacc .ib{background:#fff;color:var(--navy);border:0}
+.dtiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.dt{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;min-height:84px;border-radius:16px;background:var(--tile);border:1px solid var(--line);color:var(--ink);text-decoration:none;text-align:center;padding:8px 4px}
+.dt:hover{border-color:var(--sky)}.dt .di{font-size:24px}.dt b{font-size:13px;line-height:1.4}.dt small{font-size:11px;color:var(--ink2)}
+.dbig{display:flex;align-items:center;gap:12px;background:var(--goldS);color:var(--deep);border-radius:18px;padding:14px;text-decoration:none}.dbig>span{font-size:30px}.dbig small{display:block;color:#6B4700}
+.seg{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;background:var(--tile);border:1px solid var(--line);border-radius:16px;padding:5px}
+.seg.two{grid-template-columns:1fr 1fr;margin-top:8px}
+.seg button{display:flex;flex-direction:column;align-items:center;gap:2px;min-height:56px;border-radius:12px;font-size:12px;font-weight:800;color:var(--ink2)}
+.seg button span{font-size:18px;line-height:1.2}.seg button.on{background:var(--navy);color:#fff}
+.tg2{position:relative}.tg2 input{position:absolute;opacity:0;width:52px;height:30px;left:12px;cursor:pointer;margin:0}
+.tg2 .sw{width:48px;height:28px;border-radius:99px;background:var(--line);position:relative;flex:none;transition:background .2s}
+.tg2 .sw::after{content:"";position:absolute;top:3px;right:3px;width:22px;height:22px;border-radius:50%;background:#fff;box-shadow:0 2px 6px #0003;transition:right .2s}
+.tg2 input:checked+.sw{background:var(--mint)}.tg2 input:checked+.sw::after{right:23px}
+.tg2 input:focus-visible+.sw{outline:3px solid var(--sky);outline-offset:2px}
+.dwa{display:flex;align-items:center;gap:12px;background:var(--okS);color:var(--deep);border-radius:18px;padding:10px 14px;text-decoration:none}
+.dwa .wic{width:40px;height:40px;border-radius:50%;background:#1FA855;color:#fff;display:grid;place-items:center;flex:none}.dwa .wic svg{width:22px;height:22px}
+.dwa small{display:block;font-weight:700}.dwa bdi{font-size:18px;font-weight:900}
+.dnote{margin:0;font-size:12px;color:var(--ink2);text-align:center}
+
+/* أيقونات وحسابات */
+.ico{display:inline-block;vertical-align:-4px;flex:none}
+.ib .ico{margin-left:4px}
+.dt .di{width:44px;height:44px;border-radius:14px;display:grid;place-items:center;background:var(--skyS);color:var(--navy)}
+.dtiles .dt:nth-child(3n+2) .di{background:var(--mintS)}.dtiles .dt:nth-child(3n) .di{background:var(--goldS)}
+.dacc .av{color:var(--gold)}
+.dbig>span{width:54px;height:54px;border-radius:16px;background:#fff;display:grid;place-items:center;color:var(--navy)}
+.dl .n{color:var(--navy)}
+.login-card{position:relative;padding-top:34px}
+.login-card .lk{position:absolute;top:-26px;left:50%;translate:-50% 0;width:56px;height:56px;border-radius:18px;background:var(--navy);color:var(--gold);display:grid;place-items:center;box-shadow:0 12px 26px -12px var(--shade)}
+.acc{position:relative;padding-top:14px!important}
+.acc .ai{width:46px;height:46px;border-radius:14px;display:grid;place-items:center;margin-bottom:8px}
+.acc.full .ai{background:var(--navy);color:var(--gold)}.acc.guest .ai{background:var(--skyS);color:var(--navy)}
+.acc.full{border-color:var(--gold)!important;box-shadow:0 0 0 3px var(--goldS)}
+.lockbox .ic{width:80px;height:80px;border-radius:24px;margin:0 auto;background:var(--navy);color:var(--gold);display:grid;place-items:center}
+.locked::after{content:"";width:22px;height:22px;background:var(--navy) no-repeat center/14px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23F2B84B' stroke-width='2.4' stroke-linecap='round'%3E%3Crect x='5' y='11' width='14' height='10' rx='2'/%3E%3Cpath d='M8 11V7a4 4 0 0 1 8 0v4'/%3E%3C/svg%3E");border-radius:8px;font-size:0}
+.rolechip{display:inline-flex;align-items:center}
+
+/* ===== بطاقات الدرس ومؤشرات الأداء ===== */
+.fcards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:12px 0}
+.fcard{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:16px;display:flex;flex-direction:column;gap:10px;position:relative;overflow:hidden;border-top:6px solid var(--c,var(--sky))}
+.fcard.wide{grid-column:span 3}
+.fcard header{display:flex;align-items:center;gap:8px;font-weight:900;color:var(--ink2);font-size:14px}
+.fcard header span{width:30px;height:30px;border-radius:10px;background:var(--c,var(--sky));color:var(--deep);display:grid;place-items:center;font-weight:900}
+.fcard h3{margin:0;font-family:TD;font-weight:900;font-size:21px;color:var(--ink)}
+.fcard p,.fcard li{line-height:1.9;margin:0}.fcard ul{margin:0;padding-right:20px}
+.fcard footer{margin-top:auto;font-size:13px;color:var(--ink2);background:var(--tile);border-radius:12px;padding:8px 10px}
+.c-goal{--c:var(--sky)}.c-def{--c:var(--mint)}.c-how{--c:var(--gold)}.c-ex{--c:var(--sky)}.c-kpi{--c:var(--navy)}.c-kpi header span{color:#fff}
+.flow2{display:flex;gap:6px;align-items:center;flex-wrap:wrap}.flow2 span{background:var(--navy);color:#fff;border-radius:10px;padding:4px 10px;font-weight:800;font-size:14px}.flow2 i{font-style:normal;color:var(--gold);font-weight:900}
+.exg{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:10px}
+.exb{min-height:84px;border-radius:16px;background:var(--tile);border:2px solid var(--line);display:grid;place-items:center;color:var(--navy)}.exb .ar{font-size:34px}.exb:hover{border-color:var(--sky)}
+.kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.ring{position:relative;display:flex;flex-direction:column;align-items:center;gap:4px}
+.ring svg{width:110px;height:110px;transform:rotate(-90deg)}.ring circle{fill:none;stroke-width:3.6}.ring .bg{stroke:var(--line)}.ring .fg{stroke:var(--c);stroke-linecap:round}
+.ring b{position:absolute;top:38px;font-size:22px;font-weight:900;font-variant-numeric:tabular-nums}.ring small{font-weight:800;color:var(--ink2);font-size:13px;text-align:center}
+.kgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px}
+.kgrid div{background:var(--tile);color:var(--navy);border:1px solid var(--line);border-radius:14px;padding:10px;text-align:center}.kgrid b{display:block;font-size:20px}.kgrid small{color:var(--soft);font-weight:700}
+.ukpi{display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:22px;padding:14px 18px;margin-top:14px}
+@media (max-width:900px){.fcards{grid-template-columns:1fr 1fr}.fcard.wide{grid-column:span 2}.kpis{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.fcards{grid-template-columns:1fr}.fcard.wide{grid-column:auto}.ukpi{grid-template-columns:1fr;justify-items:center}}
+/* ===== نوافذ ===== */
+.modal{position:fixed;inset:0;background:#0D2945CC;z-index:50;display:flex;align-items:center;justify-content:center;padding:16px}
+.mbox{background:var(--card);color:var(--ink);border-radius:20px;max-width:900px;width:100%;max-height:92vh;overflow:auto;padding:18px}
+.mbox img{width:100%;border-radius:10px;background:#fff}
+.mbox h3{margin:16px 0 8px}
+.set{display:grid;gap:8px}
+.set label{display:flex;align-items:center;justify-content:space-between;gap:12px;background:var(--tile);color:var(--navy);border:1px solid var(--line);border-radius:14px;padding:10px 14px;min-height:56px;font-weight:700}
+.set label small{display:block;color:var(--soft);font-weight:500}
+.set input[type=checkbox]{width:24px;height:24px;accent-color:var(--navy)}
+.vt{width:100%;border-collapse:collapse;font-size:14px}
+.vt td,.vt th{border-bottom:1px solid var(--line);padding:6px;text-align:right}
+.vt input{width:100%;min-width:60px;padding:8px;border-radius:8px;border:1px solid var(--line);background:var(--tile);color:var(--navy);font:inherit}
+.qmodal{text-align:center}.qmodal .q{width:min(70vh,420px);height:min(70vh,420px);max-width:100%;background:#fff;border-radius:20px;padding:16px;margin:8px auto}
+.qmodal .q svg{width:100%;height:100%}
+.nwb b{color:#F07A5A}.nwb i{color:#1FB3A8;font-style:normal;font-weight:800}
+body.teach .tile .ar{--fs:66px}body.teach .tile{min-height:136px}body.teach .board{--w:156px}body.teach .line .ar{font-size:48px}
+@media (max-width:860px){.nav a{padding:0 10px}.brand b{display:none}}
+@media (max-width:720px){
+ .bar .in{flex-wrap:wrap}.menu .mt{display:none}.beta{font-size:10px}.nav{order:3;flex-basis:100%;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:4px;overflow:visible}.nav a{justify-content:center;padding:0 2px;font-size:12px;flex-direction:column;gap:0;line-height:1.3;white-space:normal;text-align:center}.nav a .soon{font-size:10px}.brand{flex:1}
+ .cover{grid-template-columns:1fr;padding:22px}.cover img.bk{max-width:160px}
+ .welcome{grid-template-columns:1fr;text-align:center}.welcome img{width:120px;margin:auto}
+ .stations{grid-template-columns:1fr 1fr}.wgrid{grid-template-columns:1fr}
+ .appcard{grid-template-columns:1fr}.phone{margin:auto}
+ .uhead{grid-template-columns:1fr}
+ .board{--w:84px}.board.fit{grid-template-columns:repeat(var(--cm),minmax(0,1fr))}.tile .ar{--fs:36px}.tile{min-height:80px}
+ .formrow{grid-template-columns:repeat(4,1fr)}.formrow .nmc{grid-column:1/-1;min-height:48px}
+ .mem{grid-template-columns:repeat(3,1fr)}.huntg{grid-template-columns:repeat(3,1fr)}
+ .vq{grid-template-columns:1fr;text-align:center}.vq .qbig{margin:auto;width:170px;height:170px}
+ .plan{grid-template-columns:1fr 1fr}.def{grid-template-columns:1fr}
+ .fab .ft span{display:none}
+}
+</style>
+</head>
+<body>
+<header class="bar" dir="rtl"><div class="in">
+  <button class="ib menu" id="menuBtn" aria-label="القائمة" aria-expanded="false" aria-controls="drawer"><span class="hb" aria-hidden="true"><i></i><i></i><i></i></span><span class="mt">القائمة</span></button>
+  <a class="brand" href="#" aria-label="الرئيسية"><img src="img/logo_web.webp" alt="سَنَد"><b id="brandT">منصة سَنَد التعليمية</b><span class="beta">نسخة تجريبية</span></a>
+  <nav class="nav navL" aria-label="أقسام الواجهة">
+    <a href="#" data-n="home">الرئيسية</a>
+    <a href="#why" data-n="why">لماذا سَنَد؟</a>
+    <a href="#journey" data-n="journey">رحلة الطفل</a>
+    <a href="#programs" data-n="programs">البرامج</a>
+    <a href="#orgs" data-n="orgs">للجهات</a>
+    <a href="#app" data-n="app">التطبيق <span class="soon">قريبًا</span></a>
+  </nav>
+  <nav class="nav navP" aria-label="أقسام البرنامج">
+    <a href="#program" data-n="book">الكتاب التفاعلي</a>
+    <a href="#sb" data-n="sb">كتاب الطالب</a>
+    <a href="#guide" data-n="guide">دليل المعلم</a>
+    <a href="#class" data-n="class">🎮 الألعاب</a>
+  </nav>
+  <button class="ib login" id="loginBtn">دخول البرنامج</button>
+</div></header>
+<main id="app" dir="rtl"></main>
+<footer class="site" dir="rtl"><div class="fwrap">
+ <div class="fcols">
+  <div class="fcol fabout"><img class="flogo" src="img/logo_web.webp" alt="سَنَد"><p class="fsl">حرفٌ يُتقن… وقيمةٌ تُبنى</p><p>منصة سَنَد التعليمية تساعد البنين من ٦ إلى ٩ سنوات على تعلم القراءة، وتلقين جزء عمّ، واكتساب القيم المناسبة.</p><span class="beta">نسخة تجريبية</span></div>
+  <div class="fcol"><h4>البرنامج</h4><a href="#program"><i>١</i>الكتاب التفاعلي</a><a href="#sb"><i>٢</i>كتاب الطالب</a><a href="#guide"><i>٣</i>دليل المعلم</a><a href="#class"><i>٤</i>الألعاب</a><a href="#app"><i>٥</i>تطبيق سَنَد</a></div>
+  <div class="fcol"><h4>تواصل معنا</h4><a class="fwa" href="https://wa.me/966583271994?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D9%85%D8%B9%D8%B1%D9%81%D8%A9%20%D8%A7%D9%84%D9%85%D8%B2%D9%8A%D8%AF%20%D8%B9%D9%86%20%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D8%AC%20%D8%B3%D9%8E%D9%86%D9%8E%D8%AF%20%D9%84%D8%AA%D8%B9%D9%84%D9%8A%D9%85%20%D8%A7%D9%84%D9%82%D8%B1%D8%A7%D8%A1%D8%A9%20%D9%88%D9%81%D9%82%20%D9%85%D9%86%D9%87%D8%AC%20%D8%A7%D9%84%D9%82%D8%A7%D8%B9%D8%AF%D8%A9%20%D8%A7%D9%84%D9%85%D8%AF%D9%86%D9%8A%D8%A9" target="_blank" rel="noopener"><span class="wic"><svg viewBox="0 0 32 32" aria-hidden="true"><path fill="currentColor" d="M16 3a13 13 0 0 0-11.2 19.6L3 29l6.6-1.7A13 13 0 1 0 16 3zm0 23.6a10.6 10.6 0 0 1-5.4-1.5l-.4-.2-3.9 1 1-3.8-.2-.4A10.6 10.6 0 1 1 16 26.6zm5.8-7.9c-.3-.2-1.9-.9-2.2-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7.1a8.7 8.7 0 0 1-4.3-3.8c-.3-.6.3-.5.9-1.7.1-.2 0-.4 0-.5l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6a1.2 1.2 0 0 0-.9.4 3.7 3.7 0 0 0-1.1 2.7 6.4 6.4 0 0 0 1.3 3.4 14.6 14.6 0 0 0 5.6 5c2.1.9 2.9 1 4 .8a3.4 3.4 0 0 0 2.2-1.6 2.8 2.8 0 0 0 .2-1.6c-.1-.2-.3-.3-.6-.4z"/></svg></span><span><small>واتساب</small><bdi dir="ltr">058 327 1994</bdi></span></a><a href="#privacy"><i>🔒</i>الخصوصية</a></div>
+  <div class="fcol"><h4>بالتعاون مع</h4><div class="partners fpart"><img src="img/rasikh_web.webp" alt="راسخ"><span class="nwb"><b>نوابغ</b> <i>المستقبل</i></span></div></div>
+ </div>
+ <div class="fcred"><p>وفق منهج القاعدة المدنية لفضيلة الشيخ د. عبد المحسن بن محمد القاسم، إمام وخطيب المسجد النبوي.</p><p>إعداد وتطوير البرامج التعليمية والمعرفية: <b>أحمد عبد الرحمن محمد علي</b></p></div>
+ <div class="fbar"><span>© ٢٠٢٦ منصة سَنَد التعليمية. جميع الحقوق محفوظة.</span><span>هذه نسخة تجريبية، ونسعد بملاحظاتكم لتطويرها.</span></div>
+</div></footer>
+<nav class="apptabs" id="apptabs" aria-label="شريط التطبيق"><a href="#program" data-n="book"><span class="ti" data-i="book"></span>الكتاب</a><a href="#sb" data-n="sb"><span class="ti" data-i="sbook"></span>الطالب</a><a href="#class" data-n="class"><span class="ti" data-i="game"></span>الألعاب</a><a href="#guide" data-n="guide"><span class="ti" data-i="compass"></span>الدليل</a><button id="tabMenu"><span class="ti" data-i="layers"></span>المزيد</button></nav>
+<div id="fab" dir="rtl"></div>
+<a class="wa" id="waFab" target="_blank" rel="noopener" aria-label="تواصل معنا عبر واتساب"><svg viewBox="0 0 32 32" aria-hidden="true"><path fill="currentColor" d="M16 3a13 13 0 0 0-11.2 19.6L3 29l6.6-1.7A13 13 0 1 0 16 3zm0 23.6a10.6 10.6 0 0 1-5.4-1.5l-.4-.2-3.9 1 1-3.8-.2-.4A10.6 10.6 0 1 1 16 26.6zm5.8-7.9c-.3-.2-1.9-.9-2.2-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7.1a8.7 8.7 0 0 1-4.3-3.8c-.3-.6.3-.5.9-1.7.1-.2 0-.4 0-.5l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6a1.2 1.2 0 0 0-.9.4 3.7 3.7 0 0 0-1.1 2.7 6.4 6.4 0 0 0 1.3 3.4 14.6 14.6 0 0 0 5.6 5c2.1.9 2.9 1 4 .8a3.4 3.4 0 0 0 2.2-1.6 2.8 2.8 0 0 0 .2-1.6c-.1-.2-.3-.3-.6-.4z"/></svg><span>واتساب</span></a>
+<div id="scrim" hidden></div>
+<aside id="drawer" dir="rtl" aria-label="القائمة" aria-hidden="true"></aside>
+<div id="modal" dir="rtl"></div>
+<div id="win" dir="rtl"></div>
+<script src="data.js"></script>
+<script src="games.js"></script>
+<script src="videos.js"></script>
+<script src="guide.js"></script>
+<script src="qr.js"></script>
+<script src="audio.js"></script>
+<script src="studentbook.js"></script>
+<script>
+(()=>{
+const B=window.BOOK.units,V=window.VIDEOS,GD=window.GUIDE,QR=window.QR||{},AUD=window.AUDIO||{},NO_EMBED=!!window.NO_EMBED;
+const $=s=>document.querySelector(s),app=$("#app");
+const AN=n=>String(n).replace(/\d/g,d=>"٠١٢٣٤٥٦٧٨٩"[d]);
+const UN=["","الأول","الثاني","الثالث","الرابع","الخامس","السادس","السابع","الثامن","التاسع","العاشر","الحادي عشر","الثاني عشر"];
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const rnd=a=>a[Math.floor(Math.random()*a.length)],shuf=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
+const STAR='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6 6.6.8-4.9 4.5 1.3 6.5L12 17l-5.9 3.3 1.3-6.5L2.5 9.3l6.6-.8z"/></svg>';
+const stars=(n,cls="stars")=>`<div class="${cls}">${[1,2,3].map(i=>STAR.replace("<svg",`<svg class="${n>=i?"on":""}"`)).join("")}</div>`;
+const lessonsWord=n=>n===1?"درس واحد":n===2?"درسان":n<=10?AN(n)+" دروس":AN(n)+" درسًا";
+// ---------- التخزين (يبقى في هذا الجهاز فقط)
+const S={get(k,d){try{const v=localStorage.getItem("sanad:"+k);return v?JSON.parse(v):d}catch(e){return d}},set(k,v){try{localStorage.setItem("sanad:"+k,JSON.stringify(v))}catch(e){}}};
+let prog=S.get("prog",{});const P=id=>prog[id]||(prog[id]={m:0,g:{}}),save=()=>S.set("prog",prog);
+let cfg=Object.assign({teach:false,tts:true,fab:true,sfx:true},S.get("cfg",{}));const saveCfg=()=>{S.set("cfg",cfg);applyCfg()};
+const root=document.documentElement;{const th=S.get("theme",null);if(th)root.dataset.theme=th}
+function applyCfg(){document.body.classList.toggle("teach",!!cfg.teach);document.body.classList.toggle("big",!!cfg.big);drawFab()}
+// ---------- الصوت: نطق القارئ أولًا، ثم النطق الآلي احتياطًا
+let voice=null,cur=null;const pickV=()=>{const v=speechSynthesis.getVoices().filter(v=>/^ar/i.test(v.lang));voice=v.find(x=>/SA/i.test(x.lang))||v[0]||null};
+if("speechSynthesis" in window){pickV();speechSynthesis.onvoiceschanged=pickV}
+const stopAudio=()=>{if(cur){cur.pause();cur=null}if("speechSynthesis" in window)speechSynthesis.cancel()};
+const tts=t=>{if(!cfg.tts||!("speechSynthesis" in window)||!voice)return;speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(String(t).replace(/ـ/g,""));u.voice=voice;u.lang=voice.lang;u.rate=.7;speechSynthesis.speak(u)};
+const play=(lid,key,fallback)=>{stopAudio();const f=AUD[lid]&&AUD[lid][key];if(f){cur=new Audio(f);cur.play().catch(()=>tts(fallback));return}tts(fallback)};
+// ---------- أدوات
+const FAM={"ب":1,"ت":1,"ث":1,"ج":2,"ح":2,"خ":2,"د":3,"ذ":3,"ر":4,"ز":4,"س":5,"ش":5,"ص":6,"ض":6,"ط":7,"ظ":7,"ع":8,"غ":8,"ف":9,"ق":9};
+const tint=c=>["","tS","tM","tG","tS","tM","tG","tS","tM","tG"][FAM[c]||0]||"";
+const HL={fatha:"الفتحة",kasra:"الكسرة",damma:"الضمة",sukun:"السكون",an:"الفتحتان",in:"الكسرتان",un:"الضمتان"};
+const hLabel=(u,h)=>u.n===4||u.n===5?"الشدة مع "+HL[h]:HL[h];
+const vids=()=>Object.assign({},V.lessons,S.get("vids",{}));
+const lessonById=id=>{for(const u of B)for(const l of u.lessons)if(l.id===id)return[u,l];return[]};
+const uProg=u=>{let s=0;u.lessons.forEach(l=>s+=Math.min(3,P(l.id).m));return Math.round(100*s/(3*u.lessons.length))};
+const pg=p=>`pages/${String(p).padStart(2,"0")}.webp`;
+const qrSVG=k=>{const q=QR[k];if(!q)return"";const[n,d]=q;return`<svg viewBox="-1 -1 ${n+2} ${n+2}" role="img" aria-label="رمز المقطع"><rect x="-1" y="-1" width="${n+2}" height="${n+2}" fill="#fff"/><path d="${d}" fill="#173A5E" shape-rendering="crispEdges"/></svg>`};
+const ytURL=(v,s)=>`https://www.youtube.com/watch?v=${encodeURIComponent(v)}${s?"&t="+(+s)+"s":""}`;
+function go(h){location.hash=h}window.go=go;
+const PLAN=GD.plan,TOTAL=PLAN.reduce((a,b)=>a+b[1],0);
+const TABS=[["listen","يسمع","var(--sky)"],["read","يقرأ","var(--mint)"],["master","يتقن","var(--gold)"],["play","يلعب","var(--navy)"]];
+function toast(t){const d=document.createElement("div");d.setAttribute("role","status");d.textContent=t;d.style.cssText="position:fixed;bottom:90px;left:50%;translate:-50% 0;background:#173A5E;color:#fff;padding:12px 20px;border-radius:14px;z-index:70;font-weight:700;max-width:90vw;text-align:center";document.body.append(d);setTimeout(()=>d.remove(),2400)}
+function modal(html,onOpen){const m=$("#modal");m.innerHTML=`<div class="modal"><div class="mbox">${html}</div></div>`;const close=()=>{m.innerHTML=""};m.querySelector(".modal").onclick=e=>{if(e.target.classList.contains("modal"))close()};m.querySelectorAll("[data-close]").forEach(b=>b.onclick=close);onOpen&&onOpen(m,close)}
+const mhead=t=>`<div class="row" style="margin-top:0"><b style="flex:1;font-size:20px">${t}</b><button class="btn" data-close>إغلاق</button></div>`;
+function pageModal(pages,i=0){const draw=()=>modal(`<div class="row" style="margin-top:0"><b style="flex:1">من الكتاب الأصلي – صفحة ${AN(pages[i]-1)}</b>${pages.length>1?`<button class="btn s" id="pp">السابقة</button><button class="btn s" id="pn">التالية</button>`:""}<button class="btn" data-close>إغلاق</button></div><img src="${pg(pages[i])}" alt="صفحة من الكتاب الأصلي">`,m=>{if(m.querySelector("#pn")){m.querySelector("#pn").onclick=()=>{i=(i+1)%pages.length;draw()};m.querySelector("#pp").onclick=()=>{i=(i-1+pages.length)%pages.length;draw()}}});draw()}
+function qrModal(key,title,v,s){modal(`${mhead(title)}<div class="qmodal"><p>امسح الرمز بكاميرا الجوال لمشاهدة المقطع.</p><div class="q">${qrSVG(key)}</div><a class="btn g" href="${ytURL(v,s)}" target="_blank" rel="noopener">افتح المقطع في يوتيوب</a></div>`)}
+const crumb=parts=>`<nav class="crumb" aria-label="المسار"><button onclick="go('program')">الكتاب التفاعلي</button>${parts.map(([t,h])=>` ‹ ${h?`<button onclick="go('${h}')">${t}</button>`:`<span>${t}</span>`}`).join("")}</nav>`;
+// ---------- التوجيه
+window.addEventListener("hashchange",route);
+const LSEC=["why","journey","programs","orgs"];
+function route(){stopAudio();const h=location.hash.slice(1).split(/\/|--/);window.scrollTo(0,0);
+ const land=h[0]===""||LSEC.includes(h[0])||h[0]==="privacy"||h[0]==="app"||h[0]==="login"||h[0]==="profile";
+ document.body.classList.toggle("modeL",land);document.body.classList.toggle("modeP",!land);
+ $("#brandT").textContent=land?"منصة سَنَد التعليمية":"القاعدة المدنية";
+ const sec=h[0]===""?"home":LSEC.includes(h[0])?h[0]:h[0]==="sb"?"sb":h[0]==="guide"?"guide":h[0]==="class"?"class":h[0]==="app"?"app":"book";
+ document.querySelectorAll(".nav a,.apptabs a").forEach(a=>a.classList.toggle("on",a.dataset.n===sec));
+ drawLogin();
+ const gt=gate(h);if(gt==="login")return loginView(location.hash);if(gt==="lock")return lockView();
+ if(h[0]==="login")return loginView("#program");
+ if(LSEC.includes(h[0])){landing();const el=document.getElementById("s-"+h[0]);el&&setTimeout(()=>el.scrollIntoView({block:"start"}),30);return}
+ if(h[0]==="u")return unitView(B[+h[1]-1]);
+ if(h[0]==="l"){const[u,l]=lessonById(h[1]);if(l)return h[2]==="cards"?cardsView(u,l):lessonView(u,l,h[2]||"listen")}
+ if(h[0]==="g"){const[u,l]=lessonById(h[1]);if(l)return gameView(u,l,h[2])}
+ if(h[0]==="ug")return unitGame(B[+h[1]-1]);
+ if(h[0]==="sb")return h[1]?sbView(+h[1]):sbHome();
+ if(h[0]==="guide")return guideView(+h[1]||0);
+ if(h[0]==="class")return classView();
+ if(h[0]==="app")return appView();
+ if(h[0]==="privacy")return privacyView();
+ if(h[0]==="profile")return profileView();
+ if(h[0]==="program"||h[0]==="welcome")return home(h[0]==="welcome");
+ landing()}
+// ================= الكتاب التفاعلي: الغلاف ← الترحيب ← الأبواب
+function home(toWelcome){
+ const sts=[["يسمع","أستمع إلى القارئ ومعلّمي، وأنظر إلى الحرف.","var(--sky)"],["يقرأ","أضع إصبعي تحت الحرف، وأقرأ مع معلّمي.","var(--mint)"],["يتقن","أقرأ وحدي حتى لا أخطئ.","var(--gold)"],["يلعب","ألعب لأثبّت ما تعلّمته.","var(--sky)"]];
+ app.innerHTML=`<section class="cover" aria-label="الغلاف"><div><span class="kick">منصة سَنَد التعليمية</span><h1>القاعدة المدنية</h1><p class="sub">تعليم القراءة للمبتدئين – الكتاب التفاعلي</p>
+ <p class="slogan">حرفٌ يُتقن… وقيمةٌ تُبنى</p><p class="credit">وفق منهج القاعدة المدنية لفضيلة الشيخ د. عبد المحسن بن محمد القاسم، إمام وخطيب المسجد النبوي.</p>
+ <div class="acts"><button class="btn g" id="startW">ابدأ الرحلة</button><button class="btn s" id="introV">مقطع المقدمة</button></div></div><img class="bk" src="img/cover.webp" alt="غلاف كتاب سند"></section>
+ <section class="welcome" id="welcome" aria-label="صفحة الترحيب"><img src="img/child_web.webp" alt=""><div>
+  <h2>أهلًا بك يا بطل!</h2><p>هذا كتابك في رحلة سَنَد. ستتعلّم فيه القراءة حرفًا بعد حرف، حتى تقرأ كلام الله بإتقان. في كل درس أربع محطات:</p>
+  <div class="stations">${sts.map(([a,b,c],i)=>`<div class="st" style="--c:${c}"><span class="n">${AN(i+1)}</span><div><b>${a}</b><span>${b}</span></div></div>`).join("")}</div>
+  <div class="wgrid"><div class="box"><b>بيوت الأخوات</b><p>الحروف المتشابهة تسكن بيتًا بلون واحد، والنقاط هي التي تفرّق بينها.</p><div class="houses"><span class="tS">ب ت ث</span><span class="tM">ج ح خ</span><span class="tG">د ذ</span><span class="tS">ر ز</span><span class="tM">س ش</span><span class="tG">ص ض</span></div></div>
+  <div class="box"><b>نجومي الثلاث</b><p>أقرأ الصفحة مع معلّمي، ثم مع زميلي، ثم وحدي. لا أنتقل حتى أنال النجمة الثالثة.</p><div class="stars3">${["مع معلّمي","مع زميلي","وحدي"].map(t=>`<span>${STAR}${t}</span>`).join("")}</div></div></div>
+  <div class="row"><button class="btn" onclick="go('u/1')">ابدأ الباب الأول</button><button class="btn s" onclick="go('guide')">إلى ولي الأمر والمعلّم</button></div></div></section>
+ <h2 class="sec">أبواب الكتاب</h2><p class="lead">اثنا عشر بابًا، من الحروف الهجائية إلى مصطلحات رسم المصحف.</p>
+ <div class="units">${B.map(u=>`<button class="uc ${!isOwner()&&u.n>1?"locked":""}" onclick="go('u/${u.n}')"><span class="n">${AN(u.n)}</span><small>الباب ${UN[u.n]}</small><h3>${u.title}</h3><small>${lessonsWord(u.lessons.length)}</small><div class="prog" aria-label="التقدّم"><i style="width:${uProg(u)}%"></i></div></button>`).join("")}</div>
+ ${appTeaser()}`;
+ $("#startW").onclick=()=>$("#welcome").scrollIntoView({behavior:"smooth",block:"start"});
+ $("#introV").onclick=()=>qrModal("intro","مقطع المقدمة",V.intro);
+ if(toWelcome)setTimeout(()=>$("#welcome").scrollIntoView({block:"start"}),60)}
+const phone=()=>`<div class="dev" aria-hidden="true"><div class="phone"><div class="scr"><span class="notch"></span><div class="ph"><b>سَنَد</b><small>الباب الثاني</small></div><div class="pbody"><div class="lt"><span>الفتحة</span><span>٧ / ٢٨</span></div><div class="pg">${["بَ","تَ","ثَ","جَ","حَ","خَ","دَ","ذَ","رَ"].map((x,i)=>`<span class="${i===6?"on":""}">${x}</span>`).join("")}</div><div class="ps">${STAR+STAR+STAR}</div><div class="pb"><i></i></div><div class="tabs4">${[["يسمع","var(--sky)"],["يقرأ","var(--mint)"],["يتقن","var(--gold)"],["يلعب","var(--navy)"]].map(([t,c])=>`<span style="--c:${c}"><i></i>${t}</span>`).join("")}</div></div></div></div><span class="chipf c1">${STAR}أتقنتَ الدرس!</span><span class="chipf c2">🔊 نطق القارئ</span><span class="chipf c3">👨‍👩‍👦 متابعة ولي الأمر</span></div>`;
+const appTeaser=()=>`<section class="appcard"><div><span class="badge"><i></i>تحت الإنشاء</span><h3>تطبيق سَنَد</h3><p>رحلة القراءة كلها في جيب طفلك: يسمع القارئ، ويقرأ، ويلعب، ويتابع ولي الأمر تقدّمه خطوة بخطوة. نعمل على إعداده بعناية ليكون رفيق الطفل اليومي.</p><button class="btn g" onclick="go('app')">تعرّف على التطبيق</button><div class="soonrow"><span class="soonb"><svg viewBox="0 0 24 24"><path d="M7 2h10a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm0 3v13h10V5H7zm4 14.5a1 1 0 1 0 2 0 1 1 0 0 0-2 0z"/></svg><span><small>قريبًا</small><b>على الجوال</b></span></span><span class="soonb"><svg viewBox="0 0 24 24"><path d="M3 5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-5l1 2h2v1H7v-1h2l1-2H5a2 2 0 0 1-2-2V5zm2 0v12h14V5H5z"/></svg><span><small>قريبًا</small><b>على الجهاز اللوحي</b></span></span></div></div>${phone()}</section>`;
+// ================= التطبيق
+function appView(){const F=[["١","نطق القارئ لكل حرف","يلمس الطفل الحرف فيسمع نطقه الصحيح من القارئ."],["٢","ألعاب على قدر الطفل","تزداد صعوبة الألعاب كلما أتقن الطفل، وتعود إلى ما أخطأ فيه."],["٣","متابعة ولي الأمر","يرى ولي الأمر ما قرأه طفله، والنجوم التي نالها، وما يحتاج إلى مراجعة."],["٤","شارات وإنجازات","شارة لكل باب يتقنه الطفل، وشهادة عند إتمام الكتاب."],["٥","جزء عمّ والقيم","بعد القراءة: تلقين جزء عمّ، وقيمة لكل باب، ضمن رحلة سند."],["٦","يعمل دون إنترنت","تُحفظ الدروس في الجهاز، فيتعلّم الطفل في أي مكان."]];
+ app.innerHTML=`<section class="appcard" style="margin-top:0"><div><span class="badge"><i></i>تحت الإنشاء</span><h3>تطبيق سَنَد للقراءة</h3><p>نبني تطبيقًا يحمل منهج القاعدة المدنية إلى بيت الطفل: دروس قصيرة، ونطق القارئ، وألعاب تثبّت التعلّم، ومتابعة يومية لولي الأمر. حرفٌ يُتقن… وقيمةٌ تُبنى.</p><p style="color:var(--gold);font-weight:800">ترقّبوا الإطلاق قريبًا بإذن الله.</p><div class="soonrow"><span class="soonb"><svg viewBox="0 0 24 24"><path d="M7 2h10a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm0 3v13h10V5H7zm4 14.5a1 1 0 1 0 2 0 1 1 0 0 0-2 0z"/></svg><span><small>قريبًا</small><b>على الجوال</b></span></span><span class="soonb"><svg viewBox="0 0 24 24"><path d="M3 5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-5l1 2h2v1H7v-1h2l1-2H5a2 2 0 0 1-2-2V5zm2 0v12h14V5H5z"/></svg><span><small>قريبًا</small><b>على الجهاز اللوحي</b></span></span></div></div>${phone()}</section>
+ <h2 class="sec">ماذا سيقدّم التطبيق؟</h2><p class="lead">هذه المزايا قيد التطوير، وقد تتغيّر قبل الإطلاق.</p><div class="feat">${F.map(([n,a,b])=>`<div class="fe"><span class="ic">${n}</span><b>${a}</b><p>${b}</p></div>`).join("")}</div>
+ <h2 class="sec">إلى أن يصل التطبيق</h2><div class="panel"><p style="margin-top:0;line-height:1.9">الكتاب التفاعلي متاح الآن بكل أبوابه ودروسه وألعابه، ويعمل على الجوال والسبورة الذكية. ومقاطع القارئ متاحة في قائمة «قراءة القاعدة المدنية» على يوتيوب.</p><div class="row"><button class="btn" onclick="go('program')">افتح الكتاب التفاعلي</button><button class="btn s" id="plQ">رمز قائمة المقاطع</button></div></div>`;
+ $("#plQ").onclick=()=>modal(`${mhead("قائمة مقاطع القاعدة المدنية")}<div class="qmodal"><div class="q">${qrSVG("playlist")}</div><a class="btn g" href="https://www.youtube.com/playlist?list=${V.playlist}" target="_blank" rel="noopener">افتح القائمة في يوتيوب</a></div>`)}
+// ================= الباب
+function unitView(u){
+ const vv=vids();
+ app.innerHTML=crumb([["الباب "+UN[u.n]]])+`<section class="uhead"><div><span class="chip">الباب ${UN[u.n]}</span><h1>${u.title}</h1>
+ <b>بعد الانتهاء من هذا الباب يصبح الطالب قادرًا ـ بإذن الله ـ على أن:</b><ul class="goals">${u.goals.map(g=>`<li>${g}</li>`).join("")}</ul></div>
+ <div class="uact"><button class="btn g" onclick="go('ug/${u.n}')">تحدّي الباب</button><button class="btn" onclick="go('guide/${u.n}')">دليل المعلم للباب</button><button class="btn s" onclick="go('sb/${(SB.toc.find(t=>t[0]===u.n)||[0,1])[1]}')">الباب في كتاب الطالب</button></div></section>
+ ${unitKPI(u)}<h2 class="sec">دروس الباب</h2><div class="lessons">${u.lessons.map(l=>`<button class="lc" onclick="go('l/${l.id}')"><span class="sm">${l.id.endsWith("x")?"أمثلة":"درس"} – صفحة ${AN(l.pages[0]-1)}</span><b>${l.title}</b>${stars(P(l.id).m)}</button>`).join("")}</div>
+ ${u.lessons.some(l=>vv[l.id])?`<h2 class="sec">بطاقات مقاطع الباب</h2><p class="lead">امسح رمز الدرس بالجوال، أو اضغطه لتكبيره على السبورة.</p><div class="qrs">${u.lessons.filter(l=>vv[l.id]&&QR[l.id]).map(l=>`<button class="qc" data-q="${l.id}">${qrSVG(l.id)}<b>${l.title}</b></button>`).join("")}</div>`:""}`;
+ app.querySelectorAll("[data-pg]").forEach(b=>b.onclick=()=>pageModal([+b.dataset.pg]));
+ app.querySelectorAll("[data-q]").forEach(b=>b.onclick=()=>{const[,l]=lessonById(b.dataset.q);const v=vv[l.id];qrModal(l.id,l.title,v.v,v.s)})}
+// ================= الدرس
+function tileHTML(l,it,i){const rd=AUD[l.id]&&AUD[l.id][i+"-0"]?'<i class="rd" title="بصوت القارئ"></i>':"";
+ if(l.kind==="letters")return`<button class="tile ${tint(it.w)}" data-i="${i}" data-k="0">${rd}<span class="ar">${it.w}</span><span class="nm">${it.name}</span></button>`;
+ if(l.kind==="words")return`<button class="tile" data-i="${i}" data-k="0">${rd}<span class="ar">${esc(it.w)}</span>${it.t?`<span class="tg">${esc(it.t)}</span>`:""}</button>`;
+ return`<button class="tile ${tint(it.w.charAt(0))}" data-i="${i}" data-k="0">${rd}<span class="ar">${esc(it.w)}</span></button>`}
+function boardHTML(l){
+ if(l.kind==="page")return`<p class="note">${l.read}</p><img src="${pg(l.pages[0])}" alt="أمثلة الدرس من الكتاب الأصلي" style="width:100%;max-width:640px;display:block;margin:auto;border-radius:12px;background:#fff">`;
+ if(l.kind==="build")return l.items.map((it,i)=>`<div class="buildrow ${it.s.length===1?"c2":""}">${it.s.map((x,k)=>`<button class="tile" data-i="${i}" data-k="${k}" data-say="${esc(x)}"><span class="ar">${esc(x)}</span></button>`).join("")}<button class="tile" data-i="${i}" data-k="${it.s.length}"><span class="ar">${esc(it.w)}</span></button></div>`).join("");
+ if(l.kind==="forms")return l.items.map((it,i)=>`<div class="formrow">${it.f.map((x,k)=>`<button class="tile ${k===0?tint(it.w):""}" data-i="${i}" data-k="${k}"><span class="ar">${x}</span></button>`).join("")}<div class="tile nmc"><span class="nm" style="font-size:22px">${it.name}</span></div></div>`).join("");
+ if(l.kind==="lines")return l.items.map((it,i)=>`<button class="line" data-i="${i}" data-k="0"><span class="ar">${esc(it.w)}</span></button>`).join("");
+ const n=l.items.length,best=(lo,hi)=>{for(let c=hi;c>=lo;c--)if(n%c===0)return c;return hi};
+ return`<div class="board fit" style="--cd:${n<=hi9(n)?n:best(5,9)};--cm:${n<=4?n:best(3,4)}">${l.items.map((it,i)=>tileHTML(l,it,i)).join("")}</div>`}
+const hi9=n=>n<=9?9:0;
+function lessonView(u,l,tab){
+ const v=vids()[l.id],idx=u.lessons.indexOf(l),nx=u.lessons[idx+1],pv=u.lessons[idx-1],ti=TABS.findIndex(t=>t[0]===tab);
+ let body="";
+ if(tab==="listen"){
+  body=(v?`<div class="vq"><button class="qbig" id="qB" aria-label="كبّر رمز المقطع">${qrSVG(l.id)}</button><div><h3>مقطع القارئ لهذا الدرس</h3><p>امسح الرمز بكاميرا الجوال، أو اضغطه لتكبيره على السبورة. يستمع الطالب إلى القارئ وينظر إلى الحرف ويشير إليه.</p>
+   <div class="row" style="margin:0">${NO_EMBED?`<a class="btn g" href="${ytURL(v.v,v.s)}" target="_blank" rel="noopener">شاهد المقطع</a>`:`<button class="btn g" id="playV">شغّل المقطع هنا</button><a class="btn s" href="${ytURL(v.v,v.s)}" target="_blank" rel="noopener">افتح في يوتيوب</a>`}</div></div></div><div id="vHost"></div>`
+   :`<p class="note">لا يوجد مقطع لهذا الدرس في السلسلة، فيقرأ المعلم من صفحة الكتاب.</p>`)+
+  (sbPages(l.id).length?`<h3 style="margin:18px 0 8px">في كتاب الطالب</h3><div class="pages">${sbPages(l.id).map(p=>`<button onclick="go('sb/${p}')"><img src="book/${String(p).padStart(2,"0")}.webp" alt="صفحة ${AN(p)} من كتاب الطالب" loading="lazy"></button>`).join("")}</div>`:"")+`<p style="margin:10px 0 0"><button class="btn s" data-pg="${l.pages[0]}">مقارنة بالكتاب الأصلي</button></p>`}
+ if(tab==="read")body=`${l.read?`<p class="note"><b>طريقة القراءة:</b> ${l.read}</p>`:""}${l.kind!=="page"?`<div class="row" style="margin-top:0"><button class="btn m" id="spotB">عرض كبير</button><button class="btn s" id="auto">قراءة متتابعة</button><span style="color:var(--ink2);font-size:14px">المس أي خانة لتسمعها.</span></div>`:""}${boardHTML(l)}`;
+ if(tab==="master")body=`<p class="note">إذا أخطأ الطالب: <b>أنا أقرأ ← نقرأ معًا ← اقرأ وحدك</b>، ثم نعود إلى الحرف نفسه بعد دقيقتين.</p>${l.kind!=="page"?`<div class="row" style="margin-top:0"><button class="btn g" id="rndB">خانة عشوائية</button><span style="color:var(--ink2);font-size:14px">يقرأ الطالب الخانة المضيئة وحده.</span></div>${boardHTML(l)}`:""}<div class="mstars">${["مع معلّمي","مع زميلي","وحدي"].map((t,i)=>`<button class="mst ${P(l.id).m>i?"on":""}" data-s="${i+1}">${STAR}<span>${t}</span></button>`).join("")}</div>`;
+ if(tab==="play")body=gamesHTML(u,l);
+ app.innerHTML=crumb([["الباب "+UN[u.n],"u/"+u.n],[l.title]])+`<div class="lhead"><h1>${l.title}</h1>${sbFirst(l.id)?`<button class="btn s" onclick="go('sb/${sbFirst(l.id)}')">في كتاب الطالب</button>`:""}${l.kind!=="page"||l.games.length?`<button class="btn g" onclick="go('l/${l.id}/play')">🎮 ألعاب الدرس (${AN(availGames(u,l).length)})</button>`:""}<button class="btn s" onclick="go('l/${l.id}/cards')">🗂️ بطاقات الدرس</button><button class="btn s" id="lg">دليل الدرس</button></div>
+ <div class="tabs" role="tablist">${TABS.map(([k,t,c])=>`<button class="tab ${k===tab?"on":""}" role="tab" aria-selected="${k===tab}" style="--c:${c}" onclick="go('l/${l.id}/${k}')"><i></i>${t}</button>`).join("")}</div>
+ <section class="panel"><div class="script"><b>المعلم – ${AN(PLAN[ti][1])} د</b><span>${PLAN[ti][2]}</span></div>${body}</section>
+ <div class="row" style="justify-content:space-between">${pv?`<button class="btn s" onclick="go('l/${pv.id}')">‹ ${pv.title}</button>`:"<span></span>"}${nx?`<button class="btn" onclick="go('l/${nx.id}')">${nx.title} ›</button>`:`<button class="btn g" onclick="go('ug/${u.n}')">تحدّي الباب</button>`}</div>`;
+ app.querySelectorAll("[data-pg]").forEach(b=>b.onclick=()=>pageModal(l.pages,l.pages.indexOf(+b.dataset.pg)));
+ $("#lg").onclick=()=>lessonGuide(u,l);
+ if($("#qB"))$("#qB").onclick=()=>qrModal(l.id,l.title,v.v,v.s);
+ if($("#playV"))$("#playV").onclick=()=>{$("#vHost").innerHTML=`<div class="vbox"><iframe src="https://www.youtube-nocookie.com/embed/${encodeURIComponent(v.v)}?rel=0&autoplay=1${v.s?"&start="+(+v.s):""}${v.e?"&end="+(+v.e):""}" title="مقطع الدرس" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe></div>`};
+ const tiles=[...app.querySelectorAll(".panel [data-i]")];
+ tiles.forEach(t=>t.onclick=()=>{tiles.forEach(x=>x.classList.remove("cur"));t.classList.add("cur","done");const it=l.items[+t.dataset.i];
+  const fb=l.kind==="letters"||l.kind==="forms"?it.name:(t.dataset.say||it.w);play(l.id,t.dataset.i+"-"+t.dataset.k,fb)});
+ if($("#auto"))$("#auto").onclick=()=>{let k=0;const step=()=>{if(k>=tiles.length||location.hash.indexOf(l.id)<0)return;tiles[k].click();tiles[k].scrollIntoView({block:"nearest",behavior:"smooth"});k++;setTimeout(step,cfg.teach?2600:1800)};step()};
+ app.querySelectorAll(".mst").forEach(b=>b.onclick=()=>{const s=+b.dataset.s,p=P(l.id);if(s>p.m+1)return toast("نبدأ بالنجمة الأولى، ثم التي تليها");p.m=p.m>=s?s-1:s;save();lessonView(u,l,"master");if(p.m===3){toast("أتقنتَ الدرس! النجمة الثالثة لك");SFX.win();const c=document.createElement("canvas");c.className="conf";document.body.append(c);confetti(c);setTimeout(()=>c.remove(),7000)}});
+ if($("#rndB"))$("#rndB").onclick=()=>{const ts=[...app.querySelectorAll(".panel [data-i]")];ts.forEach(x=>x.classList.remove("rnd"));const t=rnd(ts);t.classList.add("rnd");t.scrollIntoView({block:"center",behavior:"smooth"})};
+ if($("#spotB"))$("#spotB").onclick=()=>spotlight(u,l)}
+function spotlight(u,l){
+ const seq=[];l.items.forEach((it,i)=>{if(l.kind==="build"){it.s.forEach((x,k)=>seq.push({t:x,key:i+"-"+k,fb:x}));seq.push({t:it.w,key:i+"-"+it.s.length,fb:it.w})}
+  else if(l.kind==="forms")it.f.forEach((x,k)=>seq.push({t:x,key:i+"-"+k,fb:it.name,nm:it.name}));
+  else seq.push({t:it.w,key:i+"-0",fb:it.name||it.w,nm:it.name,tg:it.t})});
+ let i=0,timer=null,showName=true;const long=l.kind==="lines";
+ const draw=()=>{const x=seq[i];modal(`<div class="row" style="margin-top:0"><b style="flex:1;font-size:18px">${l.title} – عرض كبير</b><button class="btn" data-close>إغلاق</button></div>
+  <div class="spot bump" id="spot"><span class="ar ${long?"sm":""}">${esc(x.t)}</span>${x.nm&&showName?`<span class="nm">${x.nm}</span>`:""}${x.tg?`<span class="tile" style="min-height:0;border:0;background:none"><span class="tg">${esc(x.tg)}</span></span>`:""}<span class="ix">${AN(i+1)} من ${AN(seq.length)}</span></div>
+  <div class="sbar"><button class="btn s" id="sp">› السابق</button><button class="btn m" id="sa">اسمع</button><button class="btn g" id="sg">${timer?"إيقاف":"تشغيل تلقائي"}</button>${seq.some(z=>z.nm)?`<button class="btn s" id="sn">${showName?"أخفِ الاسم":"أظهر الاسم"}</button>`:""}<button class="btn" id="sx">التالي ‹</button></div>`,(m,close)=>{
+   const stop=()=>{clearInterval(timer);timer=null};m.querySelectorAll("[data-close]").forEach(b=>b.addEventListener("click",stop));
+   m.querySelector("#sx").onclick=()=>{i=(i+1)%seq.length;draw()};m.querySelector("#sp").onclick=()=>{i=(i-1+seq.length)%seq.length;draw()};
+   m.querySelector("#sa").onclick=()=>play(l.id,x.key,x.fb);
+   const sn=m.querySelector("#sn");if(sn)sn.onclick=()=>{showName=!showName;draw()};
+   m.querySelector("#sg").onclick=()=>{if(timer){stop();draw()}else{timer=setInterval(()=>{if(!$(".spot")){stop();return}i=(i+1)%seq.length;draw();play(l.id,seq[i].key,seq[i].fb)},cfg.teach?3200:2400);draw()}};
+   m.querySelector("#spot").onclick=()=>play(l.id,x.key,x.fb)})};
+ draw()}
+// ================= الألعاب
+const G={name:["ب","أين الحرف؟","تظهر تسمية الحرف، فاختر الحرف."],form:["ـبـ","أعرف الحرف","يظهر الحرف بشكل من أشكاله، فاختره."],haraka:["بَ","ما الحركة؟","اقرأ، ثم اختر الحركة التي على الحرف."],hunt:["؟","الصيّاد","المس كل خانة فيها الحركة المطلوبة."],build:["بَـ","ابنِ الكلمة","اقرأ المقطع، ثم اختر الكلمة التي تكمله."],target:["ـٌ","الجزء المقصود","اقرأ الكلمة، واختر الجزء الذي نتعلّمه فيها."],memory:["٢","الذاكرة","اقلب البطاقات، وطابق كل بطاقتين."],sort:["أ","صنّف","اقرأ الكلمة، وضعها في مكانها."],order:["١٢٣","رتّب الكلمات","المس الكلمات بالترتيب لتكوّن المثال."],flash:["⚡","سباق القراءة","يقرأ الطالب، ويسجّل المعلم: صحيح أو نعيد."],marks:["ۡ","علامات المصحف","اختر معنى كل علامة."]};
+function gamesHTML(u,l){
+ if(!l.games.length)return`<p class="note">يُقرأ هذا الدرس من صفحة الكتاب. لعبة «علامات المصحف» في آخر درس من الباب، وفي «تحدّي الباب».</p>`;
+ return`<p class="lead"><span class="gcount">🎮 ${AN(availGames(u,l).length)} لعبة لهذا الدرس</span></p><div class="games">${availGames(u,l).map(g=>`<button class="gc" onclick="go('g/${l.id}/${g}')"><span class="gi">${G[g][0]}</span><b>${G[g][1]}</b><small>${G[g][2]}</small>${P(l.id).g[g]?stars(P(l.id).g[g]):""}</button>`).join("")}</div>`}
+const awardHTML=()=>{const T=teams();return T.list.length?`<p style="margin:14px 0 0;color:var(--ink2);font-weight:700">أضف نقطة لفريق:</p><div class="award">${T.list.map((t,i)=>`<button style="--tc:${TC[t.c]}" data-aw="${i}">${esc(t.name)} +١</button>`).join("")}</div>`:""};
+const bindAward=()=>app.querySelectorAll("[data-aw]").forEach(b=>b.onclick=()=>{addPt(+b.dataset.aw,1);b.disabled=true;toast("أُضيفت نقطة إلى "+teams().list[+b.dataset.aw].name)});
+function gameView(u,l,g,onEnd){
+ const back=`l/${l.id}/play`;
+ const frame=(inner,dots)=>{app.innerHTML=(onEnd?crumb([["الباب "+UN[u.n],"u/"+u.n],["تحدّي الباب"]]):crumb([["الباب "+UN[u.n],"u/"+u.n],[l.title,back],[G[g][1]]]))+`<div class="gwrap"><div class="ghead"><h3>${G[g][1]}</h3><div class="dots">${dots||""}</div></div>${inner}</div>`};
+ const result=(st,msg,extra="")=>{setTimeout(()=>{if(st>=3){SFX.win();SFX.boom();fireworks()}else if(st>=1){SFX.cheer()}},120);frame(`<section class="panel res"><img src="img/child_web.webp" alt=""><h3>${msg||(st===3?"أحسنت يا بطل!":st>=1?"جميل! نحاول مرة أخرى":"نعيد معًا")}</h3>${stars(st,"big3")}${extra}<div class="row" style="justify-content:center"><button class="btn" id="again">العب مرة أخرى</button><button class="btn s" onclick="go('${back}')">ألعاب الدرس</button></div>${awardHTML()}</section>`);$("#again").onclick=()=>gameView(u,l,g);bindAward()};
+ const finish=(score,total)=>{const st=score>=total?3:score>=total*.7?2:score>=total*.4?1:0;if(onEnd)return onEnd(st);const p=P(l.id);p.g[g]=Math.max(p.g[g]||0,st);p.n=(p.n||0)+1;p.acc=Math.round(((p.acc||0)*((p.n||1)-1)+100*Math.min(1,score/Math.max(1,total)))/(p.n||1));p.d=Date.now();save();result(st,"",`<p>${AN(score)} من ${AN(total)}</p>`)};
+ const quiz=rounds=>{let i=0,sc=0,res=[];const N=rounds.length;
+  const draw=()=>{const r=rounds[i];frame(`<div class="prompt">${r.p}</div><div class="opts">${r.opts.map((o,k)=>`<button class="opt ${r.lbl?"lbl":""}" data-k="${k}">${o.h}</button>`).join("")}</div><div class="fb" id="fb" role="status"></div>`,rounds.map((_,k)=>`<i class="${k<i?(res[k]?"ok":"no"):k===i?"cur":""}"></i>`).join(""));
+   let tried=false;app.querySelectorAll(".opt").forEach(b=>b.onclick=()=>{const o=r.opts[+b.dataset.k];
+    if(o.ok){b.classList.add("ok");SFX.ok();if(!tried)sc++;res[i]=!tried;$("#fb").className="fb ok";$("#fb").textContent=rnd(["أحسنت!","ممتاز!","بارك الله فيك!"]);if(r.speak)tts(r.speak);app.querySelectorAll(".opt").forEach(x=>x.onclick=null);setTimeout(()=>{i++;i<N?draw():finish(sc,N)},1100)}
+    else{tried=true;b.classList.add("no");SFX.no();$("#fb").className="fb no";$("#fb").textContent="حاول مرة أخرى"}})};draw()};
+ const items=l.items,pick=(arr,n)=>shuf(arr).slice(0,n),AR=t=>`<span class="ar">${esc(t)}</span>`;
+ const opts=(right,pool,key,n=4)=>{const wrong=shuf([...new Set(pool.map(key))].filter(x=>x!==key(right))).slice(0,n-1);return shuf([key(right),...wrong]).map(x=>({v:x,ok:x===key(right)}))};
+ if(XG[g]&&!availGames(u,l).includes(g)){app.innerHTML=crumb([["الباب "+UN[u.n],"u/"+u.n],[l.title,back]])+`<p class="note">هذه اللعبة لا تناسب هذا الدرس. اختر لعبة من ألعاب الدرس.</p><button class="btn" onclick="go('${back}')">ألعاب الدرس</button>`;return}
+ if(XG[g]){const ctx={u,l,items,K:KEY(u,l),frame,finish,result,tts,play,AR,esc,AN,shuf,pick,rnd,STAR,teams,addPt,TC};return XG[g].run(ctx)}
+ if(g==="name")return quiz(pick(items,8).map(it=>({p:`<span class="q">أين هذا الحرف؟</span><span class="say">${it.name}</span>`,opts:opts(it,items,x=>x.w).map(o=>({h:AR(o.v),ok:o.ok})),speak:it.name})));
+ if(g==="form")return quiz(pick(items,8).map(it=>{const f=rnd(it.f.slice(1));return{p:`<span class="q">ما هذا الحرف؟</span>${AR(f)}`,opts:opts(it,items,x=>x.w).map(o=>({h:AR(o.v),ok:o.ok})),speak:it.name}}));
+ if(g==="haraka"){const all=u.lessons.flatMap(x=>x.kind==="grid"?x.items:[]);const hs=[...new Set(all.map(x=>x.h))];
+  return quiz(pick(all,8).map(it=>({p:`<span class="q">اقرأ، ثم اختر الحركة</span>${AR(it.w)}`,lbl:1,opts:shuf([it.h,...shuf(hs.filter(h=>h!==it.h)).slice(0,3)]).map(h=>({h:hLabel(u,h),ok:h===it.h})),speak:it.w})))}
+ if(g==="build")return quiz(pick(items,8).map(it=>({p:`<span class="q">اقرأ المقطع، ثم أكمل الكلمة</span>${AR(it.s[it.s.length-1])}`,opts:opts(it,items,x=>x.w).map(o=>({h:AR(o.v),ok:o.ok})),speak:it.w})));
+ if(g==="target"){const pool=items.filter(x=>x.t);return quiz(pick(pool,Math.min(8,pool.length)).map(it=>({p:`<span class="q">ما الجزء الذي نتعلّمه في هذه الكلمة؟</span>${AR(it.w)}`,opts:opts(it,pool,x=>x.t,3).map(o=>({h:AR(o.v),ok:o.ok})),speak:it.w})))}
+ if(g==="sort")return quiz(pick(items,Math.min(10,items.length)).map(it=>({p:`<span class="q">${l.cat[0]==="قمرية"?"قمرية أم شمسية؟":l.cat[0]==="قطع"?"همزة قطع أم همزة وصل؟":l.cat[0]==="عند الوصل"?"وصلًا أم وقفًا؟":"في أي حرف من حروف المدّ؟"}</span>${AR(it.w)}`,lbl:1,opts:l.cat.map(c=>({h:c,ok:c===it.c})),speak:it.w})));
+ if(g==="marks"){const M=u.marks;return quiz(shuf(M).map(m=>({p:`<span class="q">ماذا تعني هذه العلامة؟</span><span class="say" style="font-family:TS;font-size:28px">${m.m}</span>`,lbl:1,opts:opts(m,M,x=>x.r,3).map(o=>({h:`<span style="font-size:17px;line-height:1.6">${o.v}</span>`,ok:o.ok}))})))}
+ if(g==="memory"){
+  const src=pick(items.filter(x=>l.kind==="letters"||l.kind==="build"||x.t),6),A=x=>l.kind==="letters"?x.name:l.kind==="build"?x.s[x.s.length-1]:x.t;
+  let cards=shuf(src.flatMap((x,k)=>[{k,t:x.w},{k,t:A(x)}])),open=[],done=0,moves=0;
+  const draw=()=>{frame(`<div class="mem">${cards.map((c,i)=>`<button class="card ${c.up||c.m?"up":""} ${c.m?"match":""}" data-i="${i}" aria-label="بطاقة">${c.up||c.m?`<span class="ar">${esc(c.t)}</span>`:'<span class="back"></span>'}</button>`).join("")}</div><div class="fb">المحاولات: ${AN(moves)}</div>`);
+   app.querySelectorAll(".card").forEach(b=>b.onclick=()=>{const c=cards[+b.dataset.i];if(c.up||c.m||open.length>1)return;c.up=1;open.push(c);tts(c.t);draw();
+    if(open.length===2){moves++;const[a,b2]=open;setTimeout(()=>{if(a.k===b2.k){a.m=b2.m=1;done++;SFX.ok()}else SFX.no();a.up=b2.up=0;open=[];draw();if(done===src.length)setTimeout(()=>finish(moves<=src.length+3?src.length:moves<=src.length*2?Math.ceil(src.length*.7):Math.ceil(src.length*.4),src.length),500)},800)}})};draw();return}
+ if(g==="hunt"){
+  const all=u.lessons.flatMap(x=>x.kind==="grid"&&x.items[0]&&x.items[0].h?x.items:[]),hs=[...new Set(all.map(x=>x.h))];let round=0,sc=0;const R=3;
+  const draw=()=>{const tgt=rnd(hs),grid=shuf([...pick(all.filter(x=>x.h===tgt),5),...pick(all.filter(x=>x.h!==tgt),7)]);
+   frame(`<div class="prompt" style="min-height:90px"><span class="q">المس كل خانة فيها</span><span class="say" style="font-family:TS;font-size:32px">${hLabel(u,tgt)}</span></div><div class="huntg">${grid.map((x,i)=>`<button class="opt" data-i="${i}">${AR(x.w)}</button>`).join("")}</div><div class="row" style="justify-content:center"><button class="btn" id="chk">تحقّق</button></div><div class="fb" id="fb" role="status"></div>`,Array.from({length:R},(_,k)=>`<i class="${k<round?"ok":k===round?"cur":""}"></i>`).join(""));
+   app.querySelectorAll(".huntg .opt").forEach(b=>b.onclick=()=>{b.classList.toggle("sel");tts(grid[+b.dataset.i].w)});
+   $("#chk").onclick=()=>{let ok=true;app.querySelectorAll(".huntg .opt").forEach(b=>{const x=grid[+b.dataset.i],s=b.classList.contains("sel");if((x.h===tgt)!==s)ok=false;if(x.h===tgt)b.classList.add(s?"ok":"no");else if(s)b.classList.add("no")});
+    $("#fb").className="fb "+(ok?"ok":"no");$("#fb").textContent=ok?"أحسنت! وجدتها كلها":"انظر إلى الخانات الملوّنة، ثم نكمل";if(ok)sc++;$("#chk").textContent="التالي";$("#chk").onclick=()=>{round++;round<R?draw():finish(sc,R)}}};draw();return}
+ if(g==="order"){
+  const rounds=pick(items,Math.min(5,items.length));let i=0,sc=0;
+  const draw=()=>{const words=rounds[i].w.split(" "),sh=shuf(words.map((w,k)=>({w,k})));let got=[],err=false;
+   const paint=()=>{frame(`<div class="order">${got.map(x=>`<span class="opt ok">${AR(x.w)}</span>`).join("")||'<span class="q" style="color:var(--soft)">المس الكلمة الأولى…</span>'}</div><div class="opts" style="grid-template-columns:repeat(auto-fill,minmax(150px,1fr))">${sh.map((x,k)=>`<button class="opt ${got.includes(x)?"gone":""}" data-k="${k}">${AR(x.w)}</button>`).join("")}</div><div class="fb" id="fb" role="status"></div>`,rounds.map((_,k)=>`<i class="${k<i?"ok":k===i?"cur":""}"></i>`).join(""));
+    app.querySelectorAll(".opts .opt").forEach(b=>b.onclick=()=>{const x=sh[+b.dataset.k];if(x.w===words[got.length]){got.push(x);tts(x.w);paint();if(got.length===words.length){if(!err)sc++;$("#fb").className="fb ok";$("#fb").textContent="أحسنت!";setTimeout(()=>{i++;i<rounds.length?draw():finish(sc,rounds.length)},1500)}}else{err=true;b.classList.add("no");setTimeout(()=>b.classList.remove("no"),500)}})};paint()};draw();return}
+ if(g==="flash"){
+  const deck=pick(items,Math.min(12,items.length));let i=0,miss=[];
+  const draw=()=>{const it=deck[i];frame(`<div class="prompt" style="min-height:260px">${AR(it.w)}${it.name?`<span class="q">${it.name}</span>`:""}</div><div class="opts"><button class="opt lbl ok" id="y">قرأ صحيحًا</button><button class="opt lbl no" id="n">نعيد</button></div><p class="note" style="margin-top:12px">إذا أخطأ: أنا أقرأ ← نقرأ معًا ← اقرأ وحدك. ونعود إلى هذه الخانة بعد قليل.</p>`,deck.map((_,k)=>`<i class="${k<i?(miss.includes(deck[k])?"no":"ok"):k===i?"cur":""}"></i>`).join(""));
+   $("#y").onclick=()=>{i++;i<deck.length?draw():end()};$("#n").onclick=()=>{tts(it.name||it.w);miss.push(it);i++;i<deck.length?draw():end()}};
+  const end=()=>{const st=miss.length?(miss.length<3?2:1):3;if(onEnd)return onEnd(st);const p=P(l.id);p.g.flash=Math.max(p.g.flash||0,st);save();
+   result(st,miss.length?"نعود إلى هذه الخانات بعد دقيقتين":"قرأ الخانات كلها! أحسنت",miss.length?`<div class="board" style="margin:12px 0">${miss.map(x=>`<div class="tile"><span class="ar">${esc(x.w)}</span></div>`).join("")}</div>`:"")};
+  draw();return}}
+function unitGame(u){
+ const plan=shuf(u.lessons.flatMap(l=>l.games.filter(g=>!["flash","memory","hunt"].includes(g)).map(g=>[l,g]))).slice(0,4);
+ if(!plan.length)return go("u/"+u.n);
+ let k=0,st=[];const next=()=>{if(k>=plan.length){const avg=Math.round(st.reduce((a,b)=>a+b,0)/st.length);
+  app.innerHTML=crumb([["الباب "+UN[u.n],"u/"+u.n],["تحدّي الباب"]])+`<section class="panel res"><img src="img/child_web.webp" alt=""><h3>${avg===3?"أتقنتَ الباب "+UN[u.n]+"!":"أنهيت التحدّي"}</h3>${stars(avg,"big3")}<p>${u.title}</p><div class="row" style="justify-content:center"><button class="btn" onclick="go('u/${u.n}')">العودة إلى الباب</button>${u.n<12?`<button class="btn g" onclick="go('u/${u.n+1}')">الباب ${UN[u.n+1]} ›</button>`:""}</div>${awardHTML()}</section>`;bindAward();return}
+  const[l,g]=plan[k++];gameView(u,l,g,s=>{st.push(s);next()})};next()}
+// ================= الفرق والحلقة
+const TC={sky:"#69B7E8",mint:"#79CDB5",gold:"#F2B84B",coral:"#F2A08A"};const TCN={sky:"السماوي",mint:"النعناعي",gold:"الذهبي",coral:"المرجاني"};
+let TM=S.get("teams",null);
+function teams(){if(!TM)TM={list:[{name:"الفريق السماوي",c:"sky",m:[],s:0},{name:"الفريق النعناعي",c:"mint",m:[],s:0}]};return TM}
+const saveT=()=>{S.set("teams",TM);drawFab()};
+function addPt(i,d){const t=teams().list[i];t.s=Math.max(0,t.s+d);saveT();const el=document.querySelector(`[data-sc="${i}"]`);if(el)el.textContent=AN(t.s)}
+function setCount(n){const T=teams(),cs=["sky","mint","gold","coral"];while(T.list.length<n){const c=cs[T.list.length];T.list.push({name:"الفريق "+TCN[c],c,m:[],s:0})}T.list.length=n;saveT()}
+function hubHTML(){const LS=B.flatMap(u=>u.lessons.filter(l=>l.kind!=="page"||l.games.length).map(l=>[u,l])).filter(([u])=>isOwner()||u.n===1);
+ let cur=S.get("hubL",LS[0][1].id);if(!LS.some(([,l])=>l.id===cur))cur=LS[0][1].id;const[u,l]=lessonById(cur);const av=availGames(u,l);
+ return`<section class="ghub" id="ghub"><h1 style="font-family:TD;font-weight:900;margin:0 0 6px;font-size:clamp(28px,4vw,40px)">الألعاب</h1><p class="lead" style="margin:0 0 10px"><span class="gcount">🎮 ${AN(ALLG().length)} لعبة</span> تتغيّر حسب الدرس، وكلها من محتوى الكتاب الأصلي.</p>
+ <div class="row"><label for="hubSel" style="font-weight:800">الدرس</label><select id="hubSel">${B.map(uu=>`<optgroup label="الباب ${UN[uu.n]}">${uu.lessons.filter(x=>LS.some(([,y])=>y===x)).map(x=>`<option value="${x.id}" ${x.id===cur?"selected":""}>${x.title}</option>`).join("")}</optgroup>`).join("")}</select><span style="color:var(--ink2)">${AN(av.length)} لعبة لهذا الدرس</span></div>
+ <div class="games">${av.map(g=>`<button class="gc" onclick="go('g/${l.id}/${g}')"><span class="gi">${G[g][0]}</span><b>${G[g][1]}</b><small>${G[g][2]}</small></button>`).join("")}</div></section>`}
+function classView(){const T=teams();
+ app.innerHTML=hubHTML()+`<h2 class="sec" id="teamsSec">الفرق والنقاط</h2><p class="lead">نتعلّم ونحن نلعب: كوّن فرق الحلقة، واكتب أسماء الطلاب، واجمع النقاط في الألعاب. عند إعلان الفائز تظهر أسماء أعضاء الفريق كاملة.</p>
+ <div class="row"><label for="nT" style="font-weight:800">عدد الفرق</label><select id="nT">${[2,3,4].map(n=>`<option ${T.list.length===n?"selected":""}>${AN(n)}</option>`).join("")}</select>
+ <button class="btn g" id="winB">أعلن الفائز</button><button class="btn s" id="zero">تصفير النقاط</button></div>
+ <div class="teams">${T.list.map((t,i)=>`<div class="team" style="--tc:${TC[t.c]}"><div class="th"><i></i><input class="tn" data-ti="${i}" value="${esc(t.name)}" aria-label="اسم الفريق" maxlength="30"></div>
+  <div class="score"><button class="m" data-p="${i}" data-d="-1" aria-label="إنقاص نقطة">−</button><b data-sc="${i}">${AN(t.s)}</b><button data-p="${i}" data-d="1" aria-label="إضافة نقطة">+</button></div>
+  <label for="tm${i}"><small>أعضاء الفريق (اسم في كل سطر)</small></label><textarea id="tm${i}" data-tm="${i}" placeholder="عبد الله&#10;محمد&#10;يوسف">${esc(t.m.join("\n"))}</textarea><small>${AN(t.m.length)} ${t.m.length>2&&t.m.length<11?"طلاب":"طالب"}</small></div>`).join("")}</div>
+ <div class="tools">
+  <div class="tool"><h3>توزيع الطلاب على الفرق</h3><label for="roster"><small style="color:var(--ink2)">اكتب أسماء طلاب الحلقة، اسمًا في كل سطر، ثم وزّعهم عشوائيًّا بالتساوي.</small></label><textarea class="roster" id="roster" placeholder="اسم الطالب">${esc(S.get("roster",""))}</textarea><button class="btn" id="dist">وزّع عشوائيًّا</button></div>
+  <div class="tool"><h3>اختيار طالب عشوائيًّا</h3><div class="picked" id="picked" role="status">—</div><button class="btn" id="pick">اختر طالبًا</button></div>
+  <div class="tool"><h3>المؤقّت</h3><div class="clock" id="clock" role="timer" dir="ltr">0:00</div><div class="row" style="margin:0;justify-content:center">${[1,2,3,5].map(m=>`<button class="chipb" data-m="${m}">${AN(m)} د</button>`).join("")}<button class="chipb" id="stopT">إيقاف</button></div></div>
+ </div>`;
+ $("#hubSel").onchange=e=>{S.set("hubL",e.target.value);classView();setTimeout(()=>$("#ghub").scrollIntoView({block:"start"}),20)};
+ $("#nT").onchange=e=>{setCount(+e.target.selectedIndex+2);classView()};
+ app.querySelectorAll("[data-ti]").forEach(x=>x.oninput=()=>{T.list[+x.dataset.ti].name=x.value.trim()||"فريق";saveT()});
+ app.querySelectorAll("[data-tm]").forEach(x=>x.oninput=()=>{T.list[+x.dataset.tm].m=x.value.split("\n").map(s=>s.trim()).filter(Boolean);saveT()});
+ app.querySelectorAll("[data-p]").forEach(b=>b.onclick=()=>addPt(+b.dataset.p,+b.dataset.d));
+ $("#zero").onclick=()=>{T.list.forEach(t=>t.s=0);saveT();classView()};
+ $("#winB").onclick=announce;
+ $("#roster").oninput=e=>S.set("roster",e.target.value);
+ $("#dist").onclick=()=>{const names=shuf($("#roster").value.split("\n").map(s=>s.trim()).filter(Boolean));if(!names.length)return toast("اكتب أسماء الطلاب أولًا");T.list.forEach(t=>t.m=[]);names.forEach((n,i)=>T.list[i%T.list.length].m.push(n));saveT();classView();toast("وُزّع "+AN(names.length)+" طالبًا على الفرق")};
+ $("#pick").onclick=()=>{const all=T.list.flatMap(t=>t.m.map(m=>[m,t.name]));if(!all.length)return toast("اكتب أسماء الطلاب في الفرق أولًا");const[n,t]=rnd(all);$("#picked").innerHTML=`${esc(n)}<small>${esc(t)}</small>`};
+ let tm=window._tm;const clk=l=>{$("#clock")&&($("#clock").textContent=Math.floor(l/60)+":"+String(l%60).padStart(2,"0"))};
+ app.querySelectorAll("[data-m]").forEach(b=>b.onclick=()=>{clearInterval(window._tm);let left=+b.dataset.m*60;clk(left);window._tm=setInterval(()=>{left--;clk(left);if(left<=0){clearInterval(window._tm);toast("انتهى الوقت")}},1000)});
+ $("#stopT").onclick=()=>{clearInterval(window._tm);clk(0)}}
+function announce(){setTimeout(()=>{SFX.win();SFX.boom();fireworks()},200);const T=teams(),top=Math.max(...T.list.map(t=>t.s));
+ if(top===0)return toast("لم يحصل أي فريق على نقاط بعد");
+ const W=T.list.filter(t=>t.s===top),tie=W.length>1,w=$("#win");
+ w.innerHTML=`<div class="win" style="--wc:${TC[W[0].c]}"><canvas class="conf" id="conf"></canvas><div class="wb"><div class="crown">${tie?"تعادل في الصدارة":"الفريق الفائز"}</div>
+  ${W.map(t=>`<h2 style="--wc:${TC[t.c]}">${esc(t.name)}</h2><div class="big3">${STAR+STAR+STAR}</div><p style="font-size:22px;font-weight:800">${AN(t.s)} نقطة</p><div class="names">${t.m.length?t.m.map((m,i)=>`<span style="animation-delay:${i*.12}s">${esc(m)}</span>`).join(""):'<span>أبطال الحلقة</span>'}</div>`).join("")}
+  <p style="color:#BFD3E6">بارك الله فيكم جميعًا. حرفٌ يُتقن… وقيمةٌ تُبنى.</p><button class="btn g" id="winX">إغلاق</button></div></div>`;
+ $("#winX").onclick=()=>w.innerHTML="";confetti($("#conf"))}
+function confetti(c){if(matchMedia("(prefers-reduced-motion: reduce)").matches)return;const x=c.getContext("2d");c.width=innerWidth;c.height=innerHeight;const cols=["#69B7E8","#79CDB5","#F2B84B","#FFF9EF"];
+ const P=Array.from({length:140},()=>({x:Math.random()*c.width,y:-20-Math.random()*c.height,r:4+Math.random()*6,v:2+Math.random()*3,a:Math.random()*6,c:rnd(cols)}));let t=0;
+ const f=()=>{if(!c.isConnected||t++>420)return;x.clearRect(0,0,c.width,c.height);P.forEach(p=>{p.y+=p.v;p.a+=.05;x.fillStyle=p.c;x.beginPath();x.ellipse(p.x+Math.sin(p.a)*10,p.y,p.r,p.r*.6,p.a,0,7);x.fill()});requestAnimationFrame(f)};f()}
+function drawFab(){const f=$("#fab");if(!cfg.fab||!/^#(l|g|ug)(\/|--)/.test(location.hash)){f.innerHTML="";return}const T=teams();
+ f.innerHTML=`<div class="fab" role="group" aria-label="نقاط الفرق">${T.list.map((t,i)=>`<div class="ft" style="--tc:${TC[t.c]}"><span>${esc(t.name)}</span><b data-sc="${i}">${AN(t.s)}</b><button data-fp="${i}" aria-label="نقطة لـ${esc(t.name)}">+</button></div>`).join("")}<button class="ib" id="fabW" style="height:44px">الفائز</button></div>`;
+ f.querySelectorAll("[data-fp]").forEach(b=>b.onclick=()=>addPt(+b.dataset.fp,1));$("#fabW").onclick=announce}
+window.addEventListener("hashchange",drawFab);
+// ================= دليل المعلم
+const planHTML=()=>`<div class="plan">${PLAN.map(([t,m,d])=>`<div><b>${t}</b><small>${AN(m)} دقائق</small><p>${d}</p></div>`).join("")}</div>`;
+function unitGuideHTML(u){const g=GD.units[u.n];const ex=u.lessons.filter(l=>l.kind!=="page"&&l.items.length).slice(0,3);
+ return`<div class="gu-head"><span class="gu-n">${AN(u.n)}</span><div><small>الباب ${UN[u.n]}</small><h2>${u.title}</h2></div></div>
+ <div class="gu-goals">${u.goals.map(x=>`<span>✓ ${x}</span>`).join("")}</div>
+ ${g.defs.length?`<h3 class="gh">📘 تعريفات الباب</h3><div class="gdefs">${g.defs.map(([a,b])=>`<div class="gdef"><b>${a}</b><p>${b}</p></div>`).join("")}</div>`:""}
+ <h3 class="gh">🧭 طريقة القراءة خطوة خطوة</h3><ol class="steps">${g.method.map(x=>`<li><span></span><p>${x}</p></li>`).join("")}</ol>
+ ${ex.length?`<h3 class="gh">🔤 من أمثلة الباب</h3><div class="gex">${ex.map(l=>`<button class="gexc" onclick="go('l/${l.id}/read')"><small>${l.title}</small><div>${l.items.slice(0,4).map(it=>`<span class="ar">${esc(it.w)}</span>`).join("")}</div></button>`).join("")}</div>`:""}
+ <div class="gtwo"><div><h3 class="gh">⚠️ أخطاء شائعة</h3>${g.mis.map(x=>`<div class="mis">${x}</div>`).join("")}</div>
+ <div><h3 class="gh">🏠 رسالة إلى ولي الأمر</h3><div class="home"><span>${g.home}</span><button class="btn s" data-copy="${esc(g.home)}">نسخ الرسالة</button></div></div></div>
+ <h3 class="gh">📚 دروس الباب</h3><div class="glessons">${u.lessons.map(l=>`<button onclick="go('l/${l.id}')"><b>${l.title}</b><small>${l.read?l.read.slice(0,70)+(l.read.length>70?"…":""):"اقرأ الدرس"}</small></button>`).join("")}</div>
+ <p class="gsrc">طريقة القراءة والتعريفات من صفحات «للمعلم» في الكتاب الأصلي. والأخطاء الشائعة ورسالة ولي الأمر من إعداد سند.</p>`}
+function bindGuide(){app.querySelectorAll("[data-copy]").forEach(b=>b.onclick=()=>{const t=b.dataset.copy;try{navigator.clipboard.writeText(t).then(()=>toast("نُسخت الرسالة"),()=>toast(t))}catch(e){toast(t)}})}
+function guideView(open){open=open||S.get("gU",1);if(!isOwner())open=1;S.set("gU",open);const u=B[open-1];
+ app.innerHTML=`<section class="ghero"><div><span class="chip">دليل المعلم</span><h1>كيف أدير درس القاعدة المدنية؟</h1><p>يمرّ كل درس بأربع محطات، وتنتقل المسؤولية فيه من المعلم إلى الطالب خطوة خطوة. زمن الحصة المقترح ${AN(TOTAL)} دقيقة.</p></div></section>
+ ${planHTML()}
+ <div class="gcards"><div class="gcard"><span>🔁</span><b>بروتوكول تصحيح الخطأ</b><p>لا نقول «خطأ»، بل: <b>أنا أقرأ ← نقرأ معًا ← اقرأ وحدك</b>، ثم نعود إلى الحرف بعد دقيقتين.</p></div>
+  <div class="gcard"><span>⭐</span><b>النجوم الثلاث</b><p>مع معلّمي، ثم مع زميلي، ثم وحدي. لا ينتقل الطالب حتى ينال الثالثة.</p></div>
+  <div class="gcard"><span>🖥️</span><b>على السبورة الذكية</b><p>«وضع السبورة» يكبّر الخانات، و«عرض كبير» يعرض خانة واحدة، والألعاب بالفرق.</p></div>
+  <div class="gcard"><span>🎮</span><b>الألعاب والفرق</b><p>${AN(ALLG().length)} لعبة من محتوى الكتاب، وفرق بأسماء الطلاب، وإعلان للفائز.</p></div></div>
+ <h2 class="sec">دليل الأبواب</h2><nav class="upills" aria-label="الأبواب">${B.map(x=>`<button class="${x.n===open?"on":""} ${!isOwner()&&x.n>1?"locked":""}" data-u="${x.n}" aria-label="الباب ${UN[x.n]}">${AN(x.n)}</button>`).join("")}</nav>
+ <section class="gpanel" id="gpanel">${unitGuideHTML(u)}</section>`;
+ bindGuide();app.querySelectorAll(".upills button").forEach(b=>b.onclick=()=>{const n=+b.dataset.u;if(!isOwner()&&n>1)return lockView();go("guide/"+n)});
+ if(+location.hash.split(/\/|--/)[1])setTimeout(()=>$("#gpanel").scrollIntoView({block:"start"}),60)}
+function lessonGuide(u,l){const g=GD.units[u.n];
+ modal(`${mhead("دليل الدرس: "+l.title)}<p class="note"><b>أهداف الباب:</b> ${u.goals.join(" ")}<br><b>صفحة الكتاب:</b> ${l.pages.map(p=>AN(p-1)).join("، ")}${l.read?`<br><b>طريقة القراءة:</b> ${l.read}`:""}</p>
+ <h3>خطة الحصة (${AN(TOTAL)} دقيقة)</h3>${planHTML()}<h3>أخطاء شائعة</h3>${g.mis.map(x=>`<div class="mis">${x}</div>`).join("")}
+ <div class="row"><button class="btn s" onclick="go('guide/${u.n}')">دليل الباب كاملًا</button></div>`,(m,close)=>m.querySelectorAll("button[onclick]").forEach(b=>b.addEventListener("click",close)))}
+// ================= الإعدادات
+function openDrawer(){const d=$("#drawer"),sc=$("#scrim"),h=location.hash,th=root.dataset.theme||"auto",land=document.body.classList.contains("modeL");
+ const tl=(href,ic,t,sub)=>`<a class="dt" href="${href}"><span class="di">${IC(ic,24)}</span><b>${t}</b>${sub?`<small>${sub}</small>`:""}</a>`;
+ const tg=(id,t,sub,on)=>`<label class="tg2"><span>${t}<small>${sub}</small></span><input type="checkbox" id="${id}" ${on?"checked":""}><i class="sw" aria-hidden="true"></i></label>`;
+ const TH=[["auto","🌗","تلقائي"],["light","☀️","نهاري"],["dark","🌙","ليلي"],["warm","📜","ورقي"]];
+ d.innerHTML=`<div class="dhead"><img src="img/logo_web.webp" alt="سَنَد"><div><b>${land?"منصة سَنَد التعليمية":"القاعدة المدنية"}</b><span class="beta">نسخة تجريبية</span></div><button class="ib" id="dX" aria-label="إغلاق القائمة">✕</button></div>
+ <div class="dacc">${role?`<span class="av">${IC(isOwner()?"unlock":"eye")}</span><div><b>${isOwner()?"الحساب الكامل":"حساب الضيف"}</b><small>${isOwner()?"كل الأبواب والكتاب والدليل":"عيّنة: الباب الأول"}</small></div><button class="ib" id="lo">${IC("logout",18)} خروج</button>`:`<span class="av">${IC("key")}</span><div><b>لم تسجّل الدخول</b><small>ادخل برمزك لفتح البرنامج</small></div><a class="ib login" href="#login">دخول</a>`}</div>
+ ${land?`<div class="dg"><h4>الواجهة التعريفية</h4><div class="dtiles">${tl("#","home","الرئيسية")}${tl("#why","bulb","لماذا سَنَد؟")}${tl("#journey","route","رحلة الطفل")}${tl("#programs","layers","البرامج")}${tl("#orgs","school","للجهات")}${tl("#app","phone","التطبيق","قريبًا")}</div></div>
+  <div class="dg"><a class="dbig" href="#program"><span>${IC("book",30)}</span><div><b>ادخل البرنامج</b><small>الكتاب التفاعلي، وكتاب الطالب، والدليل، والألعاب</small></div></a></div>`
+ :`<div class="dg"><h4>البرنامج</h4><div class="dtiles">${tl("#program","book","الكتاب التفاعلي")}${tl("#sb","sbook","كتاب الطالب")}${tl("#guide","compass","دليل المعلم")}${tl("#class","game","الألعاب",AN(ALLG().length)+" لعبة")}${tl("#welcome","wave","الترحيب")}${tl("#","home","الواجهة")}</div></div>
+  <details class="du dg" ${/^#(u|l|g|ug)/.test(h)?"open":""}><summary><h4>أبواب الكتاب ‹</h4></summary>${B.map(u=>`<a class="dl ${!isOwner()&&u.n>1?"locked":""}" href="#u/${u.n}"><span class="n">${AN(u.n)}</span>${u.title}<span class="pc"><span class="mini"><i style="width:${uProg(u)}%"></i></span></span></a>`).join("")}</details>`}
+ <div class="dg"><h4>تعرّف على سَنَد</h4><a class="dl" href="#profile"><span class="n">${IC("download",16)}</span>الملف التعريفي بالمنصة PDF</a></div>
+ <div class="dg"><h4>المظهر</h4><div class="seg" role="radiogroup" aria-label="المظهر">${TH.map(([k,i,t])=>`<button role="radio" aria-checked="${th===k}" class="${th===k?"on":""}" data-th="${k}"><span>${i}</span>${t}</button>`).join("")}</div>
+  <div class="seg two" role="radiogroup" aria-label="حجم الخط"><button class="${cfg.big?"":"on"}" data-fs="0"><span style="font-size:14px">أ</span>خط عادي</button><button class="${cfg.big?"on":""}" data-fs="1"><span style="font-size:20px">أ</span>خط كبير</button></div></div>
+ ${land?"":`<div class="dg"><h4>الإعدادات</h4>${tg("cX","أصوات الفوز والفرح","صوت عند الإجابة والفوز، ومفرقعات.",cfg.sfx)}${tg("cT","وضع السبورة","يكبّر الحروف والخانات للّمس.",cfg.teach)}${tg("cS","النطق الآلي الاحتياطي","إذا لم يتوفّر صوت القارئ.",cfg.tts)}${tg("cF","شريط نقاط الفرق","في الدروس والألعاب.",cfg.fab)}</div>
+ <div class="dg"><h4>أدوات</h4>${isOwner()&&!window.NO_EMBED?`<a class="dl" href="sanad-student-book.pdf" download><span class="n">${IC("download",16)}</span>تنزيل كتاب الطالب PDF</a>`:""}<button class="dl" id="cV"><span class="n">${IC("play",16)}</span>ضبط مقاطع الدروس</button><button class="dl" id="cR"><span class="n">${IC("reset",16)}</span>تصفير التقدّم في هذا الجهاز</button></div>`}
+ <a class="dwa" href="${WA}" target="_blank" rel="noopener"><span class="wic">${$("#waFab").querySelector("svg").outerHTML}</span><span><small>تواصل معنا عبر واتساب</small><bdi dir="ltr">058 327 1994</bdi></span></a>
+ <p class="dnote">© ٢٠٢٦ منصة سَنَد التعليمية. جميع الحقوق محفوظة.</p>`;
+ const close=()=>{d.classList.remove("open");d.setAttribute("aria-hidden","true");sc.hidden=true;$("#menuBtn").setAttribute("aria-expanded","false")};
+ d.classList.add("open");d.setAttribute("aria-hidden","false");sc.hidden=false;$("#menuBtn").setAttribute("aria-expanded","true");sc.onclick=close;$("#dX").onclick=close;$("#dX").focus();
+ d.querySelectorAll("a.dl,a.dt,a.dbig,a.ib").forEach(a=>{if(!a.hasAttribute("download"))a.href=a.getAttribute("href").replace(/\//g,window.NO_EMBED?"--":"/");a.addEventListener("click",close)});
+ d.querySelectorAll("[data-th]").forEach(b=>b.onclick=()=>{const k=b.dataset.th;if(k==="auto"){delete root.dataset.theme;S.set("theme",null)}else{root.dataset.theme=k;S.set("theme",k)}openDrawer()});
+ d.querySelectorAll("[data-fs]").forEach(b=>b.onclick=()=>{cfg.big=b.dataset.fs==="1";saveCfg();openDrawer()});
+ const on=(id,f)=>{const e=d.querySelector(id);if(e)e.onchange=f};
+ on("#cT",e=>{cfg.teach=e.target.checked;saveCfg()});on("#cX",e=>{cfg.sfx=e.target.checked;saveCfg();if(cfg.sfx)SFX.ok()});on("#cS",e=>{cfg.tts=e.target.checked;saveCfg()});on("#cF",e=>{cfg.fab=e.target.checked;saveCfg()});
+ const cv=d.querySelector("#cV");if(cv)cv.onclick=()=>{close();vidModal()};
+ const lo=d.querySelector("#lo");if(lo)lo.onclick=()=>{close();logout()};
+ const r=d.querySelector("#cR");if(r)r.onclick=()=>{if(r.dataset.sure){prog={};save();close();route();toast("صُفّر التقدّم")}else{r.dataset.sure=1;r.lastChild.textContent="اضغط مرة أخرى للتأكيد"}};
+ document.addEventListener("keydown",function k(e){if(e.key==="Escape"){close();document.removeEventListener("keydown",k)}})}
+$("#menuBtn").onclick=openDrawer;$("#tabMenu").onclick=openDrawer;
+function vidModal(){const cur=vids();
+ const yid=s=>{s=(s||"").trim();const r=s.match(/(?:v=|youtu\.be\/|embed\/|shorts\/)([\w-]{11})/);return r?r[1]:s};
+ const tsec=s=>{s=(s||"").trim();if(!s)return"";if(/^\d+$/.test(s))return+s;return s.split(":").map(Number).reduce((a,b)=>a*60+b,0)};
+ const fmt=n=>n===""||n==null?"":`${Math.floor(n/60)}:${String(n%60).padStart(2,"0")}`;
+ modal(`${mhead("ضبط مقاطع الدروس")}<p class="note">لكل درس رابط مقطعه من سلسلة «قراءة القاعدة المدنية». يمكنك تغيير الرابط، أو تحديد بداية ونهاية بالدقائق مثل <b dir="ltr">3:25</b>. يُحفظ الضبط في هذا الجهاز، وانسخ الناتج إلى ملف <b>videos.js</b> ليصل إلى الجميع.</p>
+ <div style="overflow-x:auto"><table class="vt"><tr><th>الدرس</th><th>الرابط</th><th>البداية</th><th>النهاية</th></tr>${B.flatMap(u=>u.lessons.map(l=>{const v=cur[l.id]||{};return`<tr><td style="min-width:150px"><small>الباب ${UN[u.n]}</small><br>${l.title}</td><td><input dir="ltr" data-id="${l.id}" data-f="v" value="${v.v||""}" aria-label="رابط المقطع"></td><td><input dir="ltr" data-id="${l.id}" data-f="s" value="${fmt(v.s)}" placeholder="0:00" aria-label="البداية"></td><td><input dir="ltr" data-id="${l.id}" data-f="e" value="${fmt(v.e)}" placeholder="—" aria-label="النهاية"></td></tr>`})).join("")}</table></div>
+ <h3>للنسخ إلى videos.js</h3><textarea class="roster" id="vj" readonly dir="ltr" style="font-family:monospace"></textarea><div class="row"><button class="btn" id="vS">حفظ</button></div>`,(m,close)=>{
+  const collect=()=>{const o={};m.querySelectorAll("input[data-id]").forEach(i=>{const id=i.dataset.id;o[id]=o[id]||{};const f=i.dataset.f;o[id][f]=f==="v"?yid(i.value):tsec(i.value)});const out={};for(const id in o){const x=o[id];if(!x.v)continue;out[id]={v:x.v};if(x.s!=="")out[id].s=x.s;if(x.e!=="")out[id].e=x.e}return out};
+  const upd=()=>{m.querySelector("#vj").value="lessons: "+JSON.stringify(collect(),null,1)};upd();m.querySelectorAll("input").forEach(i=>i.oninput=upd);
+  m.querySelector("#vS").onclick=()=>{S.set("vids",collect());close();route();toast("حُفظ ضبط المقاطع")}})}
+
+// ================= كتاب الطالب
+const SB=window.SBOOK||{pages:[],toc:[]},NP=SB.pages.length,bimg=n=>`book/${String(n).padStart(2,"0")}.webp`;
+const sbPages=lid=>SB.pages.map((p,i)=>p.l===lid?i+1:0).filter(Boolean).slice(0,3);window.sbPages=sbPages;
+const sbFirst=lid=>{const i=SB.pages.findIndex(p=>p.l===lid);return i<0?0:i+1};window.sbFirst=sbFirst;
+function sbHome(){
+ const groups=[["البداية",1,SB.toc[0]?SB.toc[0][1]-1:4],...SB.toc.map(([n,p],i)=>["الباب "+UN[n]+": "+B[n-1].title,p,(SB.toc[i+1]?SB.toc[i+1][1]:NP+1)-1])];
+ app.innerHTML=`<h1 style="font-family:TD;font-weight:900;margin:0 0 4px;font-size:clamp(28px,4vw,40px)">كتاب الطالب <span class="beta">نسخة تجريبية</span></h1><p class="lead">كتاب الطالب للطباعة (${AN(NP)} صفحة)، مربوط بالكتاب التفاعلي: من كل صفحة تنتقل إلى درسها التفاعلي، ومن كل درس إلى صفحته في الكتاب.</p>
+ <div class="row"><button class="btn" onclick="go('sb/1')">افتح الكتاب</button>${isOwner()?(NO_EMBED?`<span class="note" style="margin:0">التنزيل متاح من نسخة الموقع المستقلة.</span>`:`<a class="btn g" href="sanad-student-book.pdf" download>⬇ تنزيل الكتاب PDF</a>`):`<span class="note" style="margin:0">حساب الضيف: تُعرض أول ${AN(GUEST_PAGES)} صفحة، والتنزيل للحساب الكامل.</span>`}</div>
+ ${groups.map(([t,a,b])=>`<h2 class="sec" style="font-size:22px;margin-top:24px">${t}</h2><div class="sbunits">${Array.from({length:b-a+1},(_,k)=>a+k).map(n=>`<button class="sbt ${!isOwner()&&n>GUEST_PAGES?"locked":""}" onclick="go('sb/${n}')"><img src="${bimg(n)}" alt="صفحة ${AN(n)}" loading="lazy"><small>صفحة ${AN(n)}</small></button>`).join("")}</div>`).join("")}`}
+function sbView(n){
+ n=Math.max(1,Math.min(NP,n));const wide=innerWidth>=1000&&innerWidth>innerHeight;
+ let pages=[n];if(wide&&n>1){const r=n%2===0?n:n-1;pages=[r,r+1].filter(x=>x<=NP)}
+ const meta=pages.map(p=>SB.pages[p-1]),lid=(meta.find(m=>m.l)||{}).l,unit=(meta.find(m=>m.u)||{}).u;
+ const step=pages.length===2?2:1,prev=pages[0]-1,next=pages[pages.length-1]+1;
+ app.innerHTML=`<nav class="crumb"><button onclick="go('sb')">كتاب الطالب</button> ‹ <span>${unit?"الباب "+UN[unit]:"البداية"}</span></nav>
+ <div class="viewer"><div class="vbar"><button class="btn s" id="vp" ${prev<1?"disabled":""}>› السابقة</button><span class="pgn">صفحة ${pages.map(AN).join("–")} من ${AN(NP)}</span><button class="btn s" id="vn" ${next>NP?"disabled":""}>التالية ‹</button>
+  ${lid?`<button class="btn g" onclick="go('l/${lid}/read')">افتح الدرس التفاعلي</button>`:""}${unit?`<button class="btn s" onclick="go('u/${unit}')">الباب ${UN[unit]}</button>`:""}</div>
+ <div class="spread ${pages.length===2?"two":"one"}" id="spr">${pages.map(p=>`<img src="${bimg(p)}" alt="صفحة ${AN(p)} من كتاب الطالب">`).join("")}</div>
+ <div class="strip" id="strip">${Array.from({length:NP},(_,k)=>k+1).map(p=>`<button class="${pages.includes(p)?"on":""}" data-p="${p}" aria-label="صفحة ${AN(p)}"><img src="${bimg(p)}" alt="" loading="lazy"></button>`).join("")}</div></div>`;
+ const to=k=>go("sb/"+k);$("#vp").onclick=()=>prev>=1&&to(prev);$("#vn").onclick=()=>next<=NP&&to(next);
+ app.querySelectorAll("[data-p]").forEach(b=>b.onclick=()=>to(+b.dataset.p));
+ const on=app.querySelector(".strip .on");on&&on.scrollIntoView({inline:"center",block:"nearest"});
+ let x0=null;const sp=$("#spr");sp.addEventListener("touchstart",e=>{x0=e.touches[0].clientX},{passive:true});sp.addEventListener("touchend",e=>{if(x0==null)return;const dx=e.changedTouches[0].clientX-x0;x0=null;if(Math.abs(dx)>50){dx>0?(next<=NP&&to(next)):(prev>=1&&to(prev))}});
+ window.onkeydown=e=>{if(!location.hash.includes("sb"))return;if(e.key==="ArrowLeft"&&next<=NP)to(next);if(e.key==="ArrowRight"&&prev>=1)to(prev)}}
+window.addEventListener("resize",()=>{if(/^#sb(\/|--)\d/.test(location.hash))route()});
+
+
+
+// ================= أصوات الفوز والفرح (تُولَّد في المتصفح، بلا ملفات)
+const SFX=(()=>{let ac=null;const A=()=>{if(!cfg.sfx)return null;try{ac=ac||new (window.AudioContext||window.webkitAudioContext)();if(ac.state==="suspended")ac.resume()}catch(e){ac=null}return ac};
+ const tone=(f,t0,d,type="sine",v=.18,f2)=>{const a=A();if(!a)return;const o=a.createOscillator(),g=a.createGain(),t=a.currentTime+t0;o.type=type;o.frequency.setValueAtTime(f,t);if(f2)o.frequency.exponentialRampToValueAtTime(f2,t+d);g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(v,t+.015);g.gain.exponentialRampToValueAtTime(.0008,t+d);o.connect(g).connect(a.destination);o.start(t);o.stop(t+d+.05)};
+ const noise=(t0,d,v=.25,hp=900)=>{const a=A();if(!a)return;const n=a.sampleRate*d,b=a.createBuffer(1,n,a.sampleRate),c=b.getChannelData(0);for(let i=0;i<n;i++)c[i]=(Math.random()*2-1)*Math.pow(1-i/n,3);const s=a.createBufferSource(),f=a.createBiquadFilter(),g=a.createGain();f.type="highpass";f.frequency.value=hp;g.gain.value=v;s.buffer=b;s.connect(f).connect(g).connect(a.destination);s.start(a.currentTime+t0)};
+ return{ok(){tone(660,0,.12,"triangle");tone(990,.09,.18,"triangle")},
+  no(){tone(220,0,.18,"sine",.12,170)},
+  pop(){tone(880,0,.08,"square",.06,1400)},
+  win(){[523,659,784,1047].forEach((f,i)=>tone(f,i*.12,.28,"triangle",.16));tone(1319,.5,.5,"sine",.12)},
+  cheer(){for(let i=0;i<6;i++)noise(i*.05,.35,.05,1800);[784,988,1175].forEach((f,i)=>tone(f,.1+i*.09,.3,"triangle",.1))},
+  boom(){for(let k=0;k<4;k++){const t=k*.45;tone(300,t,.5,"sine",.12,60);noise(t+.02,.6,.22,700);for(let j=0;j<8;j++)noise(t+.25+j*.04,.08,.06,3000)}}}})();
+window.SFX=SFX;
+function fireworks(){if(matchMedia("(prefers-reduced-motion: reduce)").matches)return;const c=document.createElement("canvas");c.className="conf";document.body.append(c);const x=c.getContext("2d");c.width=innerWidth;c.height=innerHeight;
+ const cols=["#69B7E8","#79CDB5","#F2B84B","#F2A08A","#FFFDF9"],P=[];
+ const burst=(bx,by)=>{for(let i=0;i<70;i++){const a=Math.random()*Math.PI*2,v=2+Math.random()*5;P.push({x:bx,y:by,vx:Math.cos(a)*v,vy:Math.sin(a)*v,l:60+Math.random()*30,c:cols[i%5]})}};
+ [0,450,900,1300].forEach((t,i)=>setTimeout(()=>burst(c.width*(.2+.6*Math.random()),c.height*(.2+.3*Math.random())),t));
+ let f=0;const tick=()=>{if(f++>200){c.remove();return}x.clearRect(0,0,c.width,c.height);P.forEach(p=>{if(p.l<=0)return;p.x+=p.vx;p.y+=p.vy;p.vy+=.06;p.vx*=.985;p.l--;x.globalAlpha=Math.max(0,p.l/80);x.fillStyle=p.c;x.beginPath();x.arc(p.x,p.y,2.6,0,7);x.fill()});x.globalAlpha=1;requestAnimationFrame(tick)};tick()}
+window.fireworks=fireworks;
+
+
+// ================= أيقونات خطّية موحّدة
+const IP={lock:'<rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/>',unlock:'<rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 7.5-2"/>',
+ eye:'<path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/>',key:'<circle cx="7.5" cy="15.5" r="4.5"/><path d="M10.7 12.3 21 2m-4 4 3 3m-6 0 2 2"/>',
+ user:'<circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/>',logout:'<path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9"/>',
+ book:'<path d="M2 4h7a3 3 0 0 1 3 3v14a2 2 0 0 0-2-2H2zM22 4h-7a3 3 0 0 0-3 3v14a2 2 0 0 1 2-2h8z"/>',sbook:'<path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V3H6.5A2.5 2.5 0 0 0 4 5.5z"/><path d="M8 7h8M8 11h6"/>',
+ compass:'<circle cx="12" cy="12" r="10"/><path d="m16 8-2 6-6 2 2-6z"/>',game:'<rect x="2" y="7" width="20" height="12" rx="6"/><path d="M7 11v4M5 13h4"/><circle cx="16" cy="12" r="1"/><circle cx="18" cy="14" r="1"/>',
+ home:'<path d="M3 11 12 3l9 8v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z"/>',wave:'<path d="M7 11V5a2 2 0 0 1 4 0v5m0-1V4a2 2 0 0 1 4 0v6m0-3a2 2 0 0 1 4 0v6a8 8 0 0 1-8 8h-1a7 7 0 0 1-6-3l-2-4a2 2 0 0 1 3-2l2 2"/>',
+ bulb:'<path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.3 1 2.3h6c0-1 .4-1.8 1-2.3A7 7 0 0 0 12 2z"/>',route:'<circle cx="6" cy="19" r="3"/><circle cx="18" cy="5" r="3"/><path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15"/>',
+ layers:'<path d="m12 2 10 5-10 5L2 7z"/><path d="m2 17 10 5 10-5M2 12l10 5 10-5"/>',school:'<path d="M22 10 12 5 2 10l10 5z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/>',
+ phone:'<rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18h2"/>',download:'<path d="M12 3v12m0 0 5-5m-5 5-5-5M4 21h16"/>',play:'<path d="m7 4 13 8-13 8z"/>',reset:'<path d="M3 12a9 9 0 1 0 3-6.7L3 8M3 3v5h5"/>',check:'<path d="m5 12 5 5L20 7"/>'};
+const IC=(k,sz=22)=>`<svg class="ico" width="${sz}" height="${sz}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${IP[k]}</svg>`;
+
+// ================= الحسابات: رمز المالك ورمز الضيف (يُحفظ في الجهاز فقط)
+const HS=s=>{let h=5381;for(const ch of s)h=(((h<<5)+h)^ch.codePointAt(0))>>>0;let g=2166136261;for(const ch of s+"sanad")g=Math.imul(g^ch.codePointAt(0),16777619)>>>0;return h.toString(36)+g.toString(36)};
+const ROLES={"1sa9ztv1n5v334":"owner","1rcw1uqs8inrt":"guest"};
+let role=S.get("role",null);if(role&&!["owner","guest"].includes(role))role=null;
+const isOwner=()=>role==="owner",GUEST_PAGES=14;
+function gate(h){const k=h[0];if(k===""||LSEC.includes(k)||["privacy","app","login","profile"].includes(k))return true;if(!role)return"login";if(isOwner())return true;
+ const un=k==="u"||k==="ug"?+h[1]:(k==="l"||k==="g")?+String(h[1]).split("-")[0]:0;if(un&&un!==1)return"lock";if(k==="sb"&&+h[1]>GUEST_PAGES)return"lock";return true}
+function drawLogin(){const b=$("#loginBtn");b.innerHTML=role?IC(isOwner()?"user":"eye",18)+(isOwner()?" حسابي":" ضيف")+'<span class="rolechip">'+(isOwner()?"كامل":"عيّنة")+"</span>":IC("key",18)+" دخول البرنامج";b.onclick=()=>role?openDrawer():go("login")}
+function loginView(next){next=next&&next!=="#login"?next:"#program";
+ app.innerHTML=`<section class="login-card"><span class="lk">${IC("lock",30)}</span><img src="img/logo_web.webp" alt="سَنَد"><h1>الدخول إلى البرنامج</h1><p style="color:var(--ink2);line-height:1.8;margin:0">اكتب رمز الدخول. رمز الضيف يعرض عيّنة من البرنامج، والرمز الكامل يفتح كل الأبواب والكتاب والدليل.</p>
+ <form id="lf"><label for="code" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap">رمز الدخول</label><input id="code" inputmode="numeric" autocomplete="off" placeholder="••••••" aria-label="رمز الدخول"><button class="btn" style="width:100%" type="submit">دخول</button></form><div class="fb" id="fb" role="status"></div>
+ <div class="two2"><div class="acc full"><span class="ai">${IC("unlock",26)}</span><b>الحساب الكامل</b><small>كل الأبواب الاثني عشر، وكتاب الطالب كاملًا مع التنزيل، ودليل المعلم، وكل الألعاب.</small></div><div class="acc guest"><span class="ai">${IC("eye",26)}</span><b>حساب الضيف</b><small>الباب الأول، وأول ${AN(GUEST_PAGES)} صفحة من كتاب الطالب، وألعاب الباب الأول.</small></div></div>
+ <p style="margin:16px 0 0"><a class="btn wa2" href="${WA}" target="_blank" rel="noopener">اطلب رمز الدخول عبر واتساب</a></p></section>`;
+ $("#lf").onsubmit=e=>{e.preventDefault();const v=$("#code").value.replace(/[٠-٩]/g,d=>"٠١٢٣٤٥٦٧٨٩".indexOf(d)).replace(/[۰-۹]/g,d=>"۰۱۲۳۴۵۶۷۸۹".indexOf(d)).replace(/\s/g,"");const r=ROLES[HS(v)];
+  if(!r){$("#fb").className="fb no";$("#fb").textContent="الرمز غير صحيح. تأكد منه وحاول مرة أخرى.";return}
+  role=r;S.set("role",r);toast(r==="owner"?"أهلًا بك: الحساب الكامل":"أهلًا بك: حساب الضيف");location.hash=next.replace(/^#/,"")||"program";route()}}
+function lockView(){app.innerHTML=`<section class="lockbox"><div class="ic">${IC("lock",40)}</div><h2>هذا الجزء للحساب الكامل</h2><p style="color:var(--ink2);line-height:1.9">حساب الضيف يعرض عيّنة من البرنامج: الباب الأول، وأول ${AN(GUEST_PAGES)} صفحة من كتاب الطالب. للاطلاع على البرنامج كاملًا تواصل معنا.</p><div class="row" style="justify-content:center"><button class="btn" onclick="go('program')">العودة إلى البرنامج</button><a class="btn wa2" href="${WA}" target="_blank" rel="noopener">تواصل معنا</a></div></section>`}
+function logout(){role=null;S.set("role",null);toast("تم الخروج");go("")}
+// ================= مكتبة الألعاب
+const XG=window.XGAMES||{};Object.entries(XG).forEach(([k,v])=>{G[k]=[v.i,v.t,v.d]});
+const KEY=(u,l)=>it=>{if(!it)return null;if(l.kind==="letters"||l.kind==="forms")return it.name?{v:it.name,ar:1}:null;if(it.h)return{v:hLabel(u,it.h)};if(it.c)return{v:it.c};if(it.t)return{v:it.t,ar:1};if(l.kind==="build")return{v:it.s[it.s.length-1],ar:1};return null};
+function availGames(u,l){if(l.kind==="page")return l.games.slice();const c={items:l.items,K:KEY(u,l),l};return[...l.games,...Object.keys(XG).filter(k=>{try{return XG[k].ok(l,c)}catch(e){return false}})]}
+const ALLG=()=>[...new Set(Object.keys(G))];
+
+
+// ================= بطاقات الدرس ومؤشرات الأداء
+const KPI=(u,l)=>{const p=P(l.id),av=availGames(u,l),played=Object.keys(p.g||{}),best=played.map(k=>p.g[k]),full=best.filter(x=>x>=3).length;
+ const read=Math.round(100*Math.min(3,p.m)/3),games=played.length?Math.round(100*best.reduce((a,b)=>a+b,0)/(3*played.length)):0,cover=av.length?Math.round(100*played.length/av.length):0;
+ const total=Math.round(read*.5+games*.3+cover*.2);return{read,games,cover,total,played:played.length,full,av:av.length,n:p.n||0,acc:p.acc||0,last:p.d}};
+const level=v=>v>=90?["متقن","var(--ok)"]:v>=60?["متقدّم","var(--hi)"]:v>=30?["في الطريق","#B07A12"]:["بداية","var(--soft)"];
+const ring=(v,lab,col)=>`<div class="ring" style="--v:${v};--c:${col||"var(--mint)"}"><svg viewBox="0 0 36 36"><circle cx="18" cy="18" r="15.9" class="bg"/>${v>0?`<circle cx="18" cy="18" r="15.9" class="fg" style="stroke-dasharray:${v} 100"/>`:""}</svg><b>${AN(v)}٪</b><small>${lab}</small></div>`;
+function cardsView(u,l){const g=GD.units[u.n],k=KPI(u,l),[lv,lc]=level(k.total),ex=l.items.filter(x=>x.w).slice(0,8),def=(g.defs.find(d=>l.title.includes(d[0].replace(/^ال/,"")))||g.defs[0]);
+ app.innerHTML=crumb([["الباب "+UN[u.n],"u/"+u.n],[l.title,"l/"+l.id],["بطاقات الدرس"]])+`<div class="lhead"><h1>بطاقات الدرس: ${l.title}</h1><button class="btn s" onclick="go('l/${l.id}')">العودة إلى الدرس</button></div>
+ <div class="fcards">
+  <article class="fcard c-goal"><header><span>١</span>بطاقة الهدف</header><h3>بعد هذا الدرس يستطيع الطالب أن:</h3><ul>${u.goals.slice(0,3).map(x=>`<li>${x}</li>`).join("")}</ul><footer><b>مؤشر الإتقان</b> يقرأ الخانات وحده بلا خطأ، وينال النجمة الثالثة.</footer></article>
+  ${def?`<article class="fcard c-def"><header><span>٢</span>بطاقة المفهوم</header><h3>${def[0]}</h3><p>${def[1]}</p><footer>من صفحة «للمعلم» في الكتاب الأصلي</footer></article>`:""}
+  <article class="fcard c-how"><header><span>${def?"٣":"٢"}</span>بطاقة طريقة القراءة</header><p>${l.read||g.method[0]}</p><div class="flow2"><span>أنا أقرأ</span><i>←</i><span>نقرأ معًا</span><i>←</i><span>اقرأ وحدك</span></div><footer>إذا أخطأ نعود إلى الحرف بعد دقيقتين.</footer></article>
+  ${ex.length?`<article class="fcard c-ex wide"><header><span>${def?"٤":"٣"}</span>بطاقة الأمثلة</header><div class="exg">${ex.map((x,i)=>`<button class="exb" data-i="${l.items.indexOf(x)}"><span class="ar">${esc(x.w)}</span></button>`).join("")}</div><footer>المس الخانة لتسمعها.</footer></article>`:""}
+  <article class="fcard c-kpi wide"><header><span>★</span>بطاقة مؤشرات الأداء</header>
+   <div class="kpis">${ring(k.total,"الإتقان العام",lc)}${ring(k.read,"القراءة (النجوم)","var(--gold)")}${ring(k.games,"نتائج الألعاب","var(--sky)")}${ring(k.cover,"تغطية الألعاب","var(--mint)")}</div>
+   <div class="kgrid"><div><b>${lv}</b><small>المستوى</small></div><div><b>${AN(Math.min(3,P(l.id).m))} / ٣</b><small>نجوم القراءة</small></div><div><b>${AN(k.played)} / ${AN(k.av)}</b><small>ألعاب جُرّبت</small></div><div><b>${AN(k.full)}</b><small>ألعاب بثلاث نجوم</small></div><div><b>${AN(k.n)}</b><small>مرات اللعب</small></div><div><b>${AN(k.acc)}٪</b><small>متوسط الدقة</small></div></div>
+   <footer>المؤشر العام = القراءة ٥٠٪ + نتائج الألعاب ٣٠٪ + تغطية الألعاب ٢٠٪. يُحفظ في هذا الجهاز فقط.</footer></article></div>
+ <div class="row"><button class="btn" onclick="go('l/${l.id}/master')">إلى محطة «يتقن»</button><button class="btn g" onclick="go('l/${l.id}/play')">🎮 ألعاب الدرس</button></div>`;
+ app.querySelectorAll(".exb").forEach(b=>b.onclick=()=>{const it=l.items[+b.dataset.i];play(l.id,b.dataset.i+"-0",it.name||it.w)})}
+function unitKPI(u){const ks=u.lessons.map(l=>KPI(u,l)),avg=Math.round(ks.reduce((a,b)=>a+b.total,0)/ks.length),done=ks.filter(k=>k.total>=90).length;
+ return`<section class="ukpi">${ring(avg,"إتقان الباب",level(avg)[1])}<div class="kgrid"><div><b>${AN(done)} / ${AN(ks.length)}</b><small>دروس مُتقنة</small></div><div><b>${AN(ks.reduce((a,b)=>a+b.played,0))}</b><small>ألعاب جُرّبت</small></div><div><b>${AN(ks.reduce((a,b)=>a+b.full,0))}</b><small>ألعاب بثلاث نجوم</small></div><div><b>${level(avg)[0]}</b><small>مستوى الباب</small></div></div></section>`}
+
+// ================= الواجهة التعريفية لمنصة سند
+const WA="https://wa.me/966583271994?text="+encodeURIComponent("السلام عليكم، أرغب في معرفة المزيد عن برنامج سَنَد لتعليم القراءة وفق منهج القاعدة المدنية");
+$("#waFab").href=WA;
+function landing(){
+ const deco="ب ت ث ج ح خ د ذ ر ز س ش".split(" ").map((c,i)=>`<span style="right:${(i*37)%95}%;top:${(i*53)%90}%;font-size:${60+(i*23)%90}px">${c}</span>`).join("");
+ const F=[["ب","رحلة تعليمية متكاملة","من أول حرف إلى قراءة الكلمات والجمل، في دروس قصيرة متدرجة.","var(--skyS)"],["ق","غرس القيم بأسلوب ممتع","لكل باب قيمة يعيشها الطفل وهو يتعلم.","var(--mintS)"],["م","متابعة وتقارير مستمرة","نشارك الأسرة صورة واضحة عن تقدم الطفل.","var(--goldS)"],["★","تحفيز ومكافآت","نجوم الإتقان، وشهادة لكل باب، وألعاب تثبّت التعلم.","var(--skyS)"]];
+ const J=[["يسمع","أنا أقرأ","يقرأ المعلم أو القارئ، والطفل يستمع وينظر ويشير.","var(--sky)"],["يقرأ","نقرأ معًا","يقرأ الطفل مع معلمه بصوت واحد، وإصبعه تحت الحرف.","var(--mint)"],["يتقن","يقرأ وحده","يقرأ الطفل وحده حتى ينال النجمة الثالثة.","var(--gold)"],["يلعب","نشاط يثبّت","لعبة أو نشاط ورقي يثبّت ما تعلّمه.","var(--navy)"]];
+ app.innerHTML=`<section class="lh" aria-label="منصة سند"><div class="deco" aria-hidden="true">${deco}</div><div style="position:relative">
+  <img class="logo" src="img/logo_web.webp" alt="سَنَد"><span class="beta" style="margin-right:8px">نسخة تجريبية</span>
+  <h1>نُتقن الحرف… ونزرع القيم</h1><p>منصة سَنَد التعليمية تساعد البنين من ٦ إلى ٩ سنوات على تعلم القراءة، وتلقين جزء عمّ، واكتساب القيم المناسبة، في رحلة متدرجة ممتعة يشارك فيها ولي الأمر.</p>
+  <div class="row acts"><button class="btn" onclick="go('program')">تعرّف على البرنامج</button><a class="btn wa2" href="${WA}" target="_blank" rel="noopener">تواصل معنا</a></div></div>
+  <img class="child" src="img/child_web.webp" alt="شخصية سند"></section>
+ <section class="lsec" id="s-why"><h2>لماذا سَنَد؟</h2><div class="feat4">${F.map(([i,a,b,c])=>`<div class="f4" style="--c:${c}"><span class="ic">${i}</span><b>${a}</b><p>${b}</p></div>`).join("")}</div></section>
+ <section class="lsec" id="s-journey"><h2>رحلة الطفل</h2><p class="lead">يسمع ← يقرأ ← يتقن ← يلعب</p><div class="jrn">${J.map(([a,b,c,col])=>`<div class="jst" style="--c:${col}"><b>${a}</b><small>${b}</small><p>${c}</p></div>`).join("")}</div>
+  <p class="why"><b>لماذا هي فعّالة؟</b> تنتقل المسؤولية فيها خطوة خطوة من المعلم إلى الطفل: من «أنا أقرأ» إلى «نقرأ معًا» ثم «يقرأ وحده». فلا ينتقل الطفل إلى الجديد حتى يتقن ما قبله، وإذا أخطأ عدنا معه: أنا أقرأ ← نقرأ معًا ← اقرأ وحدك.</p></section>
+ <section class="lsec" id="s-programs"><h2>برامج سَنَد</h2><div class="prog1"><img src="img/cover.webp" alt="غلاف كتاب القاعدة المدنية"><div><span class="beta">نسخة تجريبية</span><h3>برنامج القاعدة المدنية لتعليم القراءة</h3><p>اثنا عشر بابًا من الحروف الهجائية إلى مصطلحات رسم المصحف، وفق منهج القاعدة المدنية لفضيلة الشيخ د. عبد المحسن بن محمد القاسم، إمام وخطيب المسجد النبوي.</p></div><button class="btn g" onclick="go('program')">افتح البرنامج</button></div></section>
+ <section class="lsec"><h2>داخل البرنامج</h2><div class="inside">
+  <button class="ins" onclick="go('sb/16')"><span class="shot"><img src="book/16.webp" alt="صفحة من كتاب الطالب" loading="lazy"></span><div class="t"><b>كتاب الطالب</b><p>كتاب مطبوع بصفحات مرتبة، ورمز مقطع في كل صفحة.</p></div></button>
+  <button class="ins" onclick="go('l/2-1/read')"><span class="shot" style="background:var(--card)"><span class="mini3" style="font-family:TT;font-size:40px;gap:8px">بَ تِ ثُ</span></span><div class="t"><b>الكتاب التفاعلي</b><p>للسبورة الذكية: قراءة، وعرض كبير، وألعاب لكل درس.</p></div></button>
+  <button class="ins" onclick="go('guide')"><span class="shot" style="background:linear-gradient(135deg,var(--navy),var(--deep));color:#fff;flex-direction:column;gap:6px;padding:12px;display:flex;align-items:stretch;justify-content:center;text-align:right"><b style="font-size:14px;color:var(--gold)">🧭 طريقة القراءة</b>${[1,2,3].map(n=>`<span style="display:flex;gap:6px;align-items:center;font-size:12px"><i style="font-style:normal;width:20px;height:20px;border-radius:50%;background:#fff2;display:grid;place-items:center">${AN(n)}</i>${["يقرأ الحرف مع حركته","ثم يضمّ المقطع","ثم يقرأ الكلمة"][n-1]}</span>`).join("")}</span><div class="t"><b>دليل المعلم</b><p>طريقة القراءة، وخطة الحصة، وتصحيح الخطأ لكل باب.</p></div></button>
+  <button class="ins" onclick="go('class')"><span class="shot"><span class="mini3">${["مع معلّمي","مع زميلي","وحدي"].map(t=>`<span>${STAR}${t}</span>`).join("")}</span></span><div class="t"><b>النجوم الثلاث</b><p>يقرأ مع معلمه، ثم مع زميله، ثم وحده.</p></div></button></div></section>
+ <section class="lsec two"><div class="card2"><h3>المنهج</h3><p>«القاعدة المدنية – تعليم القراءة للمبتدئين» لفضيلة الشيخ د. عبد المحسن بن محمد القاسم، إمام وخطيب المسجد النبوي: المنهج المقرر في حلقات القرآن الكريم والمتون العلمية بالمسجد النبوي. يتدرج من الحروف إلى الحركات والتنوين والشدة، ثم المدود واللامات، حتى قراءة الكلمات والجمل ومصطلحات رسم المصحف.</p></div>
+  <div class="card2"><h3>ولي الأمر شريك النجاح</h3><p>نشارك الأسرة صورة واضحة عن تقدم الطفل، ونقترح أنشطة بسيطة تساعده على الاستمرار.</p><ul><li>عشر دقائق يوميًّا تكفي.</li><li>النجوم الثلاث أسفل كل صفحة تبيّن ما أتقنه الطفل.</li><li>رمز في كل صفحة يفتح مقطع القارئ للدرس.</li></ul></div></section>
+ <section class="lsec two" id="s-orgs"><div class="card2"><h3>للجهات والمراكز</h3><ul><li>كتاب طالب مطبوع.</li><li>كتاب معلم تفاعلي للسبورة الذكية.</li><li>دليل معلم لكل باب.</li><li>تدريب المعلمين على تطبيق البرنامج.</li></ul><a class="btn wa2" href="${WA}" target="_blank" rel="noopener">تواصل معنا عبر واتساب</a> <a class="btn s" href="#profile">الملف التعريفي</a></div>
+  <div class="card2"><h3>الفئة</h3><p><span class="age">للبنين من ٦ إلى ٩ سنوات</span></p><p>رحلة ممتعة واضحة يشارك فيها ولي الأمر: تعلم القراءة، وتلقين جزء عمّ، وغرس القيم المناسبة لأعمارهم.</p></div></section>
+ <section class="final-cta"><img src="img/child_web.webp" alt=""><div><h2>كن سَنَدًا لبداية ابنك</h2><p>حرفٌ يُتقن… وقيمةٌ تُبنى.</p><a class="btn wa2" href="${WA}" target="_blank" rel="noopener">تواصل معنا عبر واتساب</a></div></section>`}
+function profileView(){app.innerHTML=`<section class="pfv"><div class="pfh"><h1>الملف التعريفي بمنصة سَنَد</h1>${window.NO_EMBED?"":`<a class="btn g" href="sanad-profile.pdf" download>⬇ تنزيل PDF</a>`}</div>${[...Array(10)].map((_,i)=>`<img src="profile/${String(i+1).padStart(2,"0")}.webp" alt="صفحة ${AN(i+1)} من الملف التعريفي" loading="${i<2?"eager":"lazy"}">`).join("")}</section>`}
+function privacyView(){app.innerHTML=`<section class="priv"><h1 style="font-family:TD;font-weight:900">الخصوصية</h1>
+ <p>هذا الموقع موجّه للأطفال وأسرهم ومعلميهم، لذلك صمّمناه بلا جمع بيانات:</p>
+ <ul><li>لا نطلب اسمًا ولا بريدًا ولا رقمًا، ولا نُنشئ حسابات للأطفال.</li><li>لا أدوات تتبع، ولا تحليلات، ولا إعلانات.</li><li>النجوم وأسماء الفرق التي يكتبها المعلم تُحفظ في جهازه فقط، ولا تُرسل إلى أي خادم، ويمكن حذفها من «القائمة ← تصفير التقدّم».</li><li>المقاطع تُعرض من يوتيوب بوضع الخصوصية المحسّنة (youtube-nocookie.com).</li><li>زر واتساب يفتح تطبيق واتساب عندك، ولا نحفظ شيئًا منه.</li></ul>
+ <p>للاستفسار: واتساب <bdi dir="ltr">058 327 1994</bdi>.</p></section>`}
+document.querySelectorAll(".apptabs .ti").forEach(e=>e.innerHTML=IC(e.dataset.i,22));applyCfg();route();
+if("serviceWorker" in navigator&&location.protocol==="https:")navigator.serviceWorker.register("sw.js").catch(()=>{});
+const TT={"":"سَنَد – نُتقن الحرف… ونزرع القيم",program:"الكتاب التفاعلي – القاعدة المدنية",sb:"كتاب الطالب – القاعدة المدنية",guide:"دليل المعلم – القاعدة المدنية",class:"الألعاب – القاعدة المدنية",app:"تطبيق سَنَد",privacy:"الخصوصية – سَنَد"};const setT=()=>{const k=location.hash.slice(1).split(/\/|--/)[0];document.title=TT[k]||"سَنَد – القاعدة المدنية"};window.addEventListener("hashchange",setT);setT();
+})();
+</script>
+</body>
+</html>
