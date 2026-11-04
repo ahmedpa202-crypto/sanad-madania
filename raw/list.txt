@@ -1,0 +1,5 @@
+total 12
+drwxr-xr-x 2 runner runner 4096 Nov  4 23:18 .
+drwxr-xr-x 5 runner runner 4096 Nov  4 23:16 ..
+-rw-r--r-- 1 runner runner  782 Nov  4 23:18 fail.txt
+-rw-r--r-- 1 runner runner    0 Nov  4 23:18 list.txt
