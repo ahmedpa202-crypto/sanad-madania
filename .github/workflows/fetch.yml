@@ -1,0 +1,20 @@
+name: fetch-audio
+on: { push: { branches: [media-fetch] } }
+permissions: { contents: write }
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg && pip install -q -U "yt-dlp[default]"
+      - name: download
+        run: |
+          mkdir -p raw
+          while read v; do
+            yt-dlp -f bestaudio -x --audio-format mp3 --audio-quality 7 --postprocessor-args "ffmpeg:-ac 1 -ar 32000" -o "raw/%(id)s.%(ext)s" -- "$v" || echo "FAIL $v" >> raw/fail.txt
+          done < ids.txt
+          ls -la raw > raw/list.txt
+      - name: commit
+        run: |
+          git config user.name "sanad-bot"; git config user.email "actions@users.noreply.github.com"
+          git checkout --orphan media; git rm -rqf --cached . ; git add raw; git commit -qm "audio"; git push -f origin media
