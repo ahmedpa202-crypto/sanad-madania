@@ -423,6 +423,19 @@ footer.site{margin-top:40px;background:var(--deep);color:#DCE8F3;padding-block:3
 
 /* ===== وضعا الموقع: الواجهة / البرنامج (شكل تطبيق) ===== */
 body.modeL .navP,body.modeP .navL{display:none}
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.stuh h1{font-family:TD;font-weight:900;font-size:clamp(28px,5vw,40px);margin:8px 0}
+.stuadd{display:flex;gap:10px;margin:14px 0}.stuadd input{flex:1;min-width:0;font:inherit;font-size:18px;padding:12px 14px;border-radius:14px;border:2px solid var(--line);background:var(--tile);color:var(--navy)}.stuadd input:focus{outline:none;border-color:var(--sky)}
+.stul{display:grid;gap:10px;margin:0 0 16px}.stuc{display:flex;align-items:center;gap:14px;background:var(--card);border:2px solid var(--line);border-radius:18px;padding:12px 14px;flex-wrap:wrap}.stuc.on{border-color:var(--mint);background:var(--mintS)}
+.sav{width:52px;height:52px;border-radius:50%;background:var(--navy);color:#fff;display:grid;place-items:center;font-family:TD;font-size:24px;flex:none}.sinfo{flex:1;min-width:180px}.sinfo b{font-size:20px;display:block}.sinfo small{color:var(--ink2)}
+.sact{display:flex;gap:6px;flex-wrap:wrap}.sact .btn{padding:8px 12px;font-size:14px}.sact .del{color:#b4483a}
+.rep{max-width:980px;margin:0 auto}.rephead{display:flex;gap:16px;align-items:center;border-bottom:3px solid var(--gold);padding-bottom:12px}.rephead h1{font-family:TD;font-weight:900;font-size:34px;margin:2px 0}.rephead small{color:var(--ink2)}
+.repk{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:10px;margin:14px 0}.repk div{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:12px;text-align:center}.repk b{display:block;font-family:TD;font-size:26px;color:var(--navy)}.repk span{font-size:14px;color:var(--ink2)}
+.repu{display:grid;gap:8px}.ru{display:grid;grid-template-columns:34px 1fr 1.2fr 50px;gap:10px;align-items:center}.ru .rn{width:30px;height:30px;border-radius:50%;background:var(--skyS);display:grid;place-items:center;font-weight:800}.ru .vbar{margin:0}.ru b{text-align:left}
+@media(max-width:640px){.ru{grid-template-columns:30px 1fr 50px}.ru .vbar{grid-column:1/-1}}
+.repv{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px}.repv div{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:10px;text-align:center}.repv div.ok{background:var(--mintS);border-color:var(--mint)}.repv span{font-size:24px;display:block}.repv small{color:var(--ink2)}
+@media print{header.bar,.apptabs,footer,.noprint,.crumb,#fab,.fab,.teambar{display:none!important}body{background:#fff!important}.rep{max-width:none}}
+
 .vstrip{display:flex;align-items:center;gap:14px;background:linear-gradient(90deg,var(--goldS),var(--mintS));border-radius:18px;padding:12px 16px;margin:6px 0 14px;text-decoration:none;color:var(--navy)}.vstrip .vi{font-size:34px}.vstrip small{display:block;font-size:12px;color:var(--soft)}.vstrip b{font-family:TD;font-weight:900;font-size:22px;margin-inline-end:8px}.vstrip em{font-style:normal;font-size:14px}.vstrip .vgo{margin-inline-start:auto;font-weight:800;font-size:14px;white-space:nowrap}
 @media(max-width:640px){.vstrip{flex-wrap:wrap}.vstrip .vgo{margin:0}}
 .vhero h1{font-family:TD;font-weight:900;font-size:clamp(28px,5vw,42px);margin:8px 0}
@@ -660,7 +673,8 @@ const stars=(n,cls="stars")=>`<div class="${cls}">${[1,2,3].map(i=>STAR.replace(
 const lessonsWord=n=>n===1?"درس واحد":n===2?"درسان":n<=10?AN(n)+" دروس":AN(n)+" درسًا";
 // ---------- التخزين (يبقى في هذا الجهاز فقط)
 const S={get(k,d){try{const v=localStorage.getItem("sanad:"+k);return v?JSON.parse(v):d}catch(e){return d}},set(k,v){try{localStorage.setItem("sanad:"+k,JSON.stringify(v))}catch(e){}}};
-let prog=S.get("prog",{});const P=id=>prog[id]||(prog[id]={m:0,g:{}}),save=()=>S.set("prog",prog);
+function progKey(){const a=S.get("stu","");return a?"prog."+a:"prog"}
+let prog=S.get(progKey(),{});const P=id=>prog[id]||(prog[id]={m:0,g:{}}),save=()=>S.set(progKey(),prog);
 let cfg=Object.assign({teach:false,tts:true,fab:true,sfx:true},S.get("cfg",{}));const saveCfg=()=>{S.set("cfg",cfg);applyCfg()};
 const root=document.documentElement;{const th=S.get("theme",null);if(th)root.dataset.theme=th}
 function applyCfg(){document.body.classList.toggle("teach",!!cfg.teach);document.body.classList.toggle("big",!!cfg.big);drawFab()}
@@ -714,6 +728,9 @@ function route(){stopAudio();const h=location.hash.slice(1).split(/\/|--/);windo
  if(h[0]==="app")return appView();
  if(h[0]==="privacy")return privacyView();
  if(h[0]==="profile")return profileView();
+ if(h[0]==="students")return studentsView();
+ if(h[0]==="rep")return reportView(h[1]);
+ if(h[0]==="import")return importStudents(h.slice(1).join("/"));
  if(h[0]==="values")return valuesView();
  if(h[0]==="v")return valueView(+h[1]||1);
  if(h[0]==="stories")return storiesView();
@@ -957,7 +974,7 @@ function openDrawer(){const d=$("#drawer"),sc=$("#scrim"),h=location.hash,th=roo
  <div class="dacc">${role?`<span class="av">${IC(isOwner()?"unlock":"eye")}</span><div><b>${isOwner()?"الحساب الكامل":"حساب الضيف"}</b><small>${isOwner()?"كل الأبواب والكتاب والدليل":"عيّنة: الباب الأول"}</small></div><button class="ib" id="lo">${IC("logout",18)} خروج</button>`:`<span class="av">${IC("key")}</span><div><b>لم تسجّل الدخول</b><small>ادخل برمزك لفتح البرنامج</small></div><a class="ib login" href="#login">دخول</a>`}</div>
  ${land?`<div class="dg"><h4>الواجهة التعريفية</h4><div class="dtiles">${tl("#","home","الرئيسية")}${tl("#why","bulb","لماذا سَنَد؟")}${tl("#journey","route","رحلة الطفل")}${tl("#programs","layers","البرامج")}${tl("#orgs","school","للجهات")}${tl("#app","phone","التطبيق","قريبًا")}</div></div>
   <div class="dg"><a class="dbig" href="#program"><span>${IC("book",30)}</span><div><b>ادخل البرنامج</b><small>الكتاب التفاعلي، وكتاب الطالب، والدليل، والألعاب</small></div></a></div>`
- :`<div class="dg"><h4>البرنامج</h4><div class="dtiles">${tl("#program","book","الكتاب التفاعلي")}${tl("#sb","sbook","كتاب الطالب")}${tl("#guide","compass","دليل المعلم")}${tl("#class","game","الألعاب",AN(ALLG().length)+" لعبة")}${tl("#values","heart","المهارات القيمية","١٢ مهارة")}${tl("#stories","story","القصص","قريبًا")}${tl("#","home","الواجهة")}</div></div>
+ :`<div class="dg"><h4>البرنامج</h4><div class="dtiles">${tl("#program","book","الكتاب التفاعلي")}${tl("#sb","sbook","كتاب الطالب")}${tl("#guide","compass","دليل المعلم")}${tl("#class","game","الألعاب",AN(ALLG().length)+" لعبة")}${isOwner()?tl("#students","user","طلابي",(stuName()||"اختر طالبًا")):""}${tl("#values","heart","المهارات القيمية","١٢ مهارة")}${tl("#stories","story","القصص","قريبًا")}${tl("#","home","الواجهة")}</div></div>
   <details class="du dg" ${/^#(u|l|g|ug)/.test(h)?"open":""}><summary><h4>أبواب الكتاب ‹</h4></summary>${B.map(u=>`<a class="dl ${!isOwner()&&u.n>1?"locked":""}" href="#u/${u.n}"><span class="n">${AN(u.n)}</span>${u.title}<span class="pc"><span class="mini"><i style="width:${uProg(u)}%"></i></span></span></a>`).join("")}</details>`}
  <div class="dg"><h4>تعرّف على سَنَد</h4><a class="dl" href="#profile"><span class="n">${IC("download",16)}</span>الملف التعريفي بالمنصة PDF</a></div>
  <div class="dg"><h4>المظهر</h4><div class="seg" role="radiogroup" aria-label="المظهر">${TH.map(([k,i,t])=>`<button role="radio" aria-checked="${th===k}" class="${th===k?"on":""}" data-th="${k}"><span>${i}</span>${t}</button>`).join("")}</div>
@@ -1053,7 +1070,7 @@ const HS=s=>{let h=5381;for(const ch of s)h=(((h<<5)+h)^ch.codePointAt(0))>>>0;l
 const ROLES={"1sa9ztv1n5v334":"owner","1rcw1uqs8inrt":"guest"};
 let role=S.get("role",null);if(role&&!["owner","guest"].includes(role))role=null;
 const isOwner=()=>role==="owner",GUEST_PAGES=14;
-function gate(h){const k=h[0];if(k===""||LSEC.includes(k)||["privacy","app","login","profile","stories"].includes(k))return true;if(k==="values"||k==="v")return role?true:"login";if(!role)return"login";if(isOwner())return true;
+function gate(h){const k=h[0];if(k===""||LSEC.includes(k)||["privacy","app","login","profile","stories"].includes(k))return true;if(k==="values"||k==="v")return role?true:"login";if(["students","rep","import"].includes(k))return !role?"login":isOwner()?true:"lock";if(!role)return"login";if(isOwner())return true;
  const un=k==="u"||k==="ug"?+h[1]:(k==="l"||k==="g")?+String(h[1]).split("-")[0]:0;if(un&&un!==1)return"lock";if(k==="sb"&&+h[1]>GUEST_PAGES)return"lock";return true}
 function drawLogin(){const b=$("#loginBtn");b.innerHTML=role?IC(isOwner()?"user":"eye",18)+(isOwner()?" حسابي":" ضيف")+'<span class="rolechip">'+(isOwner()?"كامل":"عيّنة")+"</span>":IC("key",18)+" دخول البرنامج";b.onclick=()=>role?openDrawer():go("login")}
 function loginView(next){next=next&&next!=="#login"?next:"#program";
@@ -1128,7 +1145,7 @@ function valueStrip(n){const v=VN(n);if(!v)return"";return`<a class="vstrip" hre
 function valuesView(){app.innerHTML=`<section class="vhero"><span class="chip">رحلة سَنَد: حرفٌ يُتقن… وقيمةٌ تُبنى</span><h1>المهارات القيمية</h1><p class="lead">لكل باب مهارة قيمية يتعلّمها الطالب في الفصل، ويمارسها في بيته بواجب يومي قصير. نغرسها بثلاث خطوات: <b>أعرف</b> القيمة، ثم <b>أحبّها</b>، ثم <b>أعمل</b> بها.</p></section>
 <div class="vgrid">${VALUES.map((v,i)=>`<a class="vcard" href="#v/${i+1}"><span class="vi">${v.i}</span><small>الباب ${UN[i+1]}</small><b>${v.n}</b><p>${v.s}</p><span class="vbar"><i style="width:${vDone(i+1)*20}%"></i></span></a>`).join("")}</div>
 <div class="panel vsrc"><b>المنهج التربوي</b><p>خطوات «أعرف ← أحبّ ← أعمل» من نموذج التربية الخُلُقية (معرفة القيمة، والشعور بها، وممارستها)، ووسائل الغرس من كتاب «تربية الأولاد في الإسلام» لعبد الله ناصح علوان: القدوة، والعادة، والموعظة، والملاحظة. والأدلة من القرآن الكريم والسنة الصحيحة.</p></div>`}
-const vKey=n=>"sanad.vh."+n;function vGet(n){try{return JSON.parse(localStorage.getItem(vKey(n))||"[]")}catch(e){return[]}}function vDone(n){return vGet(n).filter(Boolean).length}
+const vKey=n=>"sanad.vh."+(S.get("stu","")?S.get("stu","")+".":"")+n;function vGet(n){try{return JSON.parse(localStorage.getItem(vKey(n))||"[]")}catch(e){return[]}}function vDone(n){return vGet(n).filter(Boolean).length}
 function valueView(n){const v=VN(n);if(!v)return valuesView();const d=vGet(n);
  app.innerHTML=`<nav class="crumb"><button onclick="go('values')">المهارات القيمية</button> ‹ <span>${v.n}</span></nav>
 <section class="vcardbig"><div class="vfront"><span class="vi">${v.i}</span><small>بطاقة المهارة · الباب ${UN[n]}</small><h1>${v.n}</h1><p class="vs">«${v.s}»</p><p>${v.d}</p><blockquote>${v.e[0]}<cite>${v.e[1]}</cite></blockquote></div></section>
@@ -1142,6 +1159,45 @@ function valueView(n){const v=VN(n);if(!v)return valuesView();const d=vGet(n);
 const STS=[["🕌","قصص الأنبياء والقيم","من كل قصة نبيّ خُلقٌ نتعلّمه: الصبر، والأمانة، والبرّ، والشكر."],["🦁","حكايات الحيوان والحكمة","حكايات قصيرة مصوّرة، في كل واحدة حكمة يفهمها الطفل."],["🏡","حكايات البيت والأسرة","مواقف من يوم الطفل مع أهله وأصدقائه، وكيف يتصرّف بأدب."],["📗","أقرأ وحدي","قصص قصيرة مشكولة على قدر ما تعلّمه الطفل من أبواب القاعدة المدنية."]];
 function storiesHTML(){return`<h2 class="sec">مكتبة قصص سَنَد <span class="soon">قريبًا</span></h2><p class="lead">سنضيف سلاسل قصص مصوّرة يقرؤها الطالب بنفسه، أو يسمعها بصوت الراوي، وتختم كل قصة بقيمة وسؤال.</p><div class="stgrid">${STS.map(([i,a,b])=>`<div class="stc"><span class="sti">${i}</span><b>${a}</b><p>${b}</p><span class="stm"><span>📖 أقرأ</span><span>🎧 أسمع</span></span></div>`).join("")}</div>`}
 function storiesView(){app.innerHTML=`<section class="priv" style="max-width:1000px">${storiesHTML()}<div class="row"><button class="btn" onclick="go('app')">عن تطبيق سَنَد</button></div></section>`}
+
+// ================= طلاب النسخة التجريبية: قاعدة بيانات محلية في الجهاز (localStorage)، مع نسخة احتياطية وتقارير
+const STU={all:()=>S.get("students",[]),put:a=>S.set("students",a),act:()=>S.get("stu","")};
+const stuName=()=>{const a=STU.act();return(STU.all().find(x=>x.id===a)||{}).n||""};
+function setStu(id){S.set("stu",id);prog=S.get(progKey(),{});}
+const newId=()=>Date.now().toString(36)+Math.random().toString(36).slice(2,6);
+function stuStats(id){const pr=S.get(id?"prog."+id:"prog",{});let started=0,full=0,stars=0,games=0,acc=[],last="";
+ for(const u of B)for(const l of u.lessons){const x=pr[l.id];if(!x)continue;const m=Math.min(3,x.m||0);if(m||Object.keys(x.g||{}).length)started++;if(m>=3)full++;stars+=m;games+=Object.keys(x.g||{}).length;if(x.acc!=null)acc.push(x.acc);if(x.d&&x.d>last)last=x.d}
+ const units=B.map(u=>{let s=0;u.lessons.forEach(l=>s+=Math.min(3,(pr[l.id]||{}).m||0));return Math.round(100*s/(3*u.lessons.length))});
+ const vals=(window.VALUES||[]).map((v,i)=>{try{return JSON.parse(localStorage.getItem("sanad.vh."+(id?id+".":"")+(i+1))||"[]").filter(Boolean).length}catch(e){return 0}});
+ const total=B.reduce((a,u)=>a+u.lessons.length,0);
+ return{started,full,stars,games,acc:acc.length?Math.round(acc.reduce((a,b)=>a+b,0)/acc.length):null,last,units,vals,total}}
+const fmtD=d=>{if(!d)return"—";try{return new Date(isNaN(d)?d:+d).toLocaleDateString("ar-SA-u-ca-gregory",{day:"numeric",month:"long"})}catch(e){return"—"}};
+function studentsView(){const L=STU.all(),a=STU.act();
+ app.innerHTML=`<section class="stuh"><span class="chip">النسخة التجريبية · برنامج نوابغ المستقبل</span><h1>طلابي</h1><p class="lead">اختر الطالب قبل الدرس، فتُحفظ نجومه ونتائج ألعابه وواجباته في سجله. البيانات محفوظة في هذا الجهاز فقط، ولا تُرسل إلى أي خادم.</p></section>
+ <form class="stuadd" id="sa"><label for="sn" class="vh">اسم الطالب</label><input id="sn" placeholder="اسم الطالب الجديد" autocomplete="off" required maxlength="60"><button class="btn">${IC("user",18)} إضافة طالب</button></form>
+ <div class="stul">${L.length?L.map(x=>{const st=stuStats(x.id);return`<div class="stuc ${x.id===a?"on":""}"><div class="sav">${esc(x.n.trim()[0]||"؟")}</div><div class="sinfo"><b>${esc(x.n)}</b><small>${AN(st.full)} درسًا متقنًا · ${AN(st.stars)} نجمة · آخر نشاط: ${fmtD(st.last)}</small><span class="vbar"><i style="width:${Math.round(100*st.full/st.total)}%"></i></span></div>
+  <div class="sact"><button class="btn ${x.id===a?"g":"s"}" data-act="${x.id}">${x.id===a?"✓ الطالب الحالي":"اختيار"}</button><button class="btn s" data-rep="${x.id}">التقرير</button><button class="btn s" data-ed="${x.id}" aria-label="تعديل الاسم">تعديل</button><button class="btn s del" data-del="${x.id}" aria-label="حذف">حذف</button></div></div>`}).join(""):`<div class="panel">لا يوجد طلاب بعد. أضف أول طالب من الخانة أعلاه.</div>`}</div>
+ <div class="panel"><h3 style="margin-top:0">قاعدة البيانات</h3><p style="line-height:1.9;margin:0 0 10px">انسخها احتياطيًّا بين حين وآخر، وانقلها إلى جهاز آخر بالاستيراد.</p><div class="row"><button class="btn s" id="sx">⬇ نسخة احتياطية (JSON)</button><label class="btn s" for="si">⬆ استيراد نسخة</label><input type="file" id="si" accept=".json,application/json" hidden><button class="btn s" id="sc">⬇ تقرير الطلاب (Excel/CSV)</button>${a?`<button class="btn s" id="s0">بلا طالب (عرض عام)</button>`:""}</div></div>`;
+ $("#sa").onsubmit=e=>{e.preventDefault();const n=$("#sn").value.trim();if(!n)return;const L=STU.all();if(L.some(x=>x.n===n))return toast("الاسم موجود");const id=newId();L.push({id,n,c:Date.now()});STU.put(L);if(!STU.act())setStu(id);toast("أُضيف: "+n);studentsView()};
+ app.querySelectorAll("[data-act]").forEach(b=>b.onclick=()=>{setStu(b.dataset.act);toast("الطالب الحالي: "+stuName());studentsView()});
+ app.querySelectorAll("[data-rep]").forEach(b=>b.onclick=()=>go("rep/"+b.dataset.rep));
+ app.querySelectorAll("[data-ed]").forEach(b=>b.onclick=()=>{const L=STU.all(),x=L.find(y=>y.id===b.dataset.ed);modal(`${mhead("تعديل اسم الطالب")}<form id="ef"><input id="en" value="${esc(x.n)}" maxlength="60" required style="width:100%;font:inherit;font-size:20px;padding:12px;border-radius:12px;border:1px solid var(--line)"><div class="row"><button class="btn">حفظ</button></div></form>`,(m,close)=>{const i=m.querySelector("#en");i.focus();i.select();m.querySelector("#ef").onsubmit=e=>{e.preventDefault();const v=i.value.trim();if(!v)return;x.n=v;STU.put(L);close();toast("حُفظ الاسم");studentsView()}})});
+ app.querySelectorAll("[data-del]").forEach(b=>b.onclick=()=>{const L=STU.all(),x=L.find(y=>y.id===b.dataset.del);if(!confirm("حذف «"+x.n+"» وكل سجله من هذا الجهاز؟"))return;STU.put(L.filter(y=>y!==x));try{localStorage.removeItem("sanad:prog."+x.id);Object.keys(localStorage).filter(k=>k.startsWith("sanad.vh."+x.id+".")).forEach(k=>localStorage.removeItem(k))}catch(e){}if(STU.act()===x.id)setStu("");toast("حُذف: "+x.n);studentsView()});
+ const dl=(name,data,type)=>{const a=document.createElement("a");a.href=URL.createObjectURL(new Blob([data],{type}));a.download=name;document.body.append(a);a.click();a.remove()};
+ $("#sx").onclick=()=>{const L=STU.all(),o={v:1,date:new Date().toISOString(),students:L,prog:{},values:{}};L.forEach(x=>{o.prog[x.id]=S.get("prog."+x.id,{});(window.VALUES||[]).forEach((v,i)=>{const k="sanad.vh."+x.id+"."+(i+1),val=localStorage.getItem(k);if(val)o.values[k]=val})});dl("sanad-students-"+new Date().toISOString().slice(0,10)+".json",JSON.stringify(o),"application/json")};
+ $("#si").onchange=e=>{const f=e.target.files[0];if(!f)return;f.text().then(t=>{try{const o=JSON.parse(t);if(!Array.isArray(o.students))throw 0;const L=STU.all();o.students.forEach(x=>{if(!x||typeof x.n!=="string"||!x.id)return;const ex=L.find(y=>y.id===x.id);ex?ex.n=x.n.slice(0,60):L.push({id:String(x.id).slice(0,40),n:x.n.slice(0,60),c:x.c||Date.now()});if(o.prog&&o.prog[x.id])S.set("prog."+x.id,o.prog[x.id])});Object.entries(o.values||{}).forEach(([k,v])=>{if(/^sanad\.vh\.[\w]+\.\d+$/.test(k))try{localStorage.setItem(k,String(v))}catch(e){}});STU.put(L);toast("استُورد "+AN(o.students.length)+" طالبًا");studentsView()}catch(err){toast("الملف غير صالح")}})};
+ $("#sc").onclick=()=>{const rows=[["الطالب","دروس بدأها","دروس متقنة (٣ نجوم)","مجموع النجوم","ألعاب لُعبت","متوسط الدقة %","آخر نشاط",...B.map(u=>"الباب "+u.n+" %"),"واجبات القيم المنجزة"]];STU.all().forEach(x=>{const s=stuStats(x.id);rows.push([x.n,s.started,s.full,s.stars,s.games,s.acc??"",fmtD(s.last),...s.units,s.vals.reduce((a,b)=>a+b,0)])});dl("sanad-report-"+new Date().toISOString().slice(0,10)+".csv","﻿"+rows.map(r=>r.map(c=>`"${String(c).replace(/"/g,'""')}"`).join(",")).join("\n"),"text/csv")};
+ const s0=$("#s0");if(s0)s0.onclick=()=>{setStu("");toast("عرض عام بلا طالب");studentsView()}}
+function reportView(id){const x=STU.all().find(y=>y.id===id);if(!x)return studentsView();const s=stuStats(id),note=S.get("note."+id,"");
+ app.innerHTML=`<nav class="crumb"><button onclick="go('students')">طلابي</button> ‹ <span>تقرير ${esc(x.n)}</span></nav>
+ <section class="rep"><div class="rephead"><img src="img/logo_web.webp" alt="سَنَد" style="height:56px;width:auto"><div><small>تقرير متابعة الطالب · النسخة التجريبية · برنامج نوابغ المستقبل</small><h1>${esc(x.n)}</h1><small>تاريخ التقرير: ${fmtD(Date.now())}</small></div></div>
+ <div class="repk">${[["دروس متقنة",AN(s.full)+" / "+AN(s.total)],["دروس بدأها",AN(s.started)],["مجموع النجوم",AN(s.stars)],["ألعاب لُعبت",AN(s.games)],["متوسط الدقة",s.acc==null?"—":AN(s.acc)+"٪"],["آخر نشاط",fmtD(s.last)]].map(([a,b])=>`<div><b>${b}</b><span>${a}</span></div>`).join("")}</div>
+ <h2 class="sec">التقدّم في الأبواب</h2><div class="repu">${B.map((u,i)=>`<div class="ru"><span class="rn">${AN(u.n)}</span><span class="rt">${u.title}</span><span class="vbar"><i style="width:${s.units[i]}%"></i></span><b>${AN(s.units[i])}٪</b></div>`).join("")}</div>
+ <h2 class="sec">المهارات القيمية: الواجب اليومي</h2><div class="repv">${(window.VALUES||[]).map((v,i)=>`<div class="${s.vals[i]>=5?"ok":""}"><span>${v.i}</span><b>${v.n}</b><small>${AN(s.vals[i])} من ٥</small></div>`).join("")}</div>
+ <h2 class="sec">ملاحظات المعلّم</h2><textarea class="roster" id="rn" placeholder="ملاحظات عن قراءة الطالب وسلوكه…">${esc(note)}</textarea>
+ <div class="row noprint"><button class="btn" onclick="print()">🖨 طباعة التقرير / PDF</button><button class="btn s" onclick="go('students')">العودة إلى الطلاب</button></div></section>`;
+ $("#rn").oninput=e=>S.set("note."+id,e.target.value)}
+function importStudents(code){try{const names=JSON.parse(decodeURIComponent(escape(atob(code.replace(/-/g,"+").replace(/_/g,"/")))));const L=STU.all();let n=0;names.forEach(v=>{v=String(v).trim().slice(0,60);if(v&&!L.some(x=>x.n===v)){L.push({id:newId(),n:v,c:Date.now()});n++}});STU.put(L);history.replaceState(null,"","#students");toast(n?"أُضيف "+AN(n)+" طلاب":"الطلاب موجودون مسبقًا");studentsView()}catch(e){toast("رابط الاستيراد غير صالح");studentsView()}}
 function profileView(){app.innerHTML=`<section class="pfv"><div class="pfh"><h1>تعرّف على سَنَد</h1>${window.NO_EMBED?"":`<a class="btn g" href="sanad-profile.pdf" download>⬇ تنزيل PDF</a>`}</div><video class="pfvid" src="sanad-intro.mp4" controls playsinline preload="metadata" poster="profile/01.webp"></video>${[...Array(10)].map((_,i)=>`<img src="profile/${String(i+1).padStart(2,"0")}.webp" alt="صفحة ${AN(i+1)} من الملف التعريفي" loading="${i<2?"eager":"lazy"}">`).join("")}</section>`}
 function privacyView(){app.innerHTML=`<section class="priv"><h1 style="font-family:TD;font-weight:900">الخصوصية</h1>
  <p>هذا الموقع موجّه للأطفال وأسرهم ومعلميهم، لذلك صمّمناه بلا جمع بيانات:</p>
