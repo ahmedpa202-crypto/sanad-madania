@@ -25,5 +25,59 @@
    "type": "image/png",
    "purpose": "maskable"
   }
+ ],
+ "id": "./",
+ "description": "برنامج القاعدة المدنية لتعليم القراءة للمبتدئين: كتاب تفاعلي، وألعاب، ومتابعة للطلاب. حرفٌ يُتقن… وقيمةٌ تُبنى.",
+ "categories": [
+  "education",
+  "kids",
+  "books"
+ ],
+ "orientation": "any",
+ "display_override": [
+  "standalone",
+  "minimal-ui"
+ ],
+ "shortcuts": [
+  {
+   "name": "الكتاب التفاعلي",
+   "url": "./#program",
+   "icons": [
+    {
+     "src": "img/icon-192.png",
+     "sizes": "192x192"
+    }
+   ]
+  },
+  {
+   "name": "الألعاب",
+   "url": "./#class",
+   "icons": [
+    {
+     "src": "img/icon-192.png",
+     "sizes": "192x192"
+    }
+   ]
+  },
+  {
+   "name": "طلابي",
+   "url": "./#students",
+   "icons": [
+    {
+     "src": "img/icon-192.png",
+     "sizes": "192x192"
+    }
+   ]
+  },
+  {
+   "name": "الإشعارات",
+   "url": "./#notify",
+   "icons": [
+    {
+     "src": "img/icon-192.png",
+     "sizes": "192x192"
+    }
+   ]
+  }
  ]
 }
